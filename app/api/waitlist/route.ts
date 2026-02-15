@@ -1,4 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { promises as fs } from 'fs'
+import path from 'path'
+
+const WAITLIST_FILE = path.join(process.cwd(), 'waitlist.json')
+
+async function getWaitlist(): Promise<string[]> {
+  try {
+    const data = await fs.readFile(WAITLIST_FILE, 'utf-8')
+    return JSON.parse(data)
+  } catch {
+    return []
+  }
+}
+
+async function addToWaitlist(email: string): Promise<void> {
+  const list = await getWaitlist()
+  if (!list.includes(email)) {
+    list.push(email)
+    await fs.writeFile(WAITLIST_FILE, JSON.stringify(list, null, 2))
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -19,7 +40,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // TODO: Connect to a real service (database, Resend, etc.)
+    await addToWaitlist(email)
     console.log(`[waitlist] New signup: ${email}`)
 
     return NextResponse.json({ success: true })
@@ -29,4 +50,9 @@ export async function POST(request: NextRequest) {
       { status: 400 }
     )
   }
+}
+
+export async function GET() {
+  const list = await getWaitlist()
+  return NextResponse.json({ count: list.length })
 }
