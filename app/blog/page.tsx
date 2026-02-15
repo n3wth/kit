@@ -19,6 +19,12 @@ const posts = [
     date: 'February 12, 2026',
     excerpt: 'A technical deep-dive into the registry protocol that powers shadcn/ui, how it works under the hood, and why it matters for the component ecosystem.',
   },
+  {
+    slug: 'ai-context-packs-explained',
+    title: 'AI Context Packs Explained',
+    date: 'February 10, 2026',
+    excerpt: 'What are AI context packs? How .cursorrules, CLAUDE.md, and MCP configs teach AI coding tools to use your design system.',
+  },
 ]
 
 export default function BlogPage() {
