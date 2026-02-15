@@ -1,8 +1,7 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
-import { useGSAP } from '@gsap/react'
 
 function MiniButton({ className }: { className?: string }) {
   return (
@@ -97,44 +96,46 @@ function MiniProgress({ className }: { className?: string }) {
 export function FloatingElements() {
   const container = useRef<HTMLDivElement>(null)
 
-  useGSAP(() => {
+  useEffect(() => {
     const items = container.current?.querySelectorAll('.float-item')
     if (!items) return
 
-    // Set initial state
-    gsap.set(items, { opacity: 0, scale: 0.5, y: 30 })
+    const ctx = gsap.context(() => {
+      items.forEach((item, i) => {
+        const yRange = 8 + Math.random() * 12
+        const xRange = 4 + Math.random() * 8
+        const duration = 3 + Math.random() * 3
+        const delay = i * 0.3
 
-    items.forEach((item, i) => {
-      const yRange = 8 + Math.random() * 12
-      const xRange = 4 + Math.random() * 8
-      const duration = 3 + Math.random() * 3
-      const delay = i * 0.3
+        // Entrance
+        gsap.to(item, {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 1.2,
+          delay: 0.8 + delay * 0.15,
+          ease: 'back.out(1.4)',
+        })
 
-      // Entrance
-      gsap.to(item, {
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        duration: 1.2,
-        delay: 0.8 + delay * 0.15,
-        ease: 'back.out(1.4)',
+        // Continuous float
+        gsap.to(item, {
+          y: `+=${yRange}`,
+          x: `+=${xRange}`,
+          duration,
+          delay: 2 + delay * 0.15,
+          ease: 'sine.inOut',
+          repeat: -1,
+          yoyo: true,
+        })
       })
+    }, container)
 
-      // Continuous float
-      gsap.to(item, {
-        y: `+=${yRange}`,
-        x: `+=${xRange}`,
-        duration,
-        delay: 2 + delay * 0.15,
-        ease: 'sine.inOut',
-        repeat: -1,
-        yoyo: true,
-      })
-    })
-  }, { scope: container })
+    return () => ctx.revert()
+  }, [])
 
   return (
     <div ref={container} className="pointer-events-none absolute inset-0 overflow-hidden">
+      <style>{`.float-item { opacity: 0; transform: scale(0.5) translateY(30px); }`}</style>
       {/* Right cluster */}
       <MiniButton className="float-item absolute right-[8%] top-[15%] rotate-[-6deg]" />
       <MiniCard className="float-item absolute right-[2%] top-[40%] rotate-[4deg]" />
