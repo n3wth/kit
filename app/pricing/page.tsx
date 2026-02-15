@@ -1,3 +1,11 @@
+import type { Metadata } from 'next'
+import { WaitlistForm } from '../_components/waitlist-form'
+
+export const metadata: Metadata = {
+  title: 'Pricing - n3wth/kit',
+  description: 'Simple pricing for n3wth/kit. Free tier for individual developers, Pro for teams, and Enterprise for design system teams.',
+}
+
 const plans = [
   {
     tier: 'Free',
@@ -29,6 +37,7 @@ const plans = [
     cta: 'Coming soon',
     href: '#',
     disabled: true,
+    showWaitlist: true,
   },
   {
     tier: 'Team',
@@ -46,6 +55,7 @@ const plans = [
     href: '#',
     highlight: true,
     disabled: true,
+    showWaitlist: true,
   },
   {
     tier: 'Enterprise',
@@ -132,18 +142,23 @@ export default function PricingPage() {
                   </li>
                 ))}
               </ul>
-              <a
-                href={plan.href}
-                className={`mt-6 block rounded-lg py-2.5 text-center text-sm font-medium transition-colors ${
-                  plan.disabled
-                    ? 'cursor-default border border-neutral-800 text-neutral-600'
-                    : plan.highlight
-                      ? 'bg-white text-neutral-950 hover:bg-neutral-200'
-                      : 'border border-neutral-800 text-neutral-300 hover:border-neutral-700 hover:text-white'
-                }`}
-              >
-                {plan.cta}
-              </a>
+              <div className="mt-6 space-y-3">
+                <a
+                  href={plan.href}
+                  className={`block rounded-lg py-2.5 text-center text-sm font-medium transition-colors ${
+                    plan.disabled
+                      ? 'cursor-default border border-neutral-800 text-neutral-600'
+                      : plan.highlight
+                        ? 'bg-white text-neutral-950 hover:bg-neutral-200'
+                        : 'border border-neutral-800 text-neutral-300 hover:border-neutral-700 hover:text-white'
+                  }`}
+                >
+                  {plan.cta}
+                </a>
+                {plan.showWaitlist && (
+                  <WaitlistForm variant="compact" />
+                )}
+              </div>
             </div>
           ))}
         </div>

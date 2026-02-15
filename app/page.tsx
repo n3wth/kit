@@ -1,8 +1,27 @@
+import type { Metadata } from 'next'
 import { InstallCommand } from './_components/install-command'
 import { HeroAnimation } from './_components/hero-animation'
 import { FloatingElements, HeroBackground } from './_components/floating-elements'
 import { ComponentShowcase } from './_components/component-showcase'
+import { WaitlistForm } from './_components/waitlist-form'
 import { Footer } from './_components/footer'
+
+export const metadata: Metadata = {
+  title: 'n3wth/kit - Make AI coding tools use your design system',
+  description: 'The packaging layer between design systems and AI code generation. 47 components with AI context packs for v0, Cursor, Claude Code, Lovable, and Windsurf.',
+  openGraph: {
+    title: 'n3wth/kit - Make AI coding tools use your design system',
+    description: 'The packaging layer between design systems and AI code generation.',
+    url: 'https://kit.newth.ai',
+    siteName: 'n3wth/kit',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'n3wth/kit - Make AI coding tools use your design system',
+    description: 'The packaging layer between design systems and AI code generation.',
+  },
+}
 
 export default function Home() {
   return (
@@ -56,7 +75,52 @@ export default function Home() {
         </section>
       </HeroAnimation>
 
-      {/* Before / After — the core value prop */}
+      {/* How it works */}
+      <section className="mx-auto max-w-6xl px-6 py-40">
+        <h2 className="text-center text-sm font-medium uppercase tracking-widest text-neutral-600">
+          How it works
+        </h2>
+        <h3 className="mt-4 text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          Three steps to on-brand AI output
+        </h3>
+
+        <div className="mt-16 grid gap-6 sm:grid-cols-3">
+          {[
+            {
+              step: '1',
+              title: 'Install',
+              description: 'One command adds components with AI context to your project.',
+            },
+            {
+              step: '2',
+              title: 'Context',
+              description: 'AI tools read component rules, props, and design tokens automatically.',
+            },
+            {
+              step: '3',
+              title: 'Generate',
+              description: 'Every prompt produces on-brand code. No more generic output.',
+            },
+          ].map((item) => (
+            <div
+              key={item.step}
+              className="rounded-xl border border-neutral-800 p-8"
+            >
+              <div className="mb-4 flex h-8 w-8 items-center justify-center rounded-md border border-neutral-700 text-sm font-semibold text-neutral-300">
+                {item.step}
+              </div>
+              <h4 className="mb-2 text-lg font-semibold text-white">
+                {item.title}
+              </h4>
+              <p className="text-sm leading-relaxed text-neutral-500">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Before / After */}
       <section className="mx-auto max-w-6xl px-6 py-40">
         <h2 className="max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
           Same prompt.<br />Different output.
@@ -96,13 +160,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Component showcase — the actual product */}
+      {/* Works with every AI tool */}
+      <section className="mx-auto max-w-6xl px-6 pb-20">
+        <h2 className="text-center text-2xl font-bold tracking-tight text-white sm:text-3xl">
+          Works with every AI tool
+        </h2>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          {['v0', 'Cursor', 'Claude Code', 'Lovable', 'Windsurf'].map((tool) => (
+            <span
+              key={tool}
+              className="rounded-full border border-neutral-800 px-5 py-2.5 text-sm text-neutral-500"
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* Component showcase */}
       <section className="mx-auto max-w-6xl px-6 pb-40">
         <h2 className="max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
           47 components. One install each.
         </h2>
         <p className="mt-6 max-w-2xl text-lg text-neutral-500">
-          Every component ships with AI context — props, usage rules, and design tokens that v0, Cursor, Claude Code, Lovable, and Windsurf understand.
+          Every component ships with AI context &mdash; props, usage rules, and design tokens that v0, Cursor, Claude Code, Lovable, and Windsurf understand.
         </p>
 
         <div className="mt-16">
@@ -119,7 +200,7 @@ export default function Home() {
                 Start building
               </h2>
               <p className="mt-4 text-lg text-neutral-500">
-                Install a single component or scaffold a full project.
+                Install a single component or scaffold a full project. Get started in 30 seconds.
               </p>
               <div className="mt-8 flex flex-col gap-3">
                 <InstallCommand command="npx shadcn add https://kit.newth.ai/r/button.json" />
@@ -139,14 +220,9 @@ export default function Home() {
                 Input your Figma tokens or CSS variables. Get a hosted registry, MCP
                 server, and AI context packs for your entire team.
               </p>
-              <div className="mt-8 flex items-center gap-4">
-                <a
-                  href="mailto:oliver@newth.ai"
-                  className="rounded-lg bg-white px-6 py-3 text-sm font-medium text-neutral-950 transition-colors hover:bg-neutral-200"
-                >
-                  Join the waitlist
-                </a>
-                <span className="text-xs font-medium uppercase tracking-widest text-neutral-700">Coming soon</span>
+              <div className="mt-8">
+                <WaitlistForm />
+                <p className="mt-3 text-xs font-medium uppercase tracking-widest text-neutral-700">Coming soon</p>
               </div>
             </div>
           </div>
