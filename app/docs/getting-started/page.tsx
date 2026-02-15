@@ -54,9 +54,8 @@ export default function GettingStartedPage() {
           </h2>
           <p className="mt-3 text-sm text-neutral-400">
             Once installed, AI coding tools like Cursor, Claude Code, v0,
-            Lovable, and Windsurf can read the context packs alongside your
-            components. This means generated code automatically follows your
-            design system rules.
+            Lovable, and Windsurf read the context packs alongside your
+            components. Generated code follows your design system rules.
           </p>
         </section>
 

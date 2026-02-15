@@ -15,6 +15,12 @@ export function Nav() {
             Components
           </Link>
           <Link
+            href="/pricing"
+            className="text-sm text-neutral-400 transition-colors hover:text-white"
+          >
+            Pricing
+          </Link>
+          <Link
             href="/docs/getting-started"
             className="text-sm text-neutral-400 transition-colors hover:text-white"
           >

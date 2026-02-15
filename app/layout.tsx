@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'n3wth/kit - Ship your design system to every AI coding tool',
+  title: 'n3wth/kit - Make AI coding tools use your design system',
   description:
-    'A component registry that gives AI tools the context they need to generate on-brand code. Built on shadcn, designed for the AI development workflow.',
+    'The packaging layer between design systems and AI code generation. One registry for v0, Cursor, Claude Code, Lovable, and Windsurf.',
 }
 
 export default function RootLayout({
