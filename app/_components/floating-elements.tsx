@@ -101,17 +101,20 @@ export function FloatingElements() {
     const items = container.current?.querySelectorAll('.float-item')
     if (!items) return
 
+    // Set initial state
+    gsap.set(items, { opacity: 0, scale: 0.5, y: 30 })
+
     items.forEach((item, i) => {
       const yRange = 8 + Math.random() * 12
       const xRange = 4 + Math.random() * 8
       const duration = 3 + Math.random() * 3
       const delay = i * 0.3
 
-      // Initial entrance
-      gsap.from(item, {
-        opacity: 0,
-        scale: 0.5,
-        y: 30,
+      // Entrance
+      gsap.to(item, {
+        opacity: 1,
+        scale: 1,
+        y: 0,
         duration: 1.2,
         delay: 0.8 + delay * 0.15,
         ease: 'back.out(1.4)',
@@ -122,7 +125,7 @@ export function FloatingElements() {
         y: `+=${yRange}`,
         x: `+=${xRange}`,
         duration,
-        delay: 1.5 + delay * 0.15,
+        delay: 2 + delay * 0.15,
         ease: 'sine.inOut',
         repeat: -1,
         yoyo: true,

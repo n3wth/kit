@@ -8,38 +8,48 @@ export function HeroAnimation({ children }: { children: React.ReactNode }) {
   const container = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
-
-    tl.from('.hero-badge', {
-      y: 20,
+    // Set initial state immediately so there's no flash
+    gsap.set(['.hero-badge', '.hero-title', '.hero-subtitle', '.hero-cta'], {
       opacity: 0,
-      duration: 0.8,
+      y: 40,
     })
-    .from('.hero-title', {
-      y: 60,
-      opacity: 0,
+    gsap.set('.hero-glow', { opacity: 0, scale: 0.5 })
+
+    const tl = gsap.timeline({
+      defaults: { ease: 'power3.out' },
+      delay: 0.1,
+    })
+
+    tl.to('.hero-glow', {
+      scale: 1,
+      opacity: 1,
+      duration: 2,
+      ease: 'power2.out',
+    })
+    .to('.hero-badge', {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+    }, 0.1)
+    .to('.hero-title', {
+      y: 0,
+      opacity: 1,
       duration: 1.2,
       force3D: true,
-    }, '-=0.4')
-    .from('.hero-subtitle', {
-      y: 40,
-      opacity: 0,
+    }, 0.3)
+    .to('.hero-subtitle', {
+      y: 0,
+      opacity: 1,
       duration: 1,
-    }, '-=0.7')
-    .from('.hero-cta', {
-      y: 20,
-      opacity: 0,
-      scale: 0.9,
+    }, 0.7)
+    .to('.hero-cta', {
+      y: 0,
+      opacity: 1,
+      scale: 1,
       duration: 0.8,
       stagger: 0.12,
       ease: 'back.out(1.7)',
-    }, '-=0.5')
-    .from('.hero-glow', {
-      scale: 0.5,
-      opacity: 0,
-      duration: 2,
-      ease: 'power2.out',
-    }, 0)
+    }, 0.9)
   }, { scope: container })
 
   return <div ref={container}>{children}</div>
