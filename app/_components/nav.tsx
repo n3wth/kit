@@ -1,8 +1,20 @@
+'use client'
+
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export function Nav() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-sm">
+    <nav className={`fixed top-0 z-50 w-full transition-[background-color,border-color] duration-300 ${scrolled ? 'border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-sm' : 'border-b border-transparent bg-transparent'}`}>
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6">
         <Link href="/" className="font-mono text-sm font-semibold text-white">
           n3wth/kit

@@ -81,7 +81,7 @@ export function Footer() {
           <p className="text-xs text-neutral-600">
             &copy; 2026 Oliver Newth
           </p>
-          <div className="h-px w-24 bg-gradient-to-r from-violet-500 via-pink-500 to-emerald-500" />
+          <p className="text-xs text-neutral-600">n3wth/kit</p>
         </div>
       </div>
     </footer>
