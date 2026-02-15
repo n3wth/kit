@@ -47,22 +47,22 @@ export default function Home() {
         <HeroAnimation>
           <section className="relative flex min-h-[80vh] flex-col items-center justify-center text-center">
             {/* Ambient glow */}
-            <div className="hero-glow pointer-events-none absolute -top-40 left-1/2 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-br from-violet-600/20 via-pink-500/10 to-emerald-500/15 blur-3xl" />
+            <div className="hero-glow pointer-events-none absolute -top-40 left-1/2 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-br from-violet-600/20 via-pink-500/10 to-emerald-500/15 blur-3xl" style={{ opacity: 0, transform: 'scale(0.5)' }} />
 
             {/* Floating design system elements */}
             <FloatingElements />
 
-            <p className="hero-badge relative rounded-full border border-violet-500/30 bg-violet-500/5 px-4 py-1.5 text-xs font-medium text-violet-300">
+            <p className="hero-badge relative rounded-full border border-violet-500/30 bg-violet-500/5 px-4 py-1.5 text-xs font-medium text-violet-300" style={{ opacity: 0, transform: 'translateY(40px)' }}>
               Built on the shadcn registry protocol
             </p>
-            <h1 className="hero-title relative mt-8 max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl">
+            <h1 className="hero-title relative mt-8 max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl" style={{ opacity: 0, transform: 'translateY(40px)' }}>
               Make AI coding tools use{' '}
               <span className="bg-gradient-to-r from-emerald-400 via-violet-400 to-pink-400 bg-clip-text text-transparent">
                 your
               </span>{' '}
               design system
             </h1>
-            <p className="hero-subtitle relative mt-6 max-w-2xl text-lg leading-relaxed text-neutral-400">
+            <p className="hero-subtitle relative mt-6 max-w-2xl text-lg leading-relaxed text-neutral-400" style={{ opacity: 0, transform: 'translateY(40px)' }}>
               AI tools generate generic code. kit is the packaging layer that
               teaches v0, Cursor, Claude Code, and Lovable to generate{' '}
               <span className="text-white">on-brand components</span> instead.
@@ -72,12 +72,14 @@ export default function Home() {
               <a
                 href="/docs/getting-started"
                 className="hero-cta rounded-lg bg-gradient-to-r from-violet-500 to-pink-500 px-6 py-2.5 text-sm font-medium text-white transition-all hover:from-violet-400 hover:to-pink-400 hover:shadow-lg hover:shadow-violet-500/25"
+                style={{ opacity: 0, transform: 'translateY(40px)' }}
               >
                 Get started
               </a>
               <a
                 href="/components"
                 className="hero-cta rounded-lg border border-neutral-700 bg-neutral-900/50 px-6 py-2.5 text-sm font-medium text-neutral-300 transition-all hover:border-neutral-600 hover:text-white"
+                style={{ opacity: 0, transform: 'translateY(40px)' }}
               >
                 Browse components
               </a>

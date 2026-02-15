@@ -101,6 +101,9 @@ export function FloatingElements() {
     if (!items) return
 
     const ctx = gsap.context(() => {
+      // Set initial hidden state via GSAP (inline styles)
+      gsap.set(items, { opacity: 0, scale: 0.5, y: 30 })
+
       items.forEach((item, i) => {
         const yRange = 8 + Math.random() * 12
         const xRange = 4 + Math.random() * 8
@@ -135,7 +138,6 @@ export function FloatingElements() {
 
   return (
     <div ref={container} className="pointer-events-none absolute inset-0 overflow-hidden">
-      <style>{`.float-item { opacity: 0; transform: scale(0.5) translateY(30px); }`}</style>
       {/* Right cluster */}
       <MiniButton className="float-item absolute right-[8%] top-[15%] rotate-[-6deg]" />
       <MiniCard className="float-item absolute right-[2%] top-[40%] rotate-[4deg]" />

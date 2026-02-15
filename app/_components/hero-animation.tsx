@@ -1,15 +1,12 @@
 'use client'
 
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 
 export function HeroAnimation({ children }: { children: React.ReactNode }) {
   const container = useRef<HTMLDivElement>(null)
-  const [ready, setReady] = useState(false)
 
   useEffect(() => {
-    setReady(true)
-
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         defaults: { ease: 'power3.out' },
@@ -49,19 +46,5 @@ export function HeroAnimation({ children }: { children: React.ReactNode }) {
     return () => ctx.revert()
   }, [])
 
-  return (
-    <div ref={container} className={ready ? 'hero-animated' : ''}>
-      <style>{`
-        .hero-badge, .hero-title, .hero-subtitle, .hero-cta {
-          opacity: 0;
-          transform: translateY(40px);
-        }
-        .hero-glow {
-          opacity: 0;
-          transform: scale(0.5);
-        }
-      `}</style>
-      {children}
-    </div>
-  )
+  return <div ref={container}>{children}</div>
 }
