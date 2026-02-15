@@ -3,93 +3,92 @@
 import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 
-function MiniButton({ className }: { className?: string }) {
-  return (
-    <div className={className}>
-      <div className="flex h-8 items-center gap-1.5 rounded-lg bg-gradient-to-r from-violet-500 to-pink-500 px-4 shadow-lg shadow-violet-500/20">
-        <span className="text-[10px] font-medium text-white">Get Started</span>
-      </div>
-    </div>
-  )
-}
-
-function MiniCard({ className }: { className?: string }) {
-  return (
-    <div className={className}>
-      <div className="w-28 rounded-lg border border-emerald-500/30 bg-neutral-900/90 p-3 shadow-lg shadow-emerald-500/10">
-        <div className="h-1.5 w-10 rounded-full bg-emerald-400/60" />
-        <div className="mt-2 h-1 w-16 rounded-full bg-neutral-700" />
-        <div className="mt-1 h-1 w-12 rounded-full bg-neutral-800" />
-      </div>
-    </div>
-  )
-}
-
-function MiniToggle({ className }: { className?: string }) {
-  return (
-    <div className={className}>
-      <div className="flex h-6 w-11 items-center rounded-full bg-emerald-500/80 p-0.5 shadow-lg shadow-emerald-500/20">
-        <div className="ml-auto h-5 w-5 rounded-full bg-white shadow-sm" />
-      </div>
-    </div>
-  )
-}
-
-function MiniBadge({ className, color = 'violet' }: { className?: string; color?: string }) {
-  const colors: Record<string, string> = {
-    violet: 'bg-violet-500/20 text-violet-300 border-violet-500/30',
-    pink: 'bg-pink-500/20 text-pink-300 border-pink-500/30',
-    amber: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
-    emerald: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
+function ShapeBlock({
+  className,
+  bg,
+  children,
+  size = 'md',
+}: {
+  className?: string
+  bg: string
+  children: React.ReactNode
+  size?: 'sm' | 'md' | 'lg'
+}) {
+  const sizes = {
+    sm: 'h-10 w-10 rounded-lg',
+    md: 'h-14 w-14 rounded-xl',
+    lg: 'h-16 w-16 rounded-2xl',
   }
   return (
     <div className={className}>
-      <div className={`rounded-full border px-2.5 py-0.5 text-[9px] font-medium ${colors[color]}`}>
-        {color === 'violet' ? 'New' : color === 'pink' ? 'Beta' : color === 'amber' ? 'Pro' : 'Live'}
+      <div className={`${sizes[size]} ${bg} flex items-center justify-center`}>
+        {children}
       </div>
     </div>
   )
 }
 
-function MiniInput({ className }: { className?: string }) {
+function CircleShape() {
   return (
-    <div className={className}>
-      <div className="flex h-8 w-32 items-center gap-2 rounded-lg border border-neutral-700/80 bg-neutral-900/90 px-3 shadow-lg">
-        <svg width="10" height="10" viewBox="0 0 10 10" className="text-neutral-500">
-          <circle cx="4" cy="4" r="3" fill="none" stroke="currentColor" strokeWidth="1" />
-          <line x1="6.5" y1="6.5" x2="9" y2="9" stroke="currentColor" strokeWidth="1" />
-        </svg>
-        <span className="text-[9px] text-neutral-600">Search...</span>
-      </div>
-    </div>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" />
+    </svg>
   )
 }
 
-function MiniSwatch({ className, color }: { className?: string; color: string }) {
+function SquareShape() {
   return (
-    <div className={className}>
-      <div className={`h-6 w-6 rounded-md ${color} shadow-lg`} />
-    </div>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <rect x="5" y="5" width="14" height="14" rx="2" stroke="white" strokeWidth="2" />
+    </svg>
   )
 }
 
-function MiniAvatar({ className }: { className?: string }) {
+function TriangleShape() {
   return (
-    <div className={className}>
-      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 to-amber-400 shadow-lg shadow-pink-500/20">
-        <span className="text-[9px] font-bold text-white">ON</span>
-      </div>
-    </div>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5L20 19H4L12 5Z" stroke="white" strokeWidth="2" strokeLinejoin="round" />
+    </svg>
   )
 }
 
-function MiniProgress({ className }: { className?: string }) {
+function DiamondShape() {
   return (
-    <div className={className}>
-      <div className="h-2 w-20 overflow-hidden rounded-full bg-neutral-800">
-        <div className="h-full w-3/4 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500" />
-      </div>
-    </div>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <rect x="12" y="3" width="12.73" height="12.73" rx="2" stroke="white" strokeWidth="2" transform="rotate(45 12 3)" />
+    </svg>
+  )
+}
+
+function CrossShape() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 4V20M4 12H20" stroke="white" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function HalfCircleShape() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M4 16A8 8 0 0120 16" stroke="white" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function LinesShape() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M5 8H19M5 12H15M5 16H11" stroke="white" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function RingShape() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" strokeDasharray="4 3" />
+    </svg>
   )
 }
 
@@ -101,31 +100,28 @@ export function FloatingElements() {
     if (!items) return
 
     const ctx = gsap.context(() => {
-      // Set initial hidden state via GSAP (inline styles)
-      gsap.set(items, { opacity: 0, scale: 0.5, y: 30 })
+      gsap.set(items, { opacity: 0, scale: 0.6, y: 20 })
 
       items.forEach((item, i) => {
-        const yRange = 8 + Math.random() * 12
-        const xRange = 4 + Math.random() * 8
-        const duration = 3 + Math.random() * 3
-        const delay = i * 0.3
+        const yRange = 6 + Math.random() * 10
+        const xRange = 3 + Math.random() * 6
+        const duration = 5 + Math.random() * 4
+        const delay = i * 0.15
 
-        // Entrance
         gsap.to(item, {
           opacity: 1,
           scale: 1,
           y: 0,
-          duration: 1.2,
-          delay: 0.8 + delay * 0.15,
-          ease: 'back.out(1.4)',
+          duration: 1.4,
+          delay: 0.6 + delay,
+          ease: 'expo.out',
         })
 
-        // Continuous float
         gsap.to(item, {
           y: `+=${yRange}`,
           x: `+=${xRange}`,
           duration,
-          delay: 2 + delay * 0.15,
+          delay: 2.5 + delay,
           ease: 'sine.inOut',
           repeat: -1,
           yoyo: true,
@@ -138,24 +134,48 @@ export function FloatingElements() {
 
   return (
     <div ref={container} className="pointer-events-none absolute inset-0 overflow-hidden">
-      {/* Right cluster */}
-      <MiniButton className="float-item absolute right-[8%] top-[15%] rotate-[-6deg]" />
-      <MiniCard className="float-item absolute right-[2%] top-[40%] rotate-[4deg]" />
-      <MiniToggle className="float-item absolute right-[22%] top-[28%] rotate-[8deg]" />
-      <MiniBadge className="float-item absolute right-[15%] top-[60%] rotate-[-3deg]" color="pink" />
-      <MiniAvatar className="float-item absolute right-[5%] top-[70%]" />
+      {/* Right side */}
+      <ShapeBlock className="float-item absolute right-[4%] top-[10%] rotate-[-6deg]" bg="bg-blue-600" size="lg">
+        <CircleShape />
+      </ShapeBlock>
+      <ShapeBlock className="float-item absolute right-[2%] top-[40%] rotate-[3deg]" bg="bg-emerald-600" size="md">
+        <LinesShape />
+      </ShapeBlock>
+      <ShapeBlock className="float-item absolute right-[12%] top-[65%] rotate-[-4deg]" bg="bg-orange-500" size="sm">
+        <CrossShape />
+      </ShapeBlock>
 
-      {/* Left cluster */}
-      <MiniInput className="float-item absolute left-[3%] top-[20%] rotate-[5deg]" />
-      <MiniBadge className="float-item absolute left-[8%] top-[45%] rotate-[-8deg]" color="emerald" />
-      <MiniSwatch className="float-item absolute left-[2%] top-[65%]" color="bg-violet-500" />
-      <MiniProgress className="float-item absolute left-[12%] top-[72%] rotate-[3deg]" />
+      {/* Left side */}
+      <ShapeBlock className="float-item absolute left-[3%] top-[15%] rotate-[4deg]" bg="bg-red-500" size="md">
+        <TriangleShape />
+      </ShapeBlock>
+      <ShapeBlock className="float-item absolute left-[5%] top-[50%] rotate-[-5deg]" bg="bg-violet-600" size="lg">
+        <SquareShape />
+      </ShapeBlock>
+      <ShapeBlock className="float-item absolute left-[2%] top-[78%] rotate-[6deg]" bg="bg-amber-500" size="sm">
+        <DiamondShape />
+      </ShapeBlock>
 
-      {/* Scattered color dots */}
-      <MiniSwatch className="float-item absolute left-[18%] top-[12%]" color="bg-pink-400" />
-      <MiniSwatch className="float-item absolute right-[28%] top-[10%]" color="bg-amber-400" />
-      <MiniBadge className="float-item absolute left-[15%] top-[55%] rotate-[12deg]" color="amber" />
-      <MiniSwatch className="float-item absolute right-[18%] top-[75%]" color="bg-emerald-400" />
+      {/* Corners */}
+      <ShapeBlock className="float-item absolute left-[15%] top-[85%] rotate-[-3deg]" bg="bg-blue-600" size="sm">
+        <HalfCircleShape />
+      </ShapeBlock>
+      <ShapeBlock className="float-item absolute right-[8%] top-[82%] rotate-[5deg]" bg="bg-emerald-600" size="md">
+        <RingShape />
+      </ShapeBlock>
+    </div>
+  )
+}
+
+export function HeroBackground() {
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <svg className="absolute inset-0 h-full w-full opacity-[0.025]">
+        <filter id="hero-noise">
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#hero-noise)" />
+      </svg>
     </div>
   )
 }
