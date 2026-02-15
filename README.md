@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# n3wth/kit
 
-## Getting Started
+The packaging layer between design systems and AI code generation.
 
-First, run the development server:
+47 components with AI context packs that teach v0, Cursor, Claude Code, Lovable, and Windsurf to generate on-brand code.
+
+## Quick Start
+
+Install any component with one command:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx shadcn add https://kit.newth.ai/r/button.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or scaffold a full project:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npx @n3wth/kit init
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## What's Included
 
-## Learn More
+Every component ships with:
 
-To learn more about Next.js, take a look at the following resources:
+- **Component source** -- TypeScript, Tailwind v4, Radix primitives
+- **AI context packs** -- .cursorrules, CLAUDE.md, MCP config, structured JSON
+- **Design tokens** -- CSS variables for colors, spacing, typography
+- **Usage rules** -- Props, patterns, and accessibility notes that LLMs can read
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Atoms
 
-## Deploy on Vercel
+button, badge, input, icon, switch, avatar, label, textarea, separator, progress, skeleton, tooltip
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Molecules
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+card, modal, tabs, toast, dropdown, accordion, command-box, theme-toggle, code-block, noise-overlay
+
+### Blocks
+
+nav, hero, section, footer
+
+### Hooks
+
+use-theme, use-media-query, use-reduced-motion, use-keyboard-shortcuts, use-toast, use-count-up, use-scroll-reveal, use-stagger-list, use-page-transition, use-text-reveal, use-button-pulse
+
+## AI Tool Setup
+
+### Cursor
+
+Copy the context file to your project root:
+
+```bash
+curl -o .cursorrules https://kit.newth.ai/ai/.cursorrules
+```
+
+### Claude Code
+
+```bash
+curl -o CLAUDE.md https://kit.newth.ai/ai/CLAUDE.md
+```
+
+### MCP Server
+
+Add to your MCP client config:
+
+```json
+{
+  "mcpServers": {
+    "n3wth-kit": {
+      "command": "npx",
+      "args": ["-y", "shadcn@latest", "registry:mcp"],
+      "env": {
+        "REGISTRY_URL": "https://kit.newth.ai/r/registry.json"
+      }
+    }
+  }
+}
+```
+
+## Registry URL
+
+Base: `https://kit.newth.ai/r`
+
+Pattern: `https://kit.newth.ai/r/{component-name}.json`
+
+## Tech Stack
+
+- Next.js 16, React 19, TypeScript
+- Tailwind CSS v4 with CSS variables
+- Radix UI primitives
+- shadcn registry protocol
+- GSAP animations
+
+## Development
+
+```bash
+npm install
+npm run dev              # Start dev server
+npm run build            # Build everything
+npm run registry:build   # Build registry JSON
+```
+
+## License
+
+MIT

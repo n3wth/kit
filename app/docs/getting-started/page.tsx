@@ -1,3 +1,10 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Getting Started - n3wth/kit',
+  description: 'Get started with n3wth/kit. Install components via shadcn CLI, configure AI context packs, and start building with AI-native components.',
+}
+
 export default function GettingStartedPage() {
   return (
     <div className="min-h-screen bg-neutral-950">

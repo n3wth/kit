@@ -1,3 +1,10 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Components - n3wth/kit',
+  description: '47 production-ready React components with built-in AI context. Install via shadcn CLI with context packs for v0, Cursor, Claude Code, Lovable, and Windsurf.',
+}
+
 const components = [
   { name: 'button', category: 'Atoms', description: 'Primary actions with variant, size, and loading state' },
   { name: 'badge', category: 'Atoms', description: 'Status indicators with semantic color variants' },
