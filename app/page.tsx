@@ -1,6 +1,7 @@
 import { InstallCommand } from './_components/install-command'
 import { HeroAnimation } from './_components/hero-animation'
 import { ScrollReveal } from './_components/scroll-reveal'
+import { FloatingElements } from './_components/floating-elements'
 import { Footer } from './_components/footer'
 
 const tools = [
@@ -41,12 +42,15 @@ const steps = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-neutral-950 overflow-hidden">
-      <main className="mx-auto max-w-5xl px-6 pt-32 pb-24">
+      <main className="mx-auto max-w-5xl px-6 pt-20 pb-24">
         {/* Hero */}
         <HeroAnimation>
-          <section className="relative flex flex-col items-center text-center">
+          <section className="relative flex min-h-[80vh] flex-col items-center justify-center text-center">
             {/* Ambient glow */}
             <div className="hero-glow pointer-events-none absolute -top-40 left-1/2 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-br from-violet-600/20 via-pink-500/10 to-emerald-500/15 blur-3xl" />
+
+            {/* Floating design system elements */}
+            <FloatingElements />
 
             <p className="hero-badge relative rounded-full border border-violet-500/30 bg-violet-500/5 px-4 py-1.5 text-xs font-medium text-violet-300">
               Built on the shadcn registry protocol
