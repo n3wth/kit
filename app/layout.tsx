@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Nav } from './_components/nav'
 import GSAPProvider from './_components/gsap-provider'
+import { PostHogProvider } from './_components/posthog-provider'
 import './globals.css'
 
 const geistSans = Geist({
@@ -87,12 +88,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <GSAPProvider>
-          <Nav />
-          {children}
-        </GSAPProvider>
-        <Analytics />
-        <SpeedInsights />
+        <PostHogProvider>
+          <GSAPProvider>
+            <Nav />
+            {children}
+          </GSAPProvider>
+          <Analytics />
+          <SpeedInsights />
+        </PostHogProvider>
       </body>
     </html>
   )
