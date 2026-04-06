@@ -16,23 +16,23 @@ function DesignSystemScope({ children }: { children: React.ReactNode }) {
   return (
     <div
       style={{
-        '--color-white': '#ffffff',
-        '--color-bg': '#0a0a0a',
-        '--color-bg-secondary': '#141414',
-        '--color-accent': '#a78bfa',
-        '--color-grey-200': '#e5e5e5',
-        '--color-grey-300': '#d4d4d4',
-        '--color-grey-400': '#a3a3a3',
-        '--color-grey-500': '#737373',
-        '--color-grey-600': '#525252',
-        '--color-grey-700': '#404040',
-        '--color-sage': '#4ade80',
-        '--color-coral': '#f87171',
-        '--color-mint': '#2dd4bf',
-        '--color-gold': '#fbbf24',
-        '--glass-bg': 'rgba(255,255,255,0.05)',
-        '--glass-border': 'rgba(255,255,255,0.1)',
-        '--glass-highlight': 'rgba(255,255,255,0.2)',
+        '--color-white': '#1c1917',
+        '--color-bg': '#ffffff',
+        '--color-bg-secondary': '#fafaf9',
+        '--color-accent': '#7c3aed',
+        '--color-grey-200': '#e7e5e4',
+        '--color-grey-300': '#d6d3d1',
+        '--color-grey-400': '#a8a29e',
+        '--color-grey-500': '#78716c',
+        '--color-grey-600': '#a8a29e',
+        '--color-grey-700': '#d6d3d1',
+        '--color-sage': '#16a34a',
+        '--color-coral': '#dc2626',
+        '--color-mint': '#0d9488',
+        '--color-gold': '#d97706',
+        '--glass-bg': 'rgba(0,0,0,0.03)',
+        '--glass-border': 'rgba(0,0,0,0.1)',
+        '--glass-highlight': 'rgba(0,0,0,0.15)',
       } as React.CSSProperties}
     >
       {children}
@@ -115,7 +115,7 @@ export function ComponentShowcase() {
         {showcaseItems.map((item) => (
           <div key={item.name} className="flex flex-col bg-white p-6">
             <p className="text-xs font-medium text-neutral-400">{item.name}</p>
-            <div className="mt-4 flex-1 rounded-lg bg-neutral-950 p-5">
+            <div className="mt-4 flex-1 rounded-lg bg-stone-50 p-5">
               {item.render()}
             </div>
             <div className="mt-4">
