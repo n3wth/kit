@@ -29,12 +29,12 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-neutral-950">
+    <div className="min-h-screen bg-white">
       <main className="mx-auto max-w-2xl px-6 pt-32 pb-24">
-        <h1 className="text-3xl font-bold tracking-tight text-white">
+        <h1 className="text-3xl font-bold tracking-tight text-stone-900">
           Blog
         </h1>
-        <p className="mt-3 text-neutral-400">
+        <p className="mt-3 text-neutral-500">
           Thoughts on AI-native design systems, component registries, and the
           future of developer tooling.
         </p>
@@ -43,13 +43,13 @@ export default function BlogPage() {
           {posts.map((post) => (
             <article key={post.slug}>
               <Link href={`/blog/${post.slug}`} className="group block">
-                <h2 className="text-xl font-semibold text-white transition-colors group-hover:text-neutral-300">
+                <h2 className="text-xl font-semibold text-stone-900 transition-colors group-hover:text-neutral-700">
                   {post.title}
                 </h2>
-                <time className="mt-2 block text-sm text-neutral-500">
+                <time className="mt-2 block text-sm text-neutral-400">
                   {post.date}
                 </time>
-                <p className="mt-3 text-neutral-400">{post.excerpt}</p>
+                <p className="mt-3 text-neutral-500">{post.excerpt}</p>
               </Link>
             </article>
           ))}

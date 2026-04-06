@@ -20,7 +20,7 @@ export default function Post() {
         instead of compiled packages?
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-white">
+      <h2 className="mt-12 text-xl font-semibold text-stone-900">
         The problem with npm packages
       </h2>
 
@@ -39,7 +39,7 @@ export default function Post() {
         scale, which is where the registry protocol comes in.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-white">
+      <h2 className="mt-12 text-xl font-semibold text-stone-900">
         How the protocol works
       </h2>
 
@@ -49,7 +49,7 @@ export default function Post() {
         item &mdash; a JSON file that the CLI can fetch and process.
       </p>
 
-      <pre className="rounded-lg border border-neutral-800 bg-neutral-900 p-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
 {`{
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "pricing-card",
@@ -68,7 +68,7 @@ export default function Post() {
 }`}
       </pre>
 
-      <h2 className="mt-12 text-xl font-semibold text-white">
+      <h2 className="mt-12 text-xl font-semibold text-stone-900">
         The install flow
       </h2>
 
@@ -77,7 +77,7 @@ export default function Post() {
         sequence:
       </p>
 
-      <pre className="rounded-lg border border-neutral-800 bg-neutral-900 p-4 font-mono text-sm text-neutral-300">
+      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700">
 {`npx shadcn add https://kit.newth.ai/r/pricing-card.json`}
       </pre>
 
@@ -93,7 +93,7 @@ export default function Post() {
         dependency on the registry. No version lock-in. Just files.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-white">
+      <h2 className="mt-12 text-xl font-semibold text-stone-900">
         Why this matters for the ecosystem
       </h2>
 
@@ -105,20 +105,20 @@ export default function Post() {
 
       <ul className="list-inside list-disc space-y-2">
         <li>
-          <span className="text-white">Teams can run private registries</span> &mdash;
+          <span className="text-stone-900">Teams can run private registries</span> &mdash;
           internal component libraries distributed via the same protocol
         </li>
         <li>
-          <span className="text-white">Composition over inheritance</span> &mdash;
+          <span className="text-stone-900">Composition over inheritance</span> &mdash;
           registries can depend on other registries
         </li>
         <li>
-          <span className="text-white">No version conflicts</span> &mdash;
+          <span className="text-stone-900">No version conflicts</span> &mdash;
           you own the source, so there are no peer dependency issues
         </li>
       </ul>
 
-      <h2 className="mt-12 text-xl font-semibold text-white">
+      <h2 className="mt-12 text-xl font-semibold text-stone-900">
         Extending with AI context
       </h2>
 
@@ -136,7 +136,7 @@ export default function Post() {
         tools can consume.
       </p>
 
-      <pre className="rounded-lg border border-neutral-800 bg-neutral-900 p-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
 {`# Install the component
 npx shadcn add https://kit.newth.ai/r/button.json
 
@@ -152,15 +152,15 @@ npx shadcn add https://kit.newth.ai/r/button.json
         is what we are building.
       </p>
 
-      <div className="mt-12 rounded-lg border border-neutral-800 bg-neutral-900 p-6">
-        <p className="text-white">
+      <div className="mt-12 rounded-lg border border-stone-200 bg-stone-50 p-6">
+        <p className="text-stone-900">
           kit uses the shadcn registry protocol to distribute AI-native
           components. Install with a single command, get source code you own,
           and AI context that teaches your tools how to use it.
         </p>
         <a
           href="/docs/getting-started"
-          className="mt-4 inline-block text-sm text-white underline underline-offset-4"
+          className="mt-4 inline-block text-sm text-stone-900 underline underline-offset-4"
         >
           Read the docs to get started
         </a>

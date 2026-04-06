@@ -26,7 +26,7 @@ export default function Post() {
         of it.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-white">
+      <h2 className="mt-12 text-xl font-semibold text-stone-900">
         The context gap
       </h2>
 
@@ -43,11 +43,11 @@ export default function Post() {
         generic. Every project gets the same Tailwind soup:
       </p>
 
-      <pre className="rounded-lg border border-neutral-800 bg-neutral-900 p-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
 {`// What AI generates without context
 <div className="rounded-2xl bg-gradient-to-br
   from-purple-500 to-pink-500 p-8 shadow-2xl">
-  <h2 className="text-3xl font-bold text-white">
+  <h2 className="text-3xl font-bold text-stone-900">
     Pricing
   </h2>
 </div>`}
@@ -59,7 +59,7 @@ export default function Post() {
         conventions:
       </p>
 
-      <pre className="rounded-lg border border-neutral-800 bg-neutral-900 p-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
 {`// What AI generates WITH your design context
 <Section>
   <Heading level={2}>Pricing</Heading>
@@ -77,7 +77,7 @@ export default function Post() {
         structured context.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-white">
+      <h2 className="mt-12 text-xl font-semibold text-stone-900">
         Why prompting alone does not work
       </h2>
 
@@ -94,7 +94,7 @@ export default function Post() {
         that into a chat prompt every time they need a component.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-white">
+      <h2 className="mt-12 text-xl font-semibold text-stone-900">
         AI context packs
       </h2>
 
@@ -106,33 +106,33 @@ export default function Post() {
 
       <ul className="list-inside list-disc space-y-2">
         <li>
-          <span className="text-white">Component API reference</span> &mdash; what
+          <span className="text-stone-900">Component API reference</span> &mdash; what
           components exist, their props, valid combinations
         </li>
         <li>
-          <span className="text-white">Design tokens</span> &mdash; colors, spacing,
+          <span className="text-stone-900">Design tokens</span> &mdash; colors, spacing,
           typography, radii, all as CSS variables
         </li>
         <li>
-          <span className="text-white">Composition patterns</span> &mdash; how
+          <span className="text-stone-900">Composition patterns</span> &mdash; how
           components are meant to be combined
         </li>
         <li>
-          <span className="text-white">Constraints</span> &mdash; what to avoid,
+          <span className="text-stone-900">Constraints</span> &mdash; what to avoid,
           anti-patterns, brand rules
         </li>
       </ul>
 
       <p>
         Drop a{' '}
-        <code className="rounded bg-neutral-800 px-1.5 py-0.5 text-sm text-neutral-300">
+        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">
           .cursorrules
         </code>{' '}
         file in your project root, configure your MCP server, and suddenly every
         AI generation is contextually aware of your design system.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-white">
+      <h2 className="mt-12 text-xl font-semibold text-stone-900">
         How kit approaches this
       </h2>
 
@@ -149,7 +149,7 @@ export default function Post() {
         correct props, the right composition patterns, the design constraints.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-white">
+      <h2 className="mt-12 text-xl font-semibold text-stone-900">
         The end of generic
       </h2>
 
@@ -165,15 +165,15 @@ export default function Post() {
         the infrastructure.
       </p>
 
-      <div className="mt-12 rounded-lg border border-neutral-800 bg-neutral-900 p-6">
-        <p className="text-white">
+      <div className="mt-12 rounded-lg border border-stone-200 bg-stone-50 p-6">
+        <p className="text-stone-900">
           kit is an AI-native component registry with built-in context packs.
           Install components with a single command, then generate code that
           actually matches your design system.
         </p>
         <a
           href="/docs/getting-started"
-          className="mt-4 inline-block text-sm text-white underline underline-offset-4"
+          className="mt-4 inline-block text-sm text-stone-900 underline underline-offset-4"
         >
           Read the docs to get started
         </a>

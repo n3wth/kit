@@ -25,7 +25,7 @@ export default function Post() {
         how to use them.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-white">
+      <h2 className="mt-12 text-xl font-semibold text-stone-900">
         The four formats
       </h2>
 
@@ -34,7 +34,7 @@ export default function Post() {
         different AI tool or workflow:
       </p>
 
-      <h3 className="mt-8 text-base font-semibold text-white">
+      <h3 className="mt-8 text-base font-semibold text-stone-900">
         1. .cursorrules
       </h3>
 
@@ -45,7 +45,7 @@ export default function Post() {
         code &mdash; written for an LLM to understand.
       </p>
 
-      <pre className="rounded-lg border border-neutral-800 bg-neutral-900 p-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
 {`# n3wth Design System
 
 ## Principles
@@ -60,7 +60,7 @@ export default function Post() {
 ...`}
       </pre>
 
-      <h3 className="mt-8 text-base font-semibold text-white">
+      <h3 className="mt-8 text-base font-semibold text-stone-900">
         2. CLAUDE.md
       </h3>
 
@@ -70,7 +70,7 @@ export default function Post() {
         prop tables, code snippets, and exact API signatures.
       </p>
 
-      <pre className="rounded-lg border border-neutral-800 bg-neutral-900 p-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
 {`## Button
 
 Props:
@@ -83,7 +83,7 @@ Usage:
 <Button variant="primary" size="lg">Get Started</Button>`}
       </pre>
 
-      <h3 className="mt-8 text-base font-semibold text-white">
+      <h3 className="mt-8 text-base font-semibold text-stone-900">
         3. MCP server config
       </h3>
 
@@ -93,7 +93,7 @@ Usage:
         components, read their source, and check for updates during a session.
       </p>
 
-      <pre className="rounded-lg border border-neutral-800 bg-neutral-900 p-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
 {`{
   "mcpServers": {
     "n3wth-kit": {
@@ -107,7 +107,7 @@ Usage:
 }`}
       </pre>
 
-      <h3 className="mt-8 text-base font-semibold text-white">
+      <h3 className="mt-8 text-base font-semibold text-stone-900">
         4. components.json
       </h3>
 
@@ -117,7 +117,7 @@ Usage:
         machine-readable format &mdash; any AI tool or script can consume it.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-white">
+      <h2 className="mt-12 text-xl font-semibold text-stone-900">
         How AI tools use them
       </h2>
 
@@ -127,28 +127,28 @@ Usage:
 
       <ul className="list-inside list-disc space-y-2">
         <li>
-          <span className="text-white">Cursor</span> reads .cursorrules from
+          <span className="text-stone-900">Cursor</span> reads .cursorrules from
           your project root automatically
         </li>
         <li>
-          <span className="text-white">Claude Code</span> reads CLAUDE.md
+          <span className="text-stone-900">Claude Code</span> reads CLAUDE.md
           from your project root automatically
         </li>
         <li>
-          <span className="text-white">v0 and Lovable</span> use the registry
+          <span className="text-stone-900">v0 and Lovable</span> use the registry
           URL directly in prompts
         </li>
         <li>
-          <span className="text-white">Windsurf</span> reads .cursorrules
+          <span className="text-stone-900">Windsurf</span> reads .cursorrules
           similar to Cursor
         </li>
         <li>
-          <span className="text-white">MCP-compatible tools</span> connect
+          <span className="text-stone-900">MCP-compatible tools</span> connect
           to the MCP server for live registry access
         </li>
       </ul>
 
-      <h2 className="mt-12 text-xl font-semibold text-white">
+      <h2 className="mt-12 text-xl font-semibold text-stone-900">
         Getting started
       </h2>
 
@@ -157,7 +157,7 @@ Usage:
         them from kit:
       </p>
 
-      <pre className="rounded-lg border border-neutral-800 bg-neutral-900 p-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
 {`# For Cursor
 curl -o .cursorrules https://kit.newth.ai/ai/.cursorrules
 
@@ -170,14 +170,14 @@ curl -o CLAUDE.md https://kit.newth.ai/ai/CLAUDE.md`}
         automatically. No configuration needed beyond placing the files.
       </p>
 
-      <div className="mt-12 rounded-lg border border-neutral-800 bg-neutral-900 p-6">
-        <p className="text-white">
+      <div className="mt-12 rounded-lg border border-stone-200 bg-stone-50 p-6">
+        <p className="text-stone-900">
           kit ships AI context packs with every component. Install a
           component, and your AI tools immediately understand how to use it.
         </p>
         <a
           href="/docs/getting-started"
-          className="mt-4 inline-block text-sm text-white underline underline-offset-4"
+          className="mt-4 inline-block text-sm text-stone-900 underline underline-offset-4"
         >
           Read the docs to get started
         </a>

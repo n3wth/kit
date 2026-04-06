@@ -67,7 +67,7 @@ function CopyButton({ text }: { text: string }) {
         setCopied(true)
         setTimeout(() => setCopied(false), 2000)
       }}
-      className="ml-2 shrink-0 text-xs text-neutral-600 transition-colors hover:text-neutral-300"
+      className="ml-2 shrink-0 text-xs text-neutral-400 transition-colors hover:text-neutral-700"
     >
       {copied ? 'Copied' : 'Copy'}
     </button>
@@ -106,7 +106,7 @@ export function ComponentGrid() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search components..."
-          className="flex-1 rounded-lg border border-neutral-800 bg-transparent px-4 py-2.5 text-sm text-white placeholder:text-neutral-600 focus:border-neutral-600 focus:outline-none"
+          className="flex-1 rounded-lg border border-neutral-200 bg-white px-4 py-2.5 text-sm text-stone-900 placeholder:text-neutral-400 focus:border-neutral-400 focus:outline-none"
         />
         <div className="flex flex-wrap gap-1.5">
           {categories.map((cat) => (
@@ -115,8 +115,8 @@ export function ComponentGrid() {
               onClick={() => setActiveCategory(cat)}
               className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
                 activeCategory === cat
-                  ? 'bg-white text-neutral-950'
-                  : 'border border-neutral-800 text-neutral-500 hover:border-neutral-700 hover:text-neutral-300'
+                  ? 'bg-stone-900 text-white'
+                  : 'border border-neutral-200 text-neutral-500 hover:border-neutral-300 hover:text-neutral-900'
               }`}
             >
               {cat}
@@ -134,9 +134,9 @@ export function ComponentGrid() {
               if (items.length === 0) return null
               return (
                 <section key={category} className="mt-10">
-                  <h2 className="flex items-center gap-2 text-sm font-medium text-neutral-500">
+                  <h2 className="flex items-center gap-2 text-sm font-medium text-neutral-400">
                     {category}
-                    <span className="text-xs text-neutral-700">{items.length}</span>
+                    <span className="text-xs text-neutral-300">{items.length}</span>
                   </h2>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {items.map((comp) => (
@@ -159,9 +159,9 @@ export function ComponentGrid() {
       {/* Hooks */}
       {showHooks && filteredHooks.length > 0 && (
         <section className="mt-10">
-          <h2 className="flex items-center gap-2 text-sm font-medium text-neutral-500">
+          <h2 className="flex items-center gap-2 text-sm font-medium text-neutral-400">
             Hooks
-            <span className="text-xs text-neutral-700">{filteredHooks.length}</span>
+            <span className="text-xs text-neutral-300">{filteredHooks.length}</span>
           </h2>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {filteredHooks.map((hook) => {
@@ -169,16 +169,16 @@ export function ComponentGrid() {
               return (
                 <div
                   key={hook.name}
-                  className="rounded-lg border border-neutral-800 p-4"
+                  className="rounded-lg border border-neutral-200 p-4"
                 >
-                  <h3 className="font-mono text-sm font-medium text-white">
+                  <h3 className="font-mono text-sm font-medium text-stone-900">
                     {hook.name}
                   </h3>
-                  <p className="mt-1.5 text-sm text-neutral-400">
+                  <p className="mt-1.5 text-sm text-neutral-500">
                     {hook.description}
                   </p>
-                  <div className="mt-3 flex items-center rounded bg-neutral-900 px-2 py-1">
-                    <code className="flex-1 truncate font-mono text-xs text-neutral-500">
+                  <div className="mt-3 flex items-center rounded bg-stone-50 px-2 py-1">
+                    <code className="flex-1 truncate font-mono text-xs text-neutral-400">
                       npx shadcn add .../{hook.name}.json
                     </code>
                     <CopyButton text={command} />
@@ -204,15 +204,15 @@ function ComponentCard({ name, description }: { name: string; description: strin
   const command = `npx shadcn add https://kit.newth.ai/r/${name}.json`
 
   return (
-    <div className="rounded-lg border border-neutral-800 p-4">
-      <h3 className="font-mono text-sm font-medium text-white">
+    <div className="rounded-lg border border-neutral-200 p-4">
+      <h3 className="font-mono text-sm font-medium text-stone-900">
         {name}
       </h3>
-      <p className="mt-1.5 text-sm text-neutral-400">
+      <p className="mt-1.5 text-sm text-neutral-500">
         {description}
       </p>
-      <div className="mt-3 flex items-center rounded bg-neutral-900 px-2 py-1">
-        <code className="flex-1 truncate font-mono text-xs text-neutral-500">
+      <div className="mt-3 flex items-center rounded bg-stone-50 px-2 py-1">
+        <code className="flex-1 truncate font-mono text-xs text-neutral-400">
           npx shadcn add .../{name}.json
         </code>
         <CopyButton text={command} />

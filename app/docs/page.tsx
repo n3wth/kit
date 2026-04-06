@@ -36,12 +36,12 @@ const guides = [
 
 export default function DocsPage() {
   return (
-    <div className="min-h-screen bg-neutral-950">
+    <div className="min-h-screen bg-white">
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
-        <h1 className="text-3xl font-bold tracking-tight text-white">
+        <h1 className="text-3xl font-bold tracking-tight text-stone-900">
           Documentation
         </h1>
-        <p className="mt-3 text-neutral-400">
+        <p className="mt-3 text-neutral-500">
           Guides for installing components and integrating with AI coding tools.
         </p>
 
@@ -50,12 +50,12 @@ export default function DocsPage() {
             <Link
               key={guide.href}
               href={guide.href}
-              className="group block rounded-lg border border-neutral-800 p-5 transition-colors hover:border-neutral-700"
+              className="group block rounded-lg border border-neutral-200 p-5 transition-colors hover:border-neutral-300"
             >
-              <h2 className="text-base font-semibold text-white transition-colors group-hover:text-neutral-200">
+              <h2 className="text-base font-semibold text-stone-900 transition-colors group-hover:text-neutral-700">
                 {guide.title}
               </h2>
-              <p className="mt-1.5 text-sm text-neutral-400">
+              <p className="mt-1.5 text-sm text-neutral-500">
                 {guide.description}
               </p>
             </Link>
