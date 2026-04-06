@@ -1,73 +1,39 @@
 'use client'
 
 import { useState } from 'react'
-import { WaitlistForm } from './waitlist-form'
 
 const plans = [
   {
     tier: 'Free',
     price: '$0',
-    period: 'forever',
-    desc: 'Open source components with AI context packs.',
-    features: [
-      'Full n3wth/ui component library',
-      'AI context packs (.cursorrules, CLAUDE.md)',
-      'MCP server config',
-      'Community support',
-      'Unlimited projects',
-    ],
-    cta: 'Get started',
-    href: '/docs/getting-started',
+    description: 'Full component library with AI context packs. Unlimited projects.',
+    features: 'All components, .cursorrules, CLAUDE.md, MCP config, community support',
   },
   {
     tier: 'Pro',
-    price: '$29',
-    period: '/month',
-    desc: 'Premium kits and private registries for individuals.',
-    features: [
-      'Everything in Free',
-      'Premium themed kits',
-      'Private registry hosting',
-      'Component usage analytics',
-      'Priority support',
-    ],
-    cta: 'Subscribe',
+    price: '$29/mo',
+    description: 'Premium kits and private registries for individuals.',
+    features: 'Everything in Free + premium themed kits, private registry hosting, component analytics, priority support',
     plan: 'pro',
   },
   {
     tier: 'Team',
-    price: '$99',
-    period: '/month',
-    desc: 'Design system packaging for teams shipping with AI.',
-    features: [
-      'Everything in Pro',
-      'Design system packaging from Figma tokens',
-      'Team MCP server',
-      'Brand consistency scoring',
-      'Up to 10 team members',
-    ],
-    cta: 'Subscribe',
+    price: '$99/mo',
+    description: 'Design system packaging for teams shipping with AI.',
+    features: 'Everything in Pro + Figma token import, team MCP server, brand consistency scoring, up to 10 members',
     plan: 'team',
     highlight: true,
   },
   {
     tier: 'Enterprise',
     price: 'Custom',
-    period: '',
-    desc: 'For organizations with complex design systems.',
-    features: [
-      'Everything in Team',
-      'SSO + audit logs',
-      'Figma sync',
-      'Unlimited team members',
-      'Dedicated support + SLA',
-    ],
-    cta: 'Contact us',
+    description: 'For organizations with complex design systems.',
+    features: 'Everything in Team + SSO, audit logs, Figma sync, unlimited members, dedicated support + SLA',
     href: 'mailto:oliver@newth.ai',
   },
 ]
 
-function SubscribeButton({ plan, highlight }: { plan: string; highlight?: boolean }) {
+function SubscribeButton({ plan, label }: { plan: string; label: string }) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -94,75 +60,73 @@ function SubscribeButton({ plan, highlight }: { plan: string; highlight?: boolea
   }
 
   return (
-    <div>
+    <>
       <button
         onClick={handleClick}
         disabled={loading}
-        className={`w-full rounded-lg py-2.5 text-center text-sm font-medium transition-colors disabled:cursor-wait disabled:opacity-60 ${
-          highlight
-            ? 'bg-white text-neutral-950 hover:bg-neutral-200'
-            : 'border border-neutral-800 text-neutral-300 hover:border-neutral-700 hover:text-white'
-        }`}
+        className="text-sm font-medium text-[var(--color-kit-accent)] underline underline-offset-4 transition-colors hover:text-neutral-900 disabled:cursor-wait disabled:opacity-60"
       >
-        {loading ? 'Redirecting...' : 'Subscribe'}
+        {loading ? 'Redirecting...' : label}
       </button>
       {error && (
-        <p className="mt-2 text-xs text-red-400">{error}</p>
+        <p className="mt-1 text-xs text-red-600">{error}</p>
       )}
-    </div>
+    </>
   )
 }
 
 export function PricingPlans() {
   return (
-    <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {plans.map((plan) => (
-        <div
-          key={plan.tier}
-          className={`flex flex-col rounded-lg border p-6 ${
-            plan.highlight ? 'border-white' : 'border-neutral-800'
-          }`}
-        >
-          <p className="text-xs font-medium text-neutral-500">
-            {plan.tier}
-          </p>
-          <div className="mt-3 flex items-baseline gap-1">
-            <span className="text-3xl font-bold text-white">
-              {plan.price}
-            </span>
-            {plan.period && (
-              <span className="text-sm text-neutral-500">
-                {plan.period}
-              </span>
-            )}
-          </div>
-          <p className="mt-3 text-sm text-neutral-400">{plan.desc}</p>
-          <ul className="mt-6 flex-1 space-y-3">
-            {plan.features.map((f) => (
-              <li key={f} className="flex items-start gap-2 text-sm text-neutral-400">
-                <span className="mt-0.5 text-neutral-600">-</span>
-                {f}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-6">
-            {'plan' in plan && plan.plan ? (
-              <SubscribeButton plan={plan.plan} highlight={plan.highlight} />
-            ) : (
-              <a
-                href={plan.href}
-                className={`block rounded-lg py-2.5 text-center text-sm font-medium transition-colors ${
-                  plan.highlight
-                    ? 'bg-white text-neutral-950 hover:bg-neutral-200'
-                    : 'border border-neutral-800 text-neutral-300 hover:border-neutral-700 hover:text-white'
-                }`}
-              >
-                {plan.cta}
-              </a>
-            )}
-          </div>
-        </div>
-      ))}
+    <div className="mt-16">
+      <table className="w-full">
+        <thead>
+          <tr className="border-b border-neutral-200 text-left">
+            <th className="pb-4 text-xs font-medium uppercase tracking-widest text-neutral-400">Tier</th>
+            <th className="pb-4 text-xs font-medium uppercase tracking-widest text-neutral-400">Price</th>
+            <th className="hidden pb-4 text-xs font-medium uppercase tracking-widest text-neutral-400 sm:table-cell">What you get</th>
+            <th className="pb-4 text-xs font-medium uppercase tracking-widest text-neutral-400"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {plans.map((plan) => (
+            <tr
+              key={plan.tier}
+              className={`border-b border-neutral-200 ${plan.highlight ? 'border-l-2 border-l-[var(--color-kit-accent)]' : ''}`}
+            >
+              <td className="py-6 pr-6 align-top">
+                <p className="text-base font-medium text-neutral-900">{plan.tier}</p>
+                <p className="mt-1 text-sm text-neutral-400 sm:hidden">{plan.description}</p>
+              </td>
+              <td className="py-6 pr-6 align-top">
+                <p className="text-base text-neutral-900">{plan.price}</p>
+              </td>
+              <td className="hidden py-6 pr-6 align-top sm:table-cell">
+                <p className="text-sm text-neutral-500">{plan.description}</p>
+                <p className="mt-1 text-xs text-neutral-400">{plan.features}</p>
+              </td>
+              <td className="py-6 text-right align-top">
+                {plan.plan ? (
+                  <SubscribeButton plan={plan.plan} label="Subscribe" />
+                ) : plan.href ? (
+                  <a
+                    href={plan.href}
+                    className="text-sm font-medium text-neutral-500 underline underline-offset-4 transition-colors hover:text-neutral-900"
+                  >
+                    Contact us
+                  </a>
+                ) : (
+                  <a
+                    href="/docs/getting-started"
+                    className="text-sm font-medium text-neutral-500 underline underline-offset-4 transition-colors hover:text-neutral-900"
+                  >
+                    Get started
+                  </a>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }

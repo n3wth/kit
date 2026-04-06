@@ -8,28 +8,28 @@ export const metadata: Metadata = {
 
 export default function CheckoutSuccessPage() {
   return (
-    <div className="min-h-screen bg-neutral-950">
+    <div className="min-h-screen bg-[#fafaf9]">
       <main className="mx-auto max-w-lg px-6 pt-32 pb-24 text-center">
-        <p className="text-xs font-mono text-neutral-500 uppercase tracking-widest">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400">
           Confirmed
         </p>
-        <h1 className="mt-4 text-2xl font-bold text-white">
+        <h1 className="mt-4 font-serif text-2xl tracking-tight text-neutral-900">
           You&apos;re subscribed
         </h1>
-        <p className="mt-4 text-sm text-neutral-400">
+        <p className="mt-4 text-sm text-neutral-500">
           Your subscription is active. You&apos;ll receive a confirmation email
           shortly.
         </p>
         <div className="mt-10 flex flex-col gap-3">
           <Link
             href="/docs/getting-started"
-            className="rounded-lg bg-white px-6 py-2.5 text-sm font-medium text-neutral-950 hover:bg-neutral-200 transition-colors"
+            className="rounded-lg bg-neutral-900 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
           >
             Get started
           </Link>
           <Link
             href="/"
-            className="rounded-lg border border-neutral-800 px-6 py-2.5 text-sm font-medium text-neutral-400 hover:border-neutral-700 hover:text-white transition-colors"
+            className="rounded-lg border border-neutral-200 px-6 py-2.5 text-sm font-medium text-neutral-500 transition-colors hover:border-neutral-300 hover:text-neutral-900"
           >
             Back to home
           </Link>
