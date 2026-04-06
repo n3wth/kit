@@ -110,20 +110,20 @@ const showcaseItems = [
 
 export function ComponentShowcase() {
   return (
-    <DesignSystemScope>
-      <div className="grid gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200 sm:grid-cols-2 lg:grid-cols-3">
-        {showcaseItems.map((item) => (
-          <div key={item.name} className="flex flex-col bg-white p-6">
-            <p className="text-xs font-medium text-neutral-400">{item.name}</p>
+    <div className="grid gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200 sm:grid-cols-2 lg:grid-cols-3">
+      {showcaseItems.map((item) => (
+        <div key={item.name} className="flex flex-col bg-[#ffffff] p-6">
+          <p className="text-xs font-medium text-neutral-400">{item.name}</p>
+          <DesignSystemScope>
             <div className="mt-4 flex-1 rounded-lg bg-stone-50 p-5">
               {item.render()}
             </div>
-            <div className="mt-4">
-              <InstallCommand command={item.install} />
-            </div>
+          </DesignSystemScope>
+          <div className="mt-4">
+            <InstallCommand command={item.install} />
           </div>
-        ))}
-      </div>
-    </DesignSystemScope>
+        </div>
+      ))}
+    </div>
   )
 }
