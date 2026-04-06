@@ -25,44 +25,32 @@ export default function Home() {
     <main>
       {/* Hero */}
       <section className="mx-auto max-w-5xl px-6 pt-16 pb-14">
-        <h1
-          className="max-w-3xl font-serif text-stone-900 tracking-tight"
-          style={{ fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', lineHeight: 1.15 }}
-        >
-          Your design system,<br />
-          every AI tool.
-        </h1>
-        <p className="mt-5 max-w-lg text-base leading-relaxed text-stone-500">
-          AI coding tools generate generic UI. kit teaches them to use your
-          components, your tokens, your brand.
-        </p>
-        <div className="mt-8 max-w-lg">
-          <InstallCommand command="npx shadcn add https://kit.newth.ai/r/button.json" />
-        </div>
-      </section>
-
-      {/* The Problem */}
-      <section className="border-t border-stone-200">
-        <div className="mx-auto grid max-w-5xl gap-10 px-6 py-14 sm:grid-cols-2">
+        <div className="grid items-center gap-12 sm:grid-cols-2">
           <div>
-            <h2 className="font-serif text-2xl tracking-tight text-stone-900 sm:text-3xl">
-              Same prompt.<br />
-              Different output.
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-stone-500">
-              Every AI tool generates the same generic components with the same
-              utility classes. No brand, no system, no consistency. kit is the
-              packaging layer that gives AI tools the context they need to
-              generate on-brand code.
+            <h1
+              className="font-serif text-stone-900 tracking-tight"
+              style={{ fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', lineHeight: 1.15 }}
+            >
+              Your design system,<br />
+              every AI tool.
+            </h1>
+            <p className="mt-5 text-base leading-relaxed text-stone-500">
+              AI coding tools generate generic UI. kit teaches them to use your
+              components, your tokens, your brand.
             </p>
+            <div className="mt-8">
+              <InstallCommand command="npx shadcn add https://kit.newth.ai/r/button.json" />
+            </div>
           </div>
+
+          {/* Code comparison */}
           <div className="grid gap-px overflow-hidden rounded-lg border border-stone-200 bg-stone-200">
-            <div className="bg-white p-5">
+            <div className="bg-[#ffffff] p-5">
               <div className="flex items-center gap-2">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-red-400" />
                 <p className="text-[11px] font-medium text-stone-400">Without kit</p>
               </div>
-              <pre className="mt-4 overflow-x-auto font-mono text-xs leading-relaxed text-stone-400">
+              <pre className="mt-3 overflow-x-auto font-mono text-xs leading-relaxed text-stone-400">
 {`<button className="bg-primary
   text-primary-foreground
   hover:bg-primary/90
@@ -72,12 +60,12 @@ export default function Home() {
 </button>`}
               </pre>
             </div>
-            <div className="bg-white p-5">
+            <div className="bg-[#ffffff] p-5">
               <div className="flex items-center gap-2">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 <p className="text-[11px] font-medium text-stone-400">With kit</p>
               </div>
-              <pre className="mt-4 overflow-x-auto font-mono text-xs leading-relaxed text-stone-900">
+              <pre className="mt-3 overflow-x-auto font-mono text-xs leading-relaxed text-stone-900">
 {`<Button
   variant="primary"
   size="lg">

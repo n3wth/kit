@@ -11,6 +11,9 @@ import { InstallCommand } from './install-command'
 /**
  * Scoped wrapper that provides the n3wth design system CSS variables
  * so registry components render correctly on the marketing site.
+ *
+ * Note: Tailwind v4 resolves `bg-white` via var(--color-white), so this
+ * wrapper must NOT contain any Tailwind `bg-white` elements.
  */
 function DesignSystemScope({ children }: { children: React.ReactNode }) {
   return (
@@ -22,17 +25,17 @@ function DesignSystemScope({ children }: { children: React.ReactNode }) {
         '--color-accent': '#7c3aed',
         '--color-grey-200': '#e7e5e4',
         '--color-grey-300': '#d6d3d1',
-        '--color-grey-400': '#a8a29e',
-        '--color-grey-500': '#78716c',
+        '--color-grey-400': '#78716c',
+        '--color-grey-500': '#57534e',
         '--color-grey-600': '#a8a29e',
         '--color-grey-700': '#d6d3d1',
         '--color-sage': '#16a34a',
         '--color-coral': '#dc2626',
         '--color-mint': '#0d9488',
         '--color-gold': '#d97706',
-        '--glass-bg': 'rgba(0,0,0,0.03)',
-        '--glass-border': 'rgba(0,0,0,0.1)',
-        '--glass-highlight': 'rgba(0,0,0,0.15)',
+        '--glass-bg': 'rgba(0,0,0,0.04)',
+        '--glass-border': 'rgba(0,0,0,0.12)',
+        '--glass-highlight': 'rgba(0,0,0,0.18)',
       } as React.CSSProperties}
     >
       {children}
@@ -70,9 +73,7 @@ const showcaseItems = [
     name: 'Input',
     install: 'npx shadcn add https://kit.newth.ai/r/input.json',
     render: () => (
-      <div className="max-w-xs">
-        <Input placeholder="Enter your email" inputSize="md" />
-      </div>
+      <Input placeholder="Enter your email" inputSize="md" />
     ),
   },
   {
@@ -89,7 +90,7 @@ const showcaseItems = [
     name: 'Progress',
     install: 'npx shadcn add https://kit.newth.ai/r/progress.json',
     render: () => (
-      <div className="flex max-w-xs flex-col gap-3">
+      <div className="flex flex-col gap-3">
         <Progress value={72} variant="success" size="md" />
         <Progress value={45} variant="warning" size="md" />
       </div>
@@ -110,16 +111,16 @@ const showcaseItems = [
 
 export function ComponentShowcase() {
   return (
-    <div className="grid gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-px overflow-hidden rounded-lg border border-stone-200 bg-stone-200 sm:grid-cols-2 lg:grid-cols-3">
       {showcaseItems.map((item) => (
         <div key={item.name} className="flex flex-col bg-[#ffffff] p-6">
-          <p className="text-xs font-medium text-neutral-400">{item.name}</p>
+          <p className="text-xs font-medium tracking-wide uppercase text-stone-400">{item.name}</p>
           <DesignSystemScope>
-            <div className="mt-4 flex-1 rounded-lg bg-stone-50 p-5">
+            <div className="mt-5 flex-1 flex items-center">
               {item.render()}
             </div>
           </DesignSystemScope>
-          <div className="mt-4">
+          <div className="mt-5">
             <InstallCommand command={item.install} />
           </div>
         </div>
