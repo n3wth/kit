@@ -53,7 +53,7 @@ export function WaitlistForm({ variant = 'inline', className = '' }: WaitlistFor
   if (state === 'success') {
     return (
       <div className={className}>
-        <p className="text-sm text-emerald-400">You&apos;re on the list. We&apos;ll be in touch.</p>
+        <p className="text-sm text-emerald-600">You&apos;re on the list. We&apos;ll be in touch.</p>
       </div>
     )
   }
@@ -70,18 +70,18 @@ export function WaitlistForm({ variant = 'inline', className = '' }: WaitlistFor
               if (state === 'error') setState('idle')
             }}
             placeholder="you@company.com"
-            className="flex-1 rounded-lg border border-neutral-800 bg-transparent px-3 py-2 text-xs text-white placeholder:text-neutral-600 focus:border-neutral-600 focus:outline-none"
+            className="flex-1 rounded-lg border border-neutral-200 bg-white px-3 py-2 text-xs text-stone-900 placeholder:text-neutral-400 focus:border-neutral-400 focus:outline-none"
           />
           <button
             type="submit"
             disabled={state === 'submitting'}
-            className="rounded-lg bg-white px-4 py-2 text-xs font-medium text-neutral-950 transition-opacity hover:opacity-90 disabled:opacity-50"
+            className="rounded-lg bg-stone-900 px-4 py-2 text-xs font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
           >
             {state === 'submitting' ? '...' : 'Notify me'}
           </button>
         </div>
         {state === 'error' && (
-          <p className="text-xs text-red-400">{errorMessage}</p>
+          <p className="text-xs text-red-600">{errorMessage}</p>
         )}
       </form>
     )
@@ -98,18 +98,18 @@ export function WaitlistForm({ variant = 'inline', className = '' }: WaitlistFor
             if (state === 'error') setState('idle')
           }}
           placeholder="you@company.com"
-          className="flex-1 rounded-lg border border-neutral-800 bg-transparent px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:border-neutral-600 focus:outline-none"
+          className="flex-1 rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-stone-900 placeholder:text-neutral-400 focus:border-neutral-400 focus:outline-none"
         />
         <button
           type="submit"
           disabled={state === 'submitting'}
-          className="rounded-lg bg-white px-6 py-3 text-sm font-medium text-neutral-950 transition-opacity hover:opacity-90 disabled:opacity-50"
+          className="rounded-lg bg-stone-900 px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
         >
           {state === 'submitting' ? 'Joining...' : 'Join the waitlist'}
         </button>
       </div>
       {state === 'error' && (
-        <p className="text-sm text-red-400">{errorMessage}</p>
+        <p className="text-sm text-red-600">{errorMessage}</p>
       )}
     </form>
   )

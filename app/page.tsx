@@ -27,7 +27,7 @@ export default function Home() {
       <section className="mx-auto max-w-5xl px-6 pt-16 pb-14">
         <h1
           className="max-w-3xl font-serif text-stone-900 tracking-tight"
-          style={{ fontSize: 'clamp(2.25rem, 5.5vw, 4rem)', lineHeight: 1.1 }}
+          style={{ fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', lineHeight: 1.15 }}
         >
           Your design system,<br />
           every AI tool.
