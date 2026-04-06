@@ -37,8 +37,8 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-4">
           {/* Brand */}
           <div>
-            <p className="font-serif text-lg italic text-neutral-900">
-              kit
+            <p className="font-mono text-sm font-semibold text-stone-900">
+              n3wth/kit
             </p>
             <p className="mt-2 text-sm leading-relaxed text-neutral-400">
               Design systems for the AI era.

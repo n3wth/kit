@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import { Instrument_Serif } from 'next/font/google'
+import { Geist, Geist_Mono, DM_Serif_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Nav } from './_components/nav'
@@ -17,11 +16,10 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-const instrumentSerif = Instrument_Serif({
-  variable: '--font-instrument-serif',
+const dmSerif = DM_Serif_Display({
+  variable: '--font-dm-serif',
   subsets: ['latin'],
   weight: '400',
-  style: ['normal', 'italic'],
 })
 
 export const metadata: Metadata = {
@@ -89,7 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${dmSerif.variable} antialiased`}
       >
         <script
           type="application/ld+json"
