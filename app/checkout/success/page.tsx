@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function CheckoutSuccessPage() {
   return (
-    <div className="min-h-screen bg-[#fafaf9]">
+    <div className="min-h-screen bg-white">
       <main className="mx-auto max-w-lg px-6 pt-32 pb-24 text-center">
         <p className="font-mono text-xs uppercase tracking-widest text-neutral-400">
           Confirmed

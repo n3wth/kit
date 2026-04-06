@@ -113,12 +113,12 @@ export function ComponentShowcase() {
     <DesignSystemScope>
       <div className="grid gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200 sm:grid-cols-2 lg:grid-cols-3">
         {showcaseItems.map((item) => (
-          <div key={item.name} className="flex flex-col bg-white p-8">
+          <div key={item.name} className="flex flex-col bg-white p-6">
             <p className="text-xs font-medium text-neutral-400">{item.name}</p>
-            <div className="mt-6 flex-1">
+            <div className="mt-4 flex-1 rounded-lg bg-neutral-950 p-5">
               {item.render()}
             </div>
-            <div className="mt-8">
+            <div className="mt-4">
               <InstallCommand command={item.install} />
             </div>
           </div>

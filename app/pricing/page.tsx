@@ -24,8 +24,8 @@ const faqs = [
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-[#fafaf9]">
-      <main className="mx-auto max-w-5xl px-6 pt-32 pb-32">
+    <div className="min-h-screen bg-white">
+      <main className="mx-auto max-w-5xl px-6 pt-24 pb-16">
         <h1 className="font-serif text-4xl tracking-tight text-neutral-900 sm:text-5xl">
           Pricing
         </h1>
@@ -37,7 +37,7 @@ export default function PricingPage() {
         <PricingPlans />
 
         {/* FAQ */}
-        <section className="mt-32">
+        <section className="mt-20">
           <h2 className="font-serif text-2xl tracking-tight text-neutral-900">
             Questions
           </h2>
