@@ -8,6 +8,12 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'why-every-ai-tool-generates-same-ui',
+    title: 'Why Every AI Tool Generates the Same Looking UI',
+    date: 'April 6, 2026',
+    excerpt: 'AI coding tools default to shadcn\'s visual style because of training data bias. Design system packaging is the fix — not better prompting.',
+  },
+  {
     slug: 'why-ai-tools-generate-ugly-code',
     title: 'Why AI Tools Generate Ugly Code',
     date: 'February 15, 2026',
