@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
+import posthog from 'posthog-js'
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -39,6 +40,7 @@ export function WaitlistForm({ variant = 'inline', className = '' }: WaitlistFor
       if (data.success) {
         setState('success')
         setEmail('')
+        posthog.capture('waitlist_signup', { email })
       } else {
         throw new Error(data.error || 'Something went wrong')
       }

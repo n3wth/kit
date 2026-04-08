@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import posthog from 'posthog-js'
 
 const plans = [
   {
@@ -40,6 +41,7 @@ function SubscribeButton({ plan, label }: { plan: string; label: string }) {
   const handleClick = async () => {
     setLoading(true)
     setError(null)
+    posthog.capture('subscribe_clicked', { plan })
     try {
       const res = await fetch('/api/checkout', {
         method: 'POST',
@@ -110,6 +112,7 @@ export function PricingPlans() {
                 ) : plan.href ? (
                   <a
                     href={plan.href}
+                    onClick={() => posthog.capture('cta_clicked', { label: 'Contact us', tier: plan.tier })}
                     className="text-sm font-medium text-neutral-500 underline underline-offset-4 transition-colors hover:text-neutral-900"
                   >
                     Contact us
@@ -117,6 +120,7 @@ export function PricingPlans() {
                 ) : (
                   <a
                     href="/docs/getting-started"
+                    onClick={() => posthog.capture('cta_clicked', { label: 'Get started', tier: plan.tier })}
                     className="text-sm font-medium text-neutral-500 underline underline-offset-4 transition-colors hover:text-neutral-900"
                   >
                     Get started

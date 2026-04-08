@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import posthog from 'posthog-js'
 
 const components = [
   { name: 'button', category: 'Atoms', description: 'Primary actions with variant, size, and loading state' },
@@ -65,6 +66,7 @@ function CopyButton({ text }: { text: string }) {
       onClick={async () => {
         await navigator.clipboard.writeText(text)
         setCopied(true)
+        posthog.capture('component_install_copied', { command: text })
         setTimeout(() => setCopied(false), 2000)
       }}
       className="ml-2 shrink-0 text-xs text-neutral-400 transition-colors hover:text-neutral-700"

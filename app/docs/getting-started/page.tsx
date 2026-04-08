@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { PageViewTracker } from '../../_components/page-view-tracker'
 
 export const metadata: Metadata = {
   title: 'Getting Started - n3wth/kit',
@@ -25,6 +26,7 @@ function InlineCode({ children }: { children: string }) {
 export default function GettingStartedPage() {
   return (
     <div className="min-h-screen bg-white">
+      <PageViewTracker event="docs_page_viewed" properties={{ page: 'getting-started' }} />
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
         <div className="mb-2 text-sm text-neutral-400">
           <Link href="/docs" className="hover:text-stone-700 transition-colors">Docs</Link>

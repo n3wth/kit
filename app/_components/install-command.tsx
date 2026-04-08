@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import posthog from 'posthog-js'
 
 export function InstallCommand({ command }: { command: string }) {
   const [copied, setCopied] = useState(false)
@@ -8,6 +9,7 @@ export function InstallCommand({ command }: { command: string }) {
   const copy = async () => {
     await navigator.clipboard.writeText(command)
     setCopied(true)
+    posthog.capture('install_command_copied', { command })
     setTimeout(() => setCopied(false), 2000)
   }
 

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { PricingPlans } from '../_components/pricing-plans'
 import { Footer } from '../_components/footer'
+import { PageViewTracker } from '../_components/page-view-tracker'
 
 export const metadata: Metadata = {
   title: 'Pricing - n3wth/kit',
@@ -25,6 +26,7 @@ const faqs = [
 export default function PricingPage() {
   return (
     <div className="min-h-screen bg-white">
+      <PageViewTracker event="pricing_page_viewed" />
       <main className="mx-auto max-w-5xl px-6 pt-24 pb-16">
         <h1 className="font-serif text-4xl tracking-tight text-neutral-900 sm:text-5xl">
           Pricing
