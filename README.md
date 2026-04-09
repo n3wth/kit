@@ -1,10 +1,14 @@
 # n3wth/kit
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-stone.svg)](https://opensource.org/licenses/MIT)
+[![Registry](https://img.shields.io/badge/registry-shadcn%20compatible-stone)](https://kit.newth.ai/r/registry.json)
+[![Components](https://img.shields.io/badge/components-49-stone)](https://kit.newth.ai/components)
+
 **AI-native component registry for the n3wth design system.**
 
 Components with built-in context packs so AI tools generate on-brand code instead of generic shadcn output.
 
-[**Browse components**](https://kit.newth.ai/components) · [**Docs**](https://kit.newth.ai/docs) · [**Blog**](https://kit.newth.ai/blog)
+[**Browse components →**](https://kit.newth.ai/components) · [**Docs**](https://kit.newth.ai/docs) · [**Blog**](https://kit.newth.ai/blog)
 
 ---
 
@@ -28,16 +32,16 @@ The result: AI-generated code that matches your design system on the first try.
 
 ## Quick start
 
-Install any component with one command:
-
-```bash
-npx shadcn add https://kit.newth.ai/r/button.json
-```
-
-Install the design system style first (required for CSS variables):
+Install the design system base (required for CSS variables):
 
 ```bash
 npx shadcn add https://kit.newth.ai/r/n3wth.json
+```
+
+Install any component:
+
+```bash
+npx shadcn add https://kit.newth.ai/r/button.json
 ```
 
 Or scaffold a full project:
@@ -84,47 +88,49 @@ Add to your MCP client config:
 
 ## Components
 
+49 components across atoms, molecules, blocks, hooks, and visual utilities.
+
 ### Atoms (12)
 
-| Component | Install |
-|-----------|---------|
-| Button — multi-variant, loading state, asChild | `npx shadcn add https://kit.newth.ai/r/button.json` |
-| Badge — semantic color variants (sage, coral, mint, gold) | `npx shadcn add https://kit.newth.ai/r/badge.json` |
-| Input — glass variant, icon slots, error state | `npx shadcn add https://kit.newth.ai/r/input.json` |
-| Icon — iconoir-react wrapper with size presets | `npx shadcn add https://kit.newth.ai/r/icon.json` |
-| Switch — controlled/uncontrolled, size variants | `npx shadcn add https://kit.newth.ai/r/switch.json` |
-| Avatar — image, fallback initials, size presets | `npx shadcn add https://kit.newth.ai/r/avatar.json` |
-| Label — form label with required indicator | `npx shadcn add https://kit.newth.ai/r/label.json` |
-| Textarea — resize control, error state | `npx shadcn add https://kit.newth.ai/r/textarea.json` |
-| Separator — horizontal or vertical | `npx shadcn add https://kit.newth.ai/r/separator.json` |
-| Progress — animated bar, semantic color states | `npx shadcn add https://kit.newth.ai/r/progress.json` |
-| Skeleton — text, circular, rectangular variants | `npx shadcn add https://kit.newth.ai/r/skeleton.json` |
-| Tooltip — portal-based, auto-positioning, arrow | `npx shadcn add https://kit.newth.ai/r/tooltip.json` |
+| Component | Description | Install |
+|-----------|-------------|---------|
+| Button | Multi-variant, loading state, asChild | `npx shadcn add https://kit.newth.ai/r/button.json` |
+| Badge | Semantic color variants (sage, coral, mint, gold) | `npx shadcn add https://kit.newth.ai/r/badge.json` |
+| Input | Glass variant, icon slots, error state | `npx shadcn add https://kit.newth.ai/r/input.json` |
+| Icon | iconoir-react wrapper with size presets | `npx shadcn add https://kit.newth.ai/r/icon.json` |
+| Switch | Controlled/uncontrolled, size variants | `npx shadcn add https://kit.newth.ai/r/switch.json` |
+| Avatar | Image, fallback initials, size presets | `npx shadcn add https://kit.newth.ai/r/avatar.json` |
+| Label | Form label with required indicator | `npx shadcn add https://kit.newth.ai/r/label.json` |
+| Textarea | Resize control, error state | `npx shadcn add https://kit.newth.ai/r/textarea.json` |
+| Separator | Horizontal or vertical | `npx shadcn add https://kit.newth.ai/r/separator.json` |
+| Progress | Animated bar, semantic color states | `npx shadcn add https://kit.newth.ai/r/progress.json` |
+| Skeleton | Text, circular, rectangular variants | `npx shadcn add https://kit.newth.ai/r/skeleton.json` |
+| Tooltip | Portal-based, auto-positioning, arrow | `npx shadcn add https://kit.newth.ai/r/tooltip.json` |
 
 ### Molecules (11)
 
-| Component | Install |
-|-----------|---------|
-| Card — default, glass, interactive variants | `npx shadcn add https://kit.newth.ai/r/card.json` |
-| Modal — portal, focus trap, compound sub-components | `npx shadcn add https://kit.newth.ai/r/modal.json` |
-| Tabs — underline and pill variants, animated indicator | `npx shadcn add https://kit.newth.ai/r/tabs.json` |
-| Toast — auto-dismiss, variant styling | `npx shadcn add https://kit.newth.ai/r/toast.json` |
-| Dropdown — single/multi-select, search | `npx shadcn add https://kit.newth.ai/r/dropdown.json` |
-| Accordion — single/multiple mode, animated | `npx shadcn add https://kit.newth.ai/r/accordion.json` |
-| Command Box — copyable command display | `npx shadcn add https://kit.newth.ai/r/command-box.json` |
-| Theme Toggle — dark/light with sun/moon icons | `npx shadcn add https://kit.newth.ai/r/theme-toggle.json` |
-| Code Block — syntax highlighting, line numbers | `npx shadcn add https://kit.newth.ai/r/code-block.json` |
-| Mobile Drawer — slide-in nav, focus trap | `npx shadcn add https://kit.newth.ai/r/mobile-drawer.json` |
-| Noise Overlay — SVG grain texture | `npx shadcn add https://kit.newth.ai/r/noise-overlay.json` |
+| Component | Description | Install |
+|-----------|-------------|---------|
+| Card | Default, glass, interactive variants | `npx shadcn add https://kit.newth.ai/r/card.json` |
+| Modal | Portal, focus trap, compound sub-components | `npx shadcn add https://kit.newth.ai/r/modal.json` |
+| Tabs | Underline and pill variants, animated indicator | `npx shadcn add https://kit.newth.ai/r/tabs.json` |
+| Toast | Auto-dismiss, variant styling | `npx shadcn add https://kit.newth.ai/r/toast.json` |
+| Dropdown | Single/multi-select, search | `npx shadcn add https://kit.newth.ai/r/dropdown.json` |
+| Accordion | Single/multiple mode, animated | `npx shadcn add https://kit.newth.ai/r/accordion.json` |
+| Command Box | Copyable command display | `npx shadcn add https://kit.newth.ai/r/command-box.json` |
+| Theme Toggle | Dark/light with sun/moon icons | `npx shadcn add https://kit.newth.ai/r/theme-toggle.json` |
+| Code Block | Syntax highlighting, line numbers | `npx shadcn add https://kit.newth.ai/r/code-block.json` |
+| Mobile Drawer | Slide-in nav, focus trap | `npx shadcn add https://kit.newth.ai/r/mobile-drawer.json` |
+| Noise Overlay | SVG grain texture | `npx shadcn add https://kit.newth.ai/r/noise-overlay.json` |
 
 ### Blocks (4)
 
-| Component | Install |
-|-----------|---------|
-| Nav — responsive bar, mobile drawer, theme toggle | `npx shadcn add https://kit.newth.ai/r/nav.json` |
-| Hero — badge, title, description, CTA buttons | `npx shadcn add https://kit.newth.ai/r/hero.json` |
-| Section — layout wrapper with size and spacing options | `npx shadcn add https://kit.newth.ai/r/section.json` |
-| Footer — link columns, social icons, copyright | `npx shadcn add https://kit.newth.ai/r/footer.json` |
+| Component | Description | Install |
+|-----------|-------------|---------|
+| Nav | Responsive bar, mobile drawer, theme toggle | `npx shadcn add https://kit.newth.ai/r/nav.json` |
+| Hero | Badge, title, description, CTA buttons | `npx shadcn add https://kit.newth.ai/r/hero.json` |
+| Section | Layout wrapper with size and spacing options | `npx shadcn add https://kit.newth.ai/r/section.json` |
+| Footer | Link columns, social icons, copyright | `npx shadcn add https://kit.newth.ai/r/footer.json` |
 
 ### Hooks (11)
 
@@ -133,14 +139,14 @@ Add to your MCP client config:
 | `use-theme` | localStorage persistence, system preference detection |
 | `use-media-query` | SSR-safe breakpoint matching |
 | `use-reduced-motion` | prefers-reduced-motion with animation config defaults |
-| `use-keyboard-shortcuts` | declarative shortcut handler with modifier keys |
-| `use-toast` | toast context provider and variant helpers |
-| `use-count-up` | animated number counter with scroll trigger |
-| `use-scroll-reveal` | scroll-triggered entrance animations |
-| `use-stagger-list` | staggered cascade animations |
-| `use-page-transition` | page entrance/exit fade-and-slide |
-| `use-text-reveal` | character-by-character text reveal |
-| `use-button-pulse` | hover/press scale animations |
+| `use-keyboard-shortcuts` | Declarative shortcut handler with modifier keys |
+| `use-toast` | Toast context provider and variant helpers |
+| `use-count-up` | Animated number counter with scroll trigger |
+| `use-scroll-reveal` | Scroll-triggered entrance animations |
+| `use-stagger-list` | Staggered cascade animations |
+| `use-page-transition` | Page entrance/exit fade-and-slide |
+| `use-text-reveal` | Character-by-character text reveal |
+| `use-button-pulse` | Hover/press scale animations |
 
 ### Visual / decorative
 
@@ -159,9 +165,33 @@ Add to your MCP client config:
 | Machine-readable usage rules | No | Yes |
 | MCP server support | No | Yes |
 | Animation hooks (GSAP) | No | Yes |
-| Install command | `npx shadcn add` | `npx shadcn add` |
+| Install command | `npx shadcn add` | `npx shadcn add` (same) |
 
-kit is additive — it uses the same install protocol, so it works with any shadcn-compatible toolchain.
+kit is additive — same install protocol, works with any shadcn-compatible toolchain.
+
+---
+
+## Example: what changes
+
+Without kit, prompting an AI gives you shadcn defaults:
+
+```tsx
+// Generic output — wrong colors, wrong radius, wrong feel
+<Button className="bg-blue-500 hover:bg-blue-600 rounded-md">
+  Get started
+</Button>
+```
+
+With kit's context pack loaded, the same prompt gives you:
+
+```tsx
+// On-brand output — correct tokens, correct patterns
+<Button variant="primary" size="md">
+  Get started
+</Button>
+```
+
+Same prompt. Different context. Your design system, first try.
 
 ---
 
