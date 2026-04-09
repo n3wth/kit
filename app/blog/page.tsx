@@ -8,6 +8,12 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'shadcn-registry-protocol-deep-dive',
+    title: 'The shadcn Registry Protocol: A Technical Deep Dive',
+    date: 'April 9, 2026',
+    excerpt: 'How the JSON schema, dependency resolution, and install flow work under the hood — and how to build your own custom component registry.',
+  },
+  {
     slug: 'why-every-ai-tool-generates-same-ui',
     title: 'Why Every AI Tool Generates the Same Looking UI',
     date: 'April 6, 2026',
