@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import posthog from 'posthog-js'
+import { componentDemos, DesignSystemScope } from './component-demos'
 
 const components = [
   { name: 'button', category: 'Atoms', description: 'Primary actions with variant, size, and loading state' },
@@ -204,20 +205,30 @@ export function ComponentGrid() {
 
 function ComponentCard({ name, description }: { name: string; description: string }) {
   const command = `npx shadcn add https://kit.newth.ai/r/${name}.json`
+  const Demo = componentDemos[name]
 
   return (
-    <div className="rounded-lg border border-neutral-200 p-4">
-      <h3 className="font-mono text-sm font-medium text-stone-900">
-        {name}
-      </h3>
-      <p className="mt-1.5 text-sm text-neutral-500">
-        {description}
-      </p>
-      <div className="mt-3 flex items-center rounded bg-stone-50 px-2 py-1">
-        <code className="flex-1 truncate font-mono text-xs text-neutral-400">
-          npx shadcn add .../{name}.json
-        </code>
-        <CopyButton text={command} />
+    <div className="rounded-lg border border-neutral-200 overflow-hidden">
+      {Demo ? (
+        <div className="bg-stone-50 border-b border-neutral-200 p-4 min-h-[100px] flex items-center">
+          <DesignSystemScope>
+            <Demo />
+          </DesignSystemScope>
+        </div>
+      ) : null}
+      <div className="p-4">
+        <h3 className="font-mono text-sm font-medium text-stone-900">
+          {name}
+        </h3>
+        <p className="mt-1 text-sm text-neutral-500">
+          {description}
+        </p>
+        <div className="mt-3 flex items-center rounded bg-stone-50 px-2 py-1">
+          <code className="flex-1 truncate font-mono text-xs text-neutral-400">
+            npx shadcn add .../{name}.json
+          </code>
+          <CopyButton text={command} />
+        </div>
       </div>
     </div>
   )
