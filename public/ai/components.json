@@ -1,5 +1,4 @@
 {
-  "$schema": "https://kit.n3wth.com/ai/components-schema.json",
   "registry": "https://kit.n3wth.com/r",
   "install": "npx shadcn add https://kit.n3wth.com/r/{name}.json",
   "components": [
