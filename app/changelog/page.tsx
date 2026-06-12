@@ -46,26 +46,26 @@ const entries = [
 
 export default function ChangelogPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-bg">
       <main className="mx-auto max-w-2xl px-6 pt-32 pb-24">
-        <h1 className="text-3xl font-bold tracking-tight text-stone-900">
+        <h1 className="text-3xl font-bold tracking-tight text-ink">
           Changelog
         </h1>
-        <p className="mt-3 text-neutral-500">
+        <p className="mt-3 text-ink-dim">
           Latest updates and improvements.
         </p>
 
         <div className="mt-16 space-y-16">
           {entries.map((entry) => (
             <article key={entry.date}>
-              <time className="text-sm text-neutral-400">{entry.date}</time>
-              <h2 className="mt-2 text-xl font-semibold text-stone-900">
+              <time className="text-sm text-ink-faint">{entry.date}</time>
+              <h2 className="mt-2 text-xl font-semibold text-ink">
                 {entry.title}
               </h2>
               <ul className="mt-4 space-y-2">
                 {entry.changes.map((change) => (
-                  <li key={change} className="flex items-start gap-2 text-sm text-neutral-500">
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-neutral-300" />
+                  <li key={change} className="flex items-start gap-2 text-sm text-ink-dim">
+                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-ink-faint" />
                     {change}
                   </li>
                 ))}

@@ -72,12 +72,12 @@ export function WaitlistForm({ variant = 'inline', className = '' }: WaitlistFor
               if (state === 'error') setState('idle')
             }}
             placeholder="you@company.com"
-            className="flex-1 rounded-lg border border-neutral-200 bg-white px-3 py-2 text-xs text-stone-900 placeholder:text-neutral-400 focus:border-neutral-400 focus:outline-none"
+            className="flex-1 rounded-lg border border-rail bg-bg-soft px-3 py-2 text-xs text-ink placeholder:text-ink-faint focus:border-rail-strong focus:outline-none"
           />
           <button
             type="submit"
             disabled={state === 'submitting'}
-            className="rounded-lg bg-stone-900 px-4 py-2 text-xs font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+            className="rounded-lg bg-accent px-4 py-2 text-xs font-medium text-accent-ink transition-opacity hover:opacity-90 disabled:opacity-50"
           >
             {state === 'submitting' ? '...' : 'Notify me'}
           </button>
@@ -100,12 +100,12 @@ export function WaitlistForm({ variant = 'inline', className = '' }: WaitlistFor
             if (state === 'error') setState('idle')
           }}
           placeholder="you@company.com"
-          className="flex-1 rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-stone-900 placeholder:text-neutral-400 focus:border-neutral-400 focus:outline-none"
+          className="flex-1 rounded-lg border border-rail bg-bg-soft px-4 py-3 text-sm text-ink placeholder:text-ink-faint focus:border-rail-strong focus:outline-none"
         />
         <button
           type="submit"
           disabled={state === 'submitting'}
-          className="rounded-lg bg-stone-900 px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+          className="rounded-lg bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-opacity hover:opacity-90 disabled:opacity-50"
         >
           {state === 'submitting' ? 'Joining...' : 'Join the waitlist'}
         </button>

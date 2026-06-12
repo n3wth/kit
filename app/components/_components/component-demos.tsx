@@ -30,35 +30,11 @@ import {
 } from '@/registry/new-york/card/card'
 
 /**
- * Remaps n3wth design system CSS variables to light-theme values so
- * registry components render correctly on the white marketing site.
+ * Registry components inherit the canonical n3wth tokens directly from
+ * @n3wth/ui/theme (imported in globals.css), so no remapping is needed.
  */
 export function DesignSystemScope({ children }: { children: React.ReactNode }) {
-  return (
-    <div
-      style={{
-        '--color-white': '#1c1917',
-        '--color-bg': '#ffffff',
-        '--color-bg-secondary': '#fafaf9',
-        '--color-accent': '#7c3aed',
-        '--color-grey-200': '#e7e5e4',
-        '--color-grey-300': '#d6d3d1',
-        '--color-grey-400': '#78716c',
-        '--color-grey-500': '#57534e',
-        '--color-grey-600': '#a8a29e',
-        '--color-grey-700': '#d6d3d1',
-        '--color-sage': '#16a34a',
-        '--color-coral': '#dc2626',
-        '--color-mint': '#0d9488',
-        '--color-gold': '#d97706',
-        '--glass-bg': 'rgba(0,0,0,0.04)',
-        '--glass-border': 'rgba(0,0,0,0.12)',
-        '--glass-highlight': 'rgba(0,0,0,0.18)',
-      } as React.CSSProperties}
-    >
-      {children}
-    </div>
-  )
+  return <div>{children}</div>
 }
 
 // --- Individual demo components (stateful where needed) ---
@@ -134,13 +110,13 @@ function ProgressDemo() {
       <div className="flex gap-2 mt-1">
         <button
           onClick={() => setValue((v) => Math.max(0, v - 10))}
-          className="text-xs text-neutral-500 border border-neutral-200 rounded px-2 py-0.5 hover:border-neutral-400"
+          className="text-xs text-ink-dim border border-rail rounded px-2 py-0.5 hover:border-rail-strong"
         >
           −10
         </button>
         <button
           onClick={() => setValue((v) => Math.min(100, v + 10))}
-          className="text-xs text-neutral-500 border border-neutral-200 rounded px-2 py-0.5 hover:border-neutral-400"
+          className="text-xs text-ink-dim border border-rail rounded px-2 py-0.5 hover:border-rail-strong"
         >
           +10
         </button>
@@ -171,13 +147,13 @@ function TabsDemo() {
           <TabsTab value="api">API</TabsTab>
         </TabsList>
         <TabsPanel value="overview">
-          <p className="text-sm text-neutral-500">Component overview content.</p>
+          <p className="text-sm text-ink-dim">Component overview content.</p>
         </TabsPanel>
         <TabsPanel value="usage">
-          <p className="text-sm text-neutral-500">Usage examples and patterns.</p>
+          <p className="text-sm text-ink-dim">Usage examples and patterns.</p>
         </TabsPanel>
         <TabsPanel value="api">
-          <p className="text-sm text-neutral-500">API reference and props.</p>
+          <p className="text-sm text-ink-dim">API reference and props.</p>
         </TabsPanel>
       </Tabs>
     </div>
@@ -197,7 +173,7 @@ function AccordionDemo() {
         <AccordionItem value="item-2">
           <AccordionTrigger>How do I install?</AccordionTrigger>
           <AccordionContent>
-            Run <code className="text-xs bg-neutral-100 px-1 rounded">npx shadcn add</code> with any component URL from this registry.
+            Run <code className="text-xs bg-bg-raise px-1 rounded">npx shadcn add</code> with any component URL from this registry.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
@@ -225,7 +201,7 @@ function SkeletonDemo() {
       <Skeleton variant="rectangular" height={60} animate={animate} />
       <button
         onClick={() => setAnimate((a) => !a)}
-        className="self-start text-xs text-neutral-500 border border-neutral-200 rounded px-2 py-0.5 hover:border-neutral-400"
+        className="self-start text-xs text-ink-dim border border-rail rounded px-2 py-0.5 hover:border-rail-strong"
       >
         {animate ? 'Pause' : 'Animate'}
       </button>
@@ -284,17 +260,17 @@ function TooltipDemo() {
           <button
             onMouseEnter={() => setVisible(label)}
             onMouseLeave={() => setVisible(null)}
-            className="text-sm border border-neutral-200 rounded px-3 py-1.5 text-neutral-700 hover:border-neutral-400"
+            className="text-sm border border-rail rounded px-3 py-1.5 text-ink-dim hover:border-rail-strong"
           >
             {label}
           </button>
           {visible === label && (
             <div
-              className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 rounded text-xs text-white bg-stone-900 whitespace-nowrap pointer-events-none"
+              className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 rounded text-xs text-accent-ink bg-accent whitespace-nowrap pointer-events-none"
               role="tooltip"
             >
               Tooltip for: {label}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-stone-900" />
+              <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-accent" />
             </div>
           )}
         </div>
@@ -317,7 +293,7 @@ function DropdownDemo() {
     <div className="relative w-48">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full flex items-center justify-between border border-neutral-200 rounded-lg px-3 py-2 text-sm text-neutral-700 hover:border-neutral-400 bg-white"
+        className="w-full flex items-center justify-between border border-rail rounded-lg px-3 py-2 text-sm text-ink-dim hover:border-rail-strong bg-bg-raise"
       >
         <span>{options.find((o) => o.value === selected)?.label}</span>
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" className={`transition-transform ${open ? 'rotate-180' : ''}`}>
@@ -325,12 +301,12 @@ function DropdownDemo() {
         </svg>
       </button>
       {open && (
-        <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-neutral-200 rounded-lg shadow-sm z-10 overflow-hidden">
+        <div className="absolute top-full left-0 right-0 mt-1 bg-bg-raise border border-rail-strong rounded-lg z-10 overflow-hidden">
           {options.map((opt) => (
             <button
               key={opt.value}
               onClick={() => { setSelected(opt.value); setOpen(false) }}
-              className={`w-full text-left px-3 py-2 text-sm hover:bg-neutral-50 ${selected === opt.value ? 'text-stone-900 font-medium' : 'text-neutral-600'}`}
+              className={`w-full text-left px-3 py-2 text-sm hover:bg-rail ${selected === opt.value ? 'text-ink font-medium' : 'text-ink-dim'}`}
             >
               {opt.label}
             </button>

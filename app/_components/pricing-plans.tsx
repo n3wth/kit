@@ -66,7 +66,7 @@ function SubscribeButton({ plan, label }: { plan: string; label: string }) {
       <button
         onClick={handleClick}
         disabled={loading}
-        className="text-sm font-medium text-[var(--color-kit-accent)] underline underline-offset-4 transition-colors hover:text-neutral-900 disabled:cursor-wait disabled:opacity-60"
+        className="text-sm font-medium text-[var(--color-kit-accent)] underline underline-offset-4 transition-colors hover:text-ink disabled:cursor-wait disabled:opacity-60"
       >
         {loading ? 'Redirecting...' : label}
       </button>
@@ -82,29 +82,29 @@ export function PricingPlans() {
     <div className="mt-16">
       <table className="w-full">
         <thead>
-          <tr className="border-b border-neutral-200 text-left">
-            <th className="pb-4 text-xs font-medium uppercase tracking-widest text-neutral-400">Tier</th>
-            <th className="pb-4 text-xs font-medium uppercase tracking-widest text-neutral-400">Price</th>
-            <th className="hidden pb-4 text-xs font-medium uppercase tracking-widest text-neutral-400 sm:table-cell">What you get</th>
-            <th className="pb-4 text-xs font-medium uppercase tracking-widest text-neutral-400"></th>
+          <tr className="border-b border-rail text-left">
+            <th className="pb-4 text-xs font-medium uppercase tracking-widest text-ink-label">Tier</th>
+            <th className="pb-4 text-xs font-medium uppercase tracking-widest text-ink-label">Price</th>
+            <th className="hidden pb-4 text-xs font-medium uppercase tracking-widest text-ink-label sm:table-cell">What you get</th>
+            <th className="pb-4 text-xs font-medium uppercase tracking-widest text-ink-label"></th>
           </tr>
         </thead>
         <tbody>
           {plans.map((plan) => (
             <tr
               key={plan.tier}
-              className={`border-b border-neutral-200 ${plan.highlight ? 'border-l-2 border-l-[var(--color-kit-accent)]' : ''}`}
+              className={`border-b border-rail ${plan.highlight ? 'border-l-2 border-l-[var(--color-kit-accent)]' : ''}`}
             >
               <td className="py-6 pr-6 align-top">
-                <p className="text-base font-medium text-neutral-900">{plan.tier}</p>
-                <p className="mt-1 text-sm text-neutral-400 sm:hidden">{plan.description}</p>
+                <p className="text-base font-medium text-ink">{plan.tier}</p>
+                <p className="mt-1 text-sm text-ink-faint sm:hidden">{plan.description}</p>
               </td>
               <td className="py-6 pr-6 align-top">
-                <p className="text-base text-neutral-900">{plan.price}</p>
+                <p className="text-base text-ink">{plan.price}</p>
               </td>
               <td className="hidden py-6 pr-6 align-top sm:table-cell">
-                <p className="text-sm text-neutral-500">{plan.description}</p>
-                <p className="mt-1 text-xs text-neutral-400">{plan.features}</p>
+                <p className="text-sm text-ink-dim">{plan.description}</p>
+                <p className="mt-1 text-xs text-ink-faint">{plan.features}</p>
               </td>
               <td className="py-6 text-right align-top">
                 {plan.plan ? (
@@ -113,7 +113,7 @@ export function PricingPlans() {
                   <a
                     href={plan.href}
                     onClick={() => posthog.capture('cta_clicked', { label: 'Contact us', tier: plan.tier })}
-                    className="text-sm font-medium text-neutral-500 underline underline-offset-4 transition-colors hover:text-neutral-900"
+                    className="text-sm font-medium text-ink-dim underline underline-offset-4 transition-colors hover:text-ink"
                   >
                     Contact us
                   </a>
@@ -121,7 +121,7 @@ export function PricingPlans() {
                   <a
                     href="/docs/getting-started"
                     onClick={() => posthog.capture('cta_clicked', { label: 'Get started', tier: plan.tier })}
-                    className="text-sm font-medium text-neutral-500 underline underline-offset-4 transition-colors hover:text-neutral-900"
+                    className="text-sm font-medium text-ink-dim underline underline-offset-4 transition-colors hover:text-ink"
                   >
                     Get started
                   </a>
