@@ -45,7 +45,7 @@ export default function Post() {
         extend it or to build on top of it.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         Why source code distribution matters
       </h2>
 
@@ -71,12 +71,12 @@ export default function Post() {
         always need to diverge from the upstream defaults eventually. And for AI
         coding tools, it matters for a different reason: the model can read files
         in your project. It cannot read inside{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">node_modules</code>.
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">node_modules</code>.
         Source-installed components are visible to the tools generating code
         against them.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         The registry schema
       </h2>
 
@@ -87,15 +87,15 @@ export default function Post() {
 
       <p>
         The{' '}
-        <span className="font-medium text-stone-900">registry manifest</span>{' '}
+        <span className="font-medium text-ink">registry manifest</span>{' '}
         (validated against{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">
           https://ui.shadcn.com/schema/registry.json
         </code>
         ) describes the registry itself and its items:
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`{
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "n3wth",
@@ -127,16 +127,16 @@ export default function Post() {
 
       <p>
         A{' '}
-        <span className="font-medium text-stone-900">registry item</span>{' '}
+        <span className="font-medium text-ink">registry item</span>{' '}
         (validated against{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">
           https://ui.shadcn.com/schema/registry-item.json
         </code>
         ) is what the CLI fetches. The key difference from the manifest entry
         is that it includes the full file content inline:
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`{
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button",
@@ -159,18 +159,18 @@ export default function Post() {
         a separate request per file. One fetch per registry item is all it takes.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         Item types
       </h2>
 
       <p>
         The{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">type</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">type</code>{' '}
         field controls both how the CLI categorizes the item and where it writes
         the files. The defined types are:
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`registry:style      // Design system base (CSS vars, global styles)
 registry:lib        // Utility functions (cn, formatters, hooks)
 registry:ui         // UI components
@@ -182,16 +182,16 @@ registry:file       // Arbitrary files (config, types, etc.)`}
 
       <p>
         In practice,{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">registry:ui</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">registry:ui</code>{' '}
         and{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">registry:lib</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">registry:lib</code>{' '}
         cover the majority of use cases.{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">registry:style</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">registry:style</code>{' '}
         is special: it installs CSS variables and global styles rather than
         component files, which is how design system tokens get distributed.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         Dependency resolution
       </h2>
 
@@ -199,7 +199,7 @@ registry:file       // Arbitrary files (config, types, etc.)`}
         The two dependency fields serve different purposes:
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`{
   "dependencies": ["clsx", "tailwind-merge"],
   "registryDependencies": ["cn", "button"]
@@ -207,22 +207,22 @@ registry:file       // Arbitrary files (config, types, etc.)`}
       </pre>
 
       <p>
-        <span className="font-medium text-stone-900">dependencies</span> are npm
+        <span className="font-medium text-ink">dependencies</span> are npm
         packages. The CLI checks whether they are already in{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">package.json</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">package.json</code>{' '}
         and installs any that are missing. This is a straightforward npm install
         step.
       </p>
 
       <p>
-        <span className="font-medium text-stone-900">registryDependencies</span>{' '}
+        <span className="font-medium text-ink">registryDependencies</span>{' '}
         are other registry items. When the CLI encounters these, it resolves
         them against the same registry. If you install a{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">pricing-card</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">pricing-card</code>{' '}
         that depends on{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">button</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">button</code>{' '}
         and{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">cn</code>,
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">cn</code>,
         the CLI fetches and installs all three. Resolution is recursive — a
         dependency can have its own dependencies.
       </p>
@@ -231,11 +231,11 @@ registry:file       // Arbitrary files (config, types, etc.)`}
         You can also reference items from the shadcn/ui base registry by name.
         If your component depends on a shadcn primitive, the CLI knows to fetch
         it from{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">ui.shadcn.com</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">ui.shadcn.com</code>{' '}
         rather than your registry.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         The install flow in detail
       </h2>
 
@@ -243,7 +243,7 @@ registry:file       // Arbitrary files (config, types, etc.)`}
         Running the install command triggers a multi-step process:
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`npx shadcn add https://kit.n3wth.com/r/card.json`}
       </pre>
 
@@ -251,42 +251,42 @@ registry:file       // Arbitrary files (config, types, etc.)`}
         Step by step:
       </p>
 
-      <ol className="list-inside list-decimal space-y-3 marker:text-stone-400">
+      <ol className="list-inside list-decimal space-y-3 marker:text-ink-faint">
         <li>
-          <span className="font-medium text-stone-900">Fetch the item JSON</span>{' '}
+          <span className="font-medium text-ink">Fetch the item JSON</span>{' '}
           — the CLI fetches the URL and parses the registry-item JSON. It
           validates the schema and extracts the item fields.
         </li>
         <li>
-          <span className="font-medium text-stone-900">Resolve registryDependencies</span>{' '}
+          <span className="font-medium text-ink">Resolve registryDependencies</span>{' '}
           — for each name in{' '}
-          <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">registryDependencies</code>,
+          <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">registryDependencies</code>,
           the CLI constructs a URL (same base URL, item name as filename) and
           fetches that item too. This recurses until all dependencies are
           resolved.
         </li>
         <li>
-          <span className="font-medium text-stone-900">Read components.json</span>{' '}
+          <span className="font-medium text-ink">Read components.json</span>{' '}
           — the CLI reads your project&apos;s{' '}
-          <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">components.json</code>{' '}
+          <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">components.json</code>{' '}
           to determine the target directory and path aliases.
         </li>
         <li>
-          <span className="font-medium text-stone-900">Write files</span>{' '}
+          <span className="font-medium text-ink">Write files</span>{' '}
           — each file in the resolved item set is written to the configured
           component directory. The{' '}
-          <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">path</code>{' '}
+          <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">path</code>{' '}
           field in the item is used as a hint but the actual destination is
           controlled by your{' '}
-          <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">components.json</code>{' '}
+          <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">components.json</code>{' '}
           config.
         </li>
         <li>
-          <span className="font-medium text-stone-900">Install npm dependencies</span>{' '}
+          <span className="font-medium text-ink">Install npm dependencies</span>{' '}
           — any packages in{' '}
-          <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">dependencies</code>{' '}
+          <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">dependencies</code>{' '}
           that are not already in{' '}
-          <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">package.json</code>{' '}
+          <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">package.json</code>{' '}
           get added via your package manager.
         </li>
       </ol>
@@ -297,23 +297,23 @@ registry:file       // Arbitrary files (config, types, etc.)`}
         JSON and writes files.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         How kit builds the registry
       </h2>
 
       <p>
         kit&apos;s registry lives in a Next.js project. The source components
         are in{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">registry/</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">registry/</code>{' '}
         and the manifest is in{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">registry.json</code>.
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">registry.json</code>.
         A build script reads the manifest, reads each referenced source file,
         and generates the per-item JSON files in{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">public/r/</code>.
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">public/r/</code>.
         The Next.js app serves them as static files.
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`# Source
 registry/
   lib/cn/cn.ts
@@ -342,7 +342,7 @@ public/r/
         Here is the structure of the build script pattern:
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`import { readFileSync, writeFileSync } from 'fs'
 import { registry } from './registry.json'
 
@@ -371,7 +371,7 @@ for (const item of registry.items) {
 }`}
       </pre>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         Building your own registry
       </h2>
 
@@ -387,7 +387,7 @@ for (const item of registry.items) {
         You can author the item JSON manually if your registry is small:
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`# Minimal registry structure
 registry/
   components/
@@ -401,42 +401,42 @@ registry/
         want a build step. The key requirements are:
       </p>
 
-      <ul className="list-inside list-disc space-y-2 marker:text-stone-400">
+      <ul className="list-inside list-disc space-y-2 marker:text-ink-faint">
         <li>
-          <span className="font-medium text-stone-900">Single source of truth</span>{' '}
+          <span className="font-medium text-ink">Single source of truth</span>{' '}
           — the manifest drives the build. Do not manually maintain per-item JSON.
         </li>
         <li>
-          <span className="font-medium text-stone-900">Content inlining</span>{' '}
+          <span className="font-medium text-ink">Content inlining</span>{' '}
           — file content must be embedded in the item JSON, not referenced by
           path. The CLI cannot follow links back to your source tree.
         </li>
         <li>
-          <span className="font-medium text-stone-900">Schema validation</span>{' '}
+          <span className="font-medium text-ink">Schema validation</span>{' '}
           — validate your output against the schema before deploying. A malformed
           item JSON will silently fail to install in ways that are hard to debug.
         </li>
         <li>
-          <span className="font-medium text-stone-900">Correct CORS headers</span>{' '}
+          <span className="font-medium text-ink">Correct CORS headers</span>{' '}
           — the CLI fetches your JSON from the user&apos;s machine, which means
           your server needs CORS configured for cross-origin requests. For static
           files on Vercel or Cloudflare, this is on by default.
         </li>
       </ul>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         The style item: distributing design tokens
       </h2>
 
       <p>
         The{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">registry:style</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">registry:style</code>{' '}
         type is worth examining separately because it works differently from
         component items. Instead of writing TypeScript files, it injects CSS
         variables and configuration into your project.
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`{
   "name": "n3wth",
   "type": "registry:style",
@@ -465,11 +465,11 @@ registry/
 
       <p>
         When a style item is installed, the CLI writes these values into your{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">globals.css</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">globals.css</code>{' '}
         or equivalent, following the Tailwind CSS variable convention. The
         component items in the registry then reference these variables using the
         standard{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">hsl(var(--background))</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">hsl(var(--background))</code>{' '}
         pattern.
       </p>
 
@@ -480,7 +480,7 @@ registry/
         up the correct tokens automatically.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         What the protocol does not handle
       </h2>
 
@@ -489,32 +489,32 @@ registry/
         distributing files. It does not handle:
       </p>
 
-      <ul className="list-inside list-disc space-y-2 marker:text-stone-400">
+      <ul className="list-inside list-disc space-y-2 marker:text-ink-faint">
         <li>
-          <span className="font-medium text-stone-900">Versioning</span>{' '}
+          <span className="font-medium text-ink">Versioning</span>{' '}
           — there is no version field in the schema. If you want versioning, you
           need to manage it out-of-band (different URLs, a version query param, or
           a separate registry manifest per version).
         </li>
         <li>
-          <span className="font-medium text-stone-900">Updates</span>{' '}
+          <span className="font-medium text-ink">Updates</span>{' '}
           — reinstalling a component overwrites the file. There is no diff or
           merge. This is intentional: you own the source, so updates are a
           manual decision.
         </li>
         <li>
-          <span className="font-medium text-stone-900">Authentication</span>{' '}
+          <span className="font-medium text-ink">Authentication</span>{' '}
           — the CLI fetches public URLs. Private registries need to be handled
           at the network level (VPN, private CDN) not at the protocol level.
         </li>
         <li>
-          <span className="font-medium text-stone-900">AI context</span>{' '}
+          <span className="font-medium text-ink">AI context</span>{' '}
           — the protocol distributes source code. Teaching AI tools how to use
           that source code is a separate problem.
         </li>
       </ul>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         Extending the protocol for AI tools
       </h2>
 
@@ -534,7 +534,7 @@ registry/
         composition patterns in a format optimized for language model consumption:
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`# Button component context (in .cursorrules / CLAUDE.md)
 
 ## Button
@@ -566,7 +566,7 @@ Constraints:
         contains.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         Protocol summary
       </h2>
 
@@ -574,13 +574,13 @@ Constraints:
         The shadcn registry protocol is:
       </p>
 
-      <ul className="list-inside list-disc space-y-2 marker:text-stone-400">
+      <ul className="list-inside list-disc space-y-2 marker:text-ink-faint">
         <li>
           A JSON schema for describing components and their dependencies
         </li>
         <li>
           A URL convention: serve item JSON at{' '}
-          <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">
+          <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">
             https://your-registry.com/r/[name].json
           </code>
         </li>
@@ -606,15 +606,15 @@ Constraints:
         documentation — you build on top.
       </p>
 
-      <div className="mt-12 rounded-lg border border-stone-200 bg-stone-50 p-6">
-        <p className="text-stone-900">
+      <div className="mt-12 rounded-lg border border-rail bg-bg-soft p-6">
+        <p className="text-ink">
           kit uses the shadcn registry protocol to distribute AI-native
           components: source code you own, plus a context pack that teaches your
           AI tools to use them correctly.
         </p>
         <a
           href="/docs/getting-started"
-          className="mt-4 inline-block text-sm text-stone-900 underline underline-offset-4"
+          className="mt-4 inline-block text-sm text-ink underline underline-offset-4"
         >
           Build with kit
         </a>

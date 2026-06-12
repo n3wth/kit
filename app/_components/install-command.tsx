@@ -16,13 +16,13 @@ export function InstallCommand({ command }: { command: string }) {
   return (
     <button
       onClick={copy}
-      className="group flex w-full items-center justify-between rounded-lg border border-stone-200 bg-[#ffffff] px-5 py-3.5 text-left font-mono text-sm text-stone-700 transition-colors hover:border-stone-300"
+      className="group flex w-full items-center justify-between rounded-lg border border-rail bg-bg-raise px-5 py-3.5 text-left font-mono text-sm text-ink-dim transition-colors hover:border-rail-strong"
     >
       <span className="truncate">
-        <span className="text-stone-400 select-none">$ </span>
+        <span className="text-ink-faint select-none">$ </span>
         {command}
       </span>
-      <span className="ml-4 shrink-0 text-xs text-stone-400 transition-colors group-hover:text-stone-600">
+      <span className="ml-4 shrink-0 text-xs text-ink-faint transition-colors group-hover:text-ink-dim">
         {copied ? 'Copied' : 'Copy'}
       </span>
     </button>

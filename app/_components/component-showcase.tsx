@@ -9,38 +9,11 @@ import { Avatar } from '@/registry/new-york/avatar/avatar'
 import { InstallCommand } from './install-command'
 
 /**
- * Scoped wrapper that provides the n3wth design system CSS variables
- * so registry components render correctly on the marketing site.
- *
- * Note: Tailwind v4 resolves `bg-white` via var(--color-white), so this
- * wrapper must NOT contain any Tailwind `bg-white` elements.
+ * Registry components inherit the canonical n3wth tokens directly from
+ * @n3wth/ui/theme (imported in globals.css), so no remapping is needed.
  */
 function DesignSystemScope({ children }: { children: React.ReactNode }) {
-  return (
-    <div
-      style={{
-        '--color-white': '#1c1917',
-        '--color-bg': '#ffffff',
-        '--color-bg-secondary': '#fafaf9',
-        '--color-accent': '#7c3aed',
-        '--color-grey-200': '#e7e5e4',
-        '--color-grey-300': '#d6d3d1',
-        '--color-grey-400': '#78716c',
-        '--color-grey-500': '#57534e',
-        '--color-grey-600': '#a8a29e',
-        '--color-grey-700': '#d6d3d1',
-        '--color-sage': '#16a34a',
-        '--color-coral': '#dc2626',
-        '--color-mint': '#0d9488',
-        '--color-gold': '#d97706',
-        '--glass-bg': 'rgba(0,0,0,0.04)',
-        '--glass-border': 'rgba(0,0,0,0.12)',
-        '--glass-highlight': 'rgba(0,0,0,0.18)',
-      } as React.CSSProperties}
-    >
-      {children}
-    </div>
-  )
+  return <div>{children}</div>
 }
 
 const showcaseItems = [
@@ -111,10 +84,10 @@ const showcaseItems = [
 
 export function ComponentShowcase() {
   return (
-    <div className="grid gap-px overflow-hidden rounded-lg border border-stone-200 bg-stone-200 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-px overflow-hidden rounded-lg border border-rail-strong bg-rail-strong sm:grid-cols-2 lg:grid-cols-3">
       {showcaseItems.map((item) => (
-        <div key={item.name} className="flex flex-col bg-[#ffffff] p-6">
-          <p className="text-xs font-medium tracking-wide uppercase text-stone-400">{item.name}</p>
+        <div key={item.name} className="flex flex-col bg-bg-raise p-6">
+          <p className="text-xs font-medium tracking-wide uppercase text-ink-label">{item.name}</p>
           <DesignSystemScope>
             <div className="mt-5 flex-1 flex items-center">
               {item.render()}

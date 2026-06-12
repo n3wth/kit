@@ -47,7 +47,7 @@ export default function Post() {
         looks a specific way.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         The shadcn monoculture
       </h2>
 
@@ -75,7 +75,7 @@ export default function Post() {
         point fits.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         What vibe coding actually produces
       </h2>
 
@@ -98,7 +98,7 @@ export default function Post() {
         Here is what that looks like in code:
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`// What you get when you ask an AI to build a card component
 <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
   <div className="flex items-center justify-between">
@@ -118,15 +118,15 @@ export default function Post() {
       <p>
         This is fine code. It is readable, it works, it follows conventions.
         But it is also generic. The{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">shadow-sm</code>,
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">shadow-sm</code>,
         the{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">rounded-lg</code>,
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">rounded-lg</code>,
         the neutral gray palette &mdash; these are not design decisions. They are
         defaults. They are what you get when there is no design system to
         reach for instead.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         Why prompting does not solve it
       </h2>
 
@@ -153,7 +153,7 @@ export default function Post() {
         worse than being obviously wrong, because it takes longer to notice.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         The model is not the problem
       </h2>
 
@@ -177,7 +177,7 @@ export default function Post() {
         scale.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         Design system packaging as the solution
       </h2>
 
@@ -194,24 +194,24 @@ export default function Post() {
       </p>
 
       <p>
-        <span className="font-medium text-stone-900">Component source.</span>{' '}
+        <span className="font-medium text-ink">Component source.</span>{' '}
         The model needs to see the actual component implementations. Not the
         npm package internals &mdash; the source files in your project. When your
         Button component lives in{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">components/button.tsx</code>,
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">components/button.tsx</code>,
         the model can read it, understand the prop API, see the variant
         definitions, and generate code that uses it correctly.
       </p>
 
       <p>
-        <span className="font-medium text-stone-900">Design token definitions.</span>{' '}
+        <span className="font-medium text-ink">Design token definitions.</span>{' '}
         Your CSS variables, your Tailwind config, your spacing scale. When the
         model has access to this, it stops guessing at colors and starts using
         the actual values from your system.
       </p>
 
       <p>
-        <span className="font-medium text-stone-900">Behavioral constraints.</span>{' '}
+        <span className="font-medium text-ink">Behavioral constraints.</span>{' '}
         The decisions that are hardest to infer from code: no gradients, no
         outer shadows, accessibility requirements, composition patterns, things
         to avoid. These belong in a context file that travels with the codebase.
@@ -224,7 +224,7 @@ export default function Post() {
         on the internet.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         What this looks like in practice
       </h2>
 
@@ -233,7 +233,7 @@ export default function Post() {
         patterns regardless of what you actually want:
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`// Without context: AI defaults to shadcn patterns
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -265,7 +265,7 @@ export function MetricCard({ title, value, trend }) {
         output that uses your actual components and your actual constraints:
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`// With kit context pack: AI uses your design system
 import { StatCard } from "@/components/stat-card"
 
@@ -283,13 +283,13 @@ export function MetricCard({ title, value, trend }) {
 
       <p>
         The second version is shorter because the model knows your{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">StatCard</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">StatCard</code>{' '}
         component exists and what it accepts. It does not need to reconstruct
         that logic from primitives. It also does not add a shadow, because the
         context pack specifies no outer shadows.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         The registry approach
       </h2>
 
@@ -299,7 +299,7 @@ export function MetricCard({ title, value, trend }) {
         output, you install the source directly into your project:
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`npx shadcn add https://kit.n3wth.com/r/card.json`}
       </pre>
 
@@ -313,14 +313,14 @@ export function MetricCard({ title, value, trend }) {
       <p>
         The second step is the context pack: a structured file that describes
         your design system to AI tools. For Cursor, this is a{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">.cursorrules</code>{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">.cursorrules</code>{' '}
         file. For Claude Code, it is a{' '}
-        <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">CLAUDE.md</code>.
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">CLAUDE.md</code>.
         For MCP-compatible tools, it is a server that exposes component metadata
         on demand.
       </p>
 
-      <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
+      <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
 {`# Design system constraints (in .cursorrules or CLAUDE.md)
 
 ## Components
@@ -346,7 +346,7 @@ export function MetricCard({ title, value, trend }) {
         reaching for shadcn defaults.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         Why this matters more as AI tools improve
       </h2>
 
@@ -372,7 +372,7 @@ export function MetricCard({ title, value, trend }) {
         toward your system, not toward the statistical average of GitHub.
       </p>
 
-      <h2 className="mt-12 text-xl font-semibold text-stone-900">
+      <h2 className="mt-12 text-xl font-semibold text-ink">
         What to do today
       </h2>
 
@@ -383,25 +383,25 @@ export function MetricCard({ title, value, trend }) {
 
       <ul className="list-inside list-disc space-y-2">
         <li>
-          <span className="text-stone-900">Audit your components.</span>{' '}
+          <span className="text-ink">Audit your components.</span>{' '}
           Which ones exist in your project? Write down their names and prop APIs.
         </li>
         <li>
-          <span className="text-stone-900">Document your constraints.</span>{' '}
+          <span className="text-ink">Document your constraints.</span>{' '}
           Border radius decisions, color palette choices, shadow rules,
           spacing conventions. The shorter the list, the more likely the model
           follows it consistently.
         </li>
         <li>
-          <span className="text-stone-900">Add a context file.</span>{' '}
+          <span className="text-ink">Add a context file.</span>{' '}
           Put it in{' '}
-          <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">.cursorrules</code>{' '}
+          <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">.cursorrules</code>{' '}
           or{' '}
-          <code className="rounded bg-stone-100 px-1.5 py-0.5 text-sm text-stone-600">CLAUDE.md</code>.
+          <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">CLAUDE.md</code>.
           Commit it. It should travel with the codebase.
         </li>
         <li>
-          <span className="text-stone-900">Prefer source-installed components.</span>{' '}
+          <span className="text-ink">Prefer source-installed components.</span>{' '}
           The model can read files in your project. It cannot read inside
           node_modules. Components installed via the shadcn registry format
           are readable.
@@ -424,15 +424,15 @@ export function MetricCard({ title, value, trend }) {
         The fix is not more prompting. It is better packaging.
       </p>
 
-      <div className="mt-12 rounded-lg border border-stone-200 bg-stone-50 p-6">
-        <p className="text-stone-900">
+      <div className="mt-12 rounded-lg border border-rail bg-bg-soft p-6">
+        <p className="text-ink">
           kit is an AI-native component registry. Install components as source,
           get a context pack that teaches your AI tools to use them correctly.
           The shadcn registry protocol, with the AI context layer on top.
         </p>
         <a
           href="/docs/getting-started"
-          className="mt-4 inline-block text-sm text-stone-900 underline underline-offset-4"
+          className="mt-4 inline-block text-sm text-ink underline underline-offset-4"
         >
           Get started with kit
         </a>

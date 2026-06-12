@@ -32,15 +32,15 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-neutral-200 bg-[#fafaf9]">
+    <footer className="border-t border-rail bg-bg-soft">
       <div className="mx-auto max-w-5xl px-6 py-16">
         <div className="grid gap-10 sm:grid-cols-4">
           {/* Brand */}
           <div>
-            <p className="font-mono text-sm font-semibold text-stone-900">
+            <p className="font-mono text-sm font-semibold text-ink">
               n3wth/kit
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-neutral-400">
+            <p className="mt-2 text-sm leading-relaxed text-ink-faint">
               Design systems for the AI era.
             </p>
           </div>
@@ -48,7 +48,7 @@ export function Footer() {
           {/* Link columns */}
           {columns.map((col) => (
             <div key={col.title}>
-              <p className="text-xs font-medium uppercase tracking-widest text-neutral-400">
+              <p className="text-xs font-medium uppercase tracking-widest text-ink-label">
                 {col.title}
               </p>
               <ul className="mt-4 space-y-2.5">
@@ -59,14 +59,14 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-neutral-500 transition-colors hover:text-neutral-900"
+                        className="text-sm text-ink-dim transition-colors hover:text-ink"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-sm text-neutral-500 transition-colors hover:text-neutral-900"
+                        className="text-sm text-ink-dim transition-colors hover:text-ink"
                       >
                         {link.label}
                       </Link>
@@ -79,11 +79,11 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 flex items-center justify-between border-t border-neutral-200 pt-6">
-          <p className="text-xs text-neutral-400">
+        <div className="mt-16 flex items-center justify-between border-t border-rail pt-6">
+          <p className="text-xs text-ink-faint">
             &copy; 2026 Oliver Newth
           </p>
-          <p className="text-xs text-neutral-400">n3wth/kit</p>
+          <p className="text-xs text-ink-faint">n3wth/kit</p>
         </div>
       </div>
     </footer>

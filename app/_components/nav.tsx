@@ -8,9 +8,9 @@ const links = [
 
 export function Nav() {
   return (
-    <nav className="w-full border-b border-neutral-200">
+    <nav className="w-full border-b border-rail">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6">
-        <Link href="/" className="font-mono text-sm font-semibold text-stone-900">
+        <Link href="/" className="font-mono text-sm font-semibold text-ink">
           n3wth/kit
         </Link>
 
@@ -22,7 +22,7 @@ export function Nav() {
                 href={l.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-neutral-500 transition-colors hover:text-neutral-900"
+                className="text-sm text-ink-dim transition-colors hover:text-ink"
               >
                 {l.label}
               </a>
@@ -30,7 +30,7 @@ export function Nav() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-sm text-neutral-500 transition-colors hover:text-neutral-900"
+                className="text-sm text-ink-dim transition-colors hover:text-ink"
               >
                 {l.label}
               </Link>

@@ -25,13 +25,13 @@ const faqs = [
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-bg">
       <PageViewTracker event="pricing_page_viewed" />
       <main className="mx-auto max-w-5xl px-6 pt-24 pb-16">
-        <h1 className="font-serif text-4xl tracking-tight text-neutral-900 sm:text-5xl">
+        <h1 className="text-4xl tracking-tight text-ink sm:text-5xl">
           Pricing
         </h1>
-        <p className="mt-4 text-base text-neutral-500">
+        <p className="mt-4 text-base text-ink-dim">
           Free to start. Pay when you need private registries, team features,
           or design system packaging.
         </p>
@@ -40,16 +40,16 @@ export default function PricingPage() {
 
         {/* FAQ */}
         <section className="mt-20">
-          <h2 className="font-serif text-2xl tracking-tight text-neutral-900">
+          <h2 className="text-2xl tracking-tight text-ink">
             Questions
           </h2>
           <div className="mt-10 max-w-2xl space-y-10">
             {faqs.map((faq) => (
               <div key={faq.q}>
-                <h3 className="text-sm font-semibold text-neutral-900">
+                <h3 className="text-sm font-semibold text-ink">
                   {faq.q}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-500">
+                <p className="mt-2 text-sm leading-relaxed text-ink-dim">
                   {faq.a}
                 </p>
               </div>

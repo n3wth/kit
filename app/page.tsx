@@ -28,13 +28,13 @@ export default function Home() {
         <div className="grid items-center gap-12 sm:grid-cols-2">
           <div>
             <h1
-              className="font-serif text-stone-900 tracking-tight"
+              className="text-ink tracking-tight"
               style={{ fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', lineHeight: 1.15 }}
             >
               Your design system,<br />
               every AI tool.
             </h1>
-            <p className="mt-5 text-base leading-relaxed text-stone-500">
+            <p className="mt-5 text-base leading-relaxed text-ink-dim">
               AI coding tools generate generic UI. kit teaches them to use your
               components, your tokens, your brand.
             </p>
@@ -44,13 +44,13 @@ export default function Home() {
           </div>
 
           {/* Code comparison */}
-          <div className="grid gap-px overflow-hidden rounded-lg border border-stone-200 bg-stone-200">
-            <div className="bg-[#ffffff] p-5">
+          <div className="grid gap-px overflow-hidden rounded-lg border border-rail-strong bg-rail-strong">
+            <div className="bg-bg-raise p-5">
               <div className="flex items-center gap-2">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-red-400" />
-                <p className="text-[11px] font-medium text-stone-400">Without kit</p>
+                <p className="text-[11px] font-medium text-ink-faint">Without kit</p>
               </div>
-              <pre className="mt-3 overflow-x-auto font-mono text-xs leading-relaxed text-stone-400">
+              <pre className="mt-3 overflow-x-auto font-mono text-xs leading-relaxed text-ink-faint">
 {`<button className="bg-primary
   text-primary-foreground
   hover:bg-primary/90
@@ -60,12 +60,12 @@ export default function Home() {
 </button>`}
               </pre>
             </div>
-            <div className="bg-[#ffffff] p-5">
+            <div className="bg-bg-raise p-5">
               <div className="flex items-center gap-2">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                <p className="text-[11px] font-medium text-stone-400">With kit</p>
+                <p className="text-[11px] font-medium text-ink-faint">With kit</p>
               </div>
-              <pre className="mt-3 overflow-x-auto font-mono text-xs leading-relaxed text-stone-900">
+              <pre className="mt-3 overflow-x-auto font-mono text-xs leading-relaxed text-ink">
 {`<Button
   variant="primary"
   size="lg">
@@ -78,12 +78,12 @@ export default function Home() {
       </section>
 
       {/* Components */}
-      <section className="border-t border-stone-200">
+      <section className="border-t border-rail">
         <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="max-w-3xl font-serif text-2xl tracking-tight text-stone-900 sm:text-3xl">
+          <h2 className="max-w-3xl text-2xl tracking-tight text-ink sm:text-3xl">
             47 components. One install each.
           </h2>
-          <p className="mt-3 max-w-lg text-sm leading-relaxed text-stone-500">
+          <p className="mt-3 max-w-lg text-sm leading-relaxed text-ink-dim">
             Every component ships with AI context &mdash; props, usage rules,
             and design tokens that v0, Cursor, Claude Code, Lovable, and
             Windsurf understand.
@@ -95,12 +95,12 @@ export default function Home() {
       </section>
 
       {/* Install */}
-      <section className="border-t border-stone-200">
+      <section className="border-t border-rail">
         <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="font-serif text-2xl tracking-tight text-stone-900 sm:text-3xl">
+          <h2 className="text-2xl tracking-tight text-ink sm:text-3xl">
             Get started
           </h2>
-          <p className="mt-3 text-sm text-stone-500">
+          <p className="mt-3 text-sm text-ink-dim">
             Install a single component with the shadcn CLI.
           </p>
           <div className="mt-6 max-w-lg">
