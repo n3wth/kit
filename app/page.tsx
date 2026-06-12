@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'n3wth/kit - Make AI coding tools use your design system',
     description: 'The packaging layer between design systems and AI code generation.',
-    url: 'https://kit.newth.ai',
+    url: 'https://kit.n3wth.com',
     siteName: 'n3wth/kit',
     type: 'website',
   },
@@ -39,7 +39,7 @@ export default function Home() {
               components, your tokens, your brand.
             </p>
             <div className="mt-8">
-              <InstallCommand command="npx shadcn add https://kit.newth.ai/r/button.json" />
+              <InstallCommand command="npx shadcn add https://kit.n3wth.com/r/button.json" />
             </div>
           </div>
 
@@ -101,17 +101,11 @@ export default function Home() {
             Get started
           </h2>
           <p className="mt-3 text-sm text-stone-500">
-            Install a single component or scaffold a full project.
+            Install a single component with the shadcn CLI.
           </p>
           <div className="mt-6 max-w-lg">
-            <InstallCommand command="npx shadcn add https://kit.newth.ai/r/button.json" />
+            <InstallCommand command="npx shadcn add https://kit.n3wth.com/r/button.json" />
           </div>
-          <p className="mt-3 text-xs text-stone-400">
-            or:{' '}
-            <code className="rounded border border-stone-200 bg-stone-50 px-1.5 py-0.5 text-stone-600">
-              npx @n3wth/kit init
-            </code>
-          </p>
         </div>
       </section>
 

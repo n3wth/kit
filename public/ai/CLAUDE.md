@@ -5,7 +5,7 @@ AI-native component registry built on shadcn. Flat, minimal, iOS-inspired React 
 ## Install
 
 ```bash
-npx shadcn add https://kit.newth.ai/r/[name].json
+npx shadcn add https://kit.n3wth.com/r/[name].json
 ```
 
 ## Component API Reference
@@ -223,7 +223,7 @@ Includes responsive mobile drawer.
 
 ### command-box
 ```tsx
-<CommandBox command="npx shadcn add https://kit.newth.ai/r/button.json" variant="default|primary" showCopyButton />
+<CommandBox command="npx shadcn add https://kit.n3wth.com/r/button.json" variant="default|primary" showCopyButton />
 ```
 
 ### mobile-drawer
