@@ -300,7 +300,7 @@ export function MetricCard({ title, value, trend }) {
       </p>
 
       <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
-{`npx shadcn add https://kit.newth.ai/r/stat-card.json`}
+{`npx shadcn add https://kit.n3wth.com/r/card.json`}
       </pre>
 
       <p>

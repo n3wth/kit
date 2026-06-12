@@ -78,7 +78,7 @@ export default function Post() {
       </p>
 
       <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700">
-{`npx shadcn add https://kit.newth.ai/r/pricing-card.json`}
+{`npx shadcn add https://kit.n3wth.com/r/card.json`}
       </pre>
 
       <ol className="list-inside list-decimal space-y-2">
@@ -138,7 +138,7 @@ export default function Post() {
 
       <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
 {`# Install the component
-npx shadcn add https://kit.newth.ai/r/button.json
+npx shadcn add https://kit.n3wth.com/r/button.json
 
 # AI tools now know about Button:
 # - Available props: variant, size, disabled

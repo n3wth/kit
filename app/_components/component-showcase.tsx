@@ -46,7 +46,7 @@ function DesignSystemScope({ children }: { children: React.ReactNode }) {
 const showcaseItems = [
   {
     name: 'Button',
-    install: 'npx shadcn add https://kit.newth.ai/r/button.json',
+    install: 'npx shadcn add https://kit.n3wth.com/r/button.json',
     render: () => (
       <div className="flex flex-wrap items-center gap-3">
         <Button variant="primary" size="lg">Primary</Button>
@@ -58,7 +58,7 @@ const showcaseItems = [
   },
   {
     name: 'Badge',
-    install: 'npx shadcn add https://kit.newth.ai/r/badge.json',
+    install: 'npx shadcn add https://kit.n3wth.com/r/badge.json',
     render: () => (
       <div className="flex flex-wrap items-center gap-2">
         <Badge variant="sage" size="md">Success</Badge>
@@ -71,14 +71,14 @@ const showcaseItems = [
   },
   {
     name: 'Input',
-    install: 'npx shadcn add https://kit.newth.ai/r/input.json',
+    install: 'npx shadcn add https://kit.n3wth.com/r/input.json',
     render: () => (
       <Input placeholder="Enter your email" inputSize="md" />
     ),
   },
   {
     name: 'Switch',
-    install: 'npx shadcn add https://kit.newth.ai/r/switch.json',
+    install: 'npx shadcn add https://kit.n3wth.com/r/switch.json',
     render: () => (
       <div className="flex items-center gap-4">
         <Switch defaultChecked size="md" label="Toggle" />
@@ -88,7 +88,7 @@ const showcaseItems = [
   },
   {
     name: 'Progress',
-    install: 'npx shadcn add https://kit.newth.ai/r/progress.json',
+    install: 'npx shadcn add https://kit.n3wth.com/r/progress.json',
     render: () => (
       <div className="flex flex-col gap-3">
         <Progress value={72} variant="success" size="md" />
@@ -98,7 +98,7 @@ const showcaseItems = [
   },
   {
     name: 'Avatar',
-    install: 'npx shadcn add https://kit.newth.ai/r/avatar.json',
+    install: 'npx shadcn add https://kit.n3wth.com/r/avatar.json',
     render: () => (
       <div className="flex items-center gap-3">
         <Avatar fallback="ON" size="lg" />

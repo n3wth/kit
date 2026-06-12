@@ -168,7 +168,7 @@ export function ComponentGrid() {
           </h2>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {filteredHooks.map((hook) => {
-              const command = `npx shadcn add https://kit.newth.ai/r/${hook.name}.json`
+              const command = `npx shadcn add https://kit.n3wth.com/r/${hook.name}.json`
               return (
                 <div
                   key={hook.name}
@@ -204,7 +204,7 @@ export function ComponentGrid() {
 }
 
 function ComponentCard({ name, description }: { name: string; description: string }) {
-  const command = `npx shadcn add https://kit.newth.ai/r/${name}.json`
+  const command = `npx shadcn add https://kit.n3wth.com/r/${name}.json`
   const Demo = componentDemos[name]
 
   return (

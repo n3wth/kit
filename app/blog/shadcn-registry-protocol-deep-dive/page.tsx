@@ -99,7 +99,7 @@ export default function Post() {
 {`{
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "n3wth",
-  "homepage": "https://kit.newth.ai",
+  "homepage": "https://kit.n3wth.com",
   "items": [
     {
       "name": "button",
@@ -244,7 +244,7 @@ registry:file       // Arbitrary files (config, types, etc.)`}
       </p>
 
       <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
-{`npx shadcn add https://kit.newth.ai/r/pricing-card.json`}
+{`npx shadcn add https://kit.n3wth.com/r/card.json`}
       </pre>
 
       <p>
@@ -320,7 +320,7 @@ registry/
   new-york/
     button/button.tsx
     badge/badge.tsx
-    pricing-card/pricing-card.tsx
+    card/card.tsx
 registry.json
 
 # Built output
@@ -328,7 +328,7 @@ public/r/
   cn.json          # { name, type, files: [{ content: "..." }] }
   button.json
   badge.json
-  pricing-card.json`}
+  card.json`}
       </pre>
 
       <p>

@@ -37,15 +37,15 @@ export default function V0DocsPage() {
             generation time.
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700">
-            https://kit.newth.ai/r
+            https://kit.n3wth.com/r
           </pre>
           <p className="mt-3 text-sm text-neutral-500">
             Individual component URLs follow the pattern:
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700">
-{`https://kit.newth.ai/r/button.json
-https://kit.newth.ai/r/card.json
-https://kit.newth.ai/r/input.json`}
+{`https://kit.n3wth.com/r/button.json
+https://kit.n3wth.com/r/card.json
+https://kit.n3wth.com/r/input.json`}
           </pre>
         </section>
 
@@ -56,11 +56,11 @@ https://kit.newth.ai/r/input.json`}
           <div className="mt-4 space-y-3">
             <pre className="overflow-x-auto rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700">
 {`Build a hero section using components from
-https://kit.newth.ai/r -- use Button for the CTA.`}
+https://kit.n3wth.com/r -- use Button for the CTA.`}
             </pre>
             <pre className="overflow-x-auto rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700">
 {`Create a pricing page with Card components from
-https://kit.newth.ai/r/card.json`}
+https://kit.n3wth.com/r/card.json`}
             </pre>
           </div>
         </section>
@@ -74,8 +74,8 @@ https://kit.newth.ai/r/card.json`}
             in your local project:
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700">
-{`npx shadcn add https://kit.newth.ai/r/button.json
-npx shadcn add https://kit.newth.ai/r/card.json`}
+{`npx shadcn add https://kit.n3wth.com/r/button.json
+npx shadcn add https://kit.n3wth.com/r/card.json`}
           </pre>
         </section>
 

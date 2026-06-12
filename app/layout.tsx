@@ -23,7 +23,7 @@ const dmSerif = DM_Serif_Text({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kit.newth.ai'),
+  metadataBase: new URL('https://kit.n3wth.com'),
   title: {
     default: 'n3wth/kit - Make AI coding tools use your design system',
     template: '%s - n3wth/kit',
@@ -45,10 +45,13 @@ export const metadata: Metadata = {
     'AI code generation',
   ],
   authors: [{ name: 'Oliver Newth' }],
+  alternates: {
+    canonical: './',
+  },
   openGraph: {
     title: 'n3wth/kit - Make AI coding tools use your design system',
     description: 'The packaging layer between design systems and AI code generation.',
-    url: 'https://kit.newth.ai',
+    url: 'https://kit.n3wth.com',
     siteName: 'n3wth/kit',
     type: 'website',
     locale: 'en_US',
@@ -69,7 +72,7 @@ const jsonLd = {
   '@type': 'SoftwareApplication',
   name: 'n3wth/kit',
   description: 'The packaging layer between design systems and AI code generation.',
-  url: 'https://kit.newth.ai',
+  url: 'https://kit.n3wth.com',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'Any',
   offers: {

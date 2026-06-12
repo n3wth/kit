@@ -36,7 +36,7 @@ export default function CursorDocsPage() {
             usage patterns.
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700">
-            curl -o .cursorrules https://kit.newth.ai/ai/.cursorrules
+            curl -o .cursorrules https://kit.n3wth.com/ai/cursorrules
           </pre>
         </section>
 
@@ -59,7 +59,7 @@ export default function CursorDocsPage() {
       "command": "npx",
       "args": ["-y", "shadcn@latest", "registry:mcp"],
       "env": {
-        "REGISTRY_URL": "https://kit.newth.ai/r/registry.json"
+        "REGISTRY_URL": "https://kit.n3wth.com/r/registry.json"
       }
     }
   }
@@ -75,9 +75,9 @@ export default function CursorDocsPage() {
             Use the shadcn CLI to add components from the registry:
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700">
-{`npx shadcn add https://kit.newth.ai/r/button.json
-npx shadcn add https://kit.newth.ai/r/card.json
-npx shadcn add https://kit.newth.ai/r/input.json`}
+{`npx shadcn add https://kit.n3wth.com/r/button.json
+npx shadcn add https://kit.n3wth.com/r/card.json
+npx shadcn add https://kit.n3wth.com/r/input.json`}
           </pre>
         </section>
 
