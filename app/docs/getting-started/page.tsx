@@ -77,7 +77,7 @@ npx shadcn init`}</CodeBlock>
           <p className="mt-3 text-sm text-neutral-500">
             Start by installing the base style. This sets up the design tokens — colors, typography, and border radius — used by all n3wth components.
           </p>
-          <CodeBlock>{'npx shadcn add https://kit.newth.ai/r/n3wth.json'}</CodeBlock>
+          <CodeBlock>{'npx shadcn add https://kit.n3wth.com/r/n3wth.json'}</CodeBlock>
           <p className="mt-3 text-sm text-neutral-500">
             This updates your <InlineCode>globals.css</InlineCode> with CSS variables for the full n3wth color palette and adds the <InlineCode>cn</InlineCode> utility.
           </p>
@@ -91,9 +91,9 @@ npx shadcn init`}</CodeBlock>
           <p className="mt-3 text-sm text-neutral-500">
             Use the shadcn CLI to add individual components from the registry. Each component is copied directly into your project so you own and can modify the source.
           </p>
-          <CodeBlock>{`npx shadcn add https://kit.newth.ai/r/button.json
-npx shadcn add https://kit.newth.ai/r/card.json
-npx shadcn add https://kit.newth.ai/r/input.json`}</CodeBlock>
+          <CodeBlock>{`npx shadcn add https://kit.n3wth.com/r/button.json
+npx shadcn add https://kit.n3wth.com/r/card.json
+npx shadcn add https://kit.n3wth.com/r/input.json`}</CodeBlock>
           <p className="mt-3 text-sm text-neutral-500">
             Components are installed to <InlineCode>components/ui/</InlineCode> by default. See the{' '}
             <Link href="/components" className="text-stone-900 underline underline-offset-4">
@@ -171,7 +171,7 @@ import { Search } from 'lucide-react'
               <p className="mt-2 text-sm text-neutral-500">
                 Add the <InlineCode>.cursorrules</InlineCode> file to your project root:
               </p>
-              <CodeBlock>{'curl -o .cursorrules https://kit.newth.ai/ai/.cursorrules'}</CodeBlock>
+              <CodeBlock>{'curl -o .cursorrules https://kit.n3wth.com/ai/cursorrules'}</CodeBlock>
               <p className="mt-3 text-sm text-neutral-500">
                 Commit this file so your whole team gets the same AI context. See the{' '}
                 <Link href="/docs/cursor" className="text-stone-900 underline underline-offset-4">
@@ -187,7 +187,7 @@ import { Search } from 'lucide-react'
               <p className="mt-2 text-sm text-neutral-500">
                 Download the <InlineCode>CLAUDE.md</InlineCode> context file:
               </p>
-              <CodeBlock>{'curl -o CLAUDE.md https://kit.newth.ai/ai/CLAUDE.md'}</CodeBlock>
+              <CodeBlock>{'curl -o CLAUDE.md https://kit.n3wth.com/ai/CLAUDE.md'}</CodeBlock>
               <p className="mt-3 text-sm text-neutral-500">
                 Claude Code reads <InlineCode>CLAUDE.md</InlineCode> automatically at startup. See the{' '}
                 <Link href="/docs/claude" className="text-stone-900 underline underline-offset-4">
@@ -203,7 +203,7 @@ import { Search } from 'lucide-react'
               <p className="mt-2 text-sm text-neutral-500">
                 Point v0 at the registry URL in your prompts:
               </p>
-              <CodeBlock>{'Use components from https://kit.newth.ai/r — build a settings page with Card and Input'}</CodeBlock>
+              <CodeBlock>{'Use components from https://kit.n3wth.com/r — build a settings page with Card and Input'}</CodeBlock>
               <p className="mt-3 text-sm text-neutral-500">
                 See the{' '}
                 <Link href="/docs/v0" className="text-stone-900 underline underline-offset-4">
@@ -221,13 +221,13 @@ import { Search } from 'lucide-react'
           <p className="mt-3 text-sm text-neutral-500">
             All components are available at:
           </p>
-          <CodeBlock>{'https://kit.newth.ai/r'}</CodeBlock>
+          <CodeBlock>{'https://kit.n3wth.com/r'}</CodeBlock>
           <p className="mt-3 text-sm text-neutral-500">
             Append <InlineCode>{`<name>.json`}</InlineCode> for a specific component:{' '}
-            <InlineCode>https://kit.newth.ai/r/badge.json</InlineCode>
+            <InlineCode>https://kit.n3wth.com/r/badge.json</InlineCode>
           </p>
           <p className="mt-3 text-sm text-neutral-500">
-            Full registry manifest: <InlineCode>https://kit.newth.ai/r/registry.json</InlineCode>
+            Full registry manifest: <InlineCode>https://kit.n3wth.com/r/registry.json</InlineCode>
           </p>
         </section>
 
@@ -288,7 +288,7 @@ import { Search } from 'lucide-react'
                 &ldquo;Could not resolve registry&rdquo;
               </h3>
               <p className="mt-2 text-sm text-neutral-500">
-                Verify the registry is reachable. If kit.newth.ai is down, check{' '}
+                Verify the registry is reachable. If kit.n3wth.com is down, check{' '}
                 <a
                   href="https://github.com/n3wth/kit"
                   target="_blank"

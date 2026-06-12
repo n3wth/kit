@@ -1,14 +1,14 @@
 # n3wth/kit
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-stone.svg)](https://opensource.org/licenses/MIT)
-[![Registry](https://img.shields.io/badge/registry-shadcn%20compatible-stone)](https://kit.newth.ai/r/registry.json)
-[![Components](https://img.shields.io/badge/components-49-stone)](https://kit.newth.ai/components)
+[![Registry](https://img.shields.io/badge/registry-shadcn%20compatible-stone)](https://kit.n3wth.com/r/registry.json)
+[![Components](https://img.shields.io/badge/components-49-stone)](https://kit.n3wth.com/components)
 
 **AI-native component registry for the n3wth design system.**
 
 Components with built-in context packs so AI tools generate on-brand code instead of generic shadcn output.
 
-[**Browse components →**](https://kit.newth.ai/components) · [**Docs**](https://kit.newth.ai/docs) · [**Blog**](https://kit.newth.ai/blog)
+[**Browse components →**](https://kit.n3wth.com/components) · [**Docs**](https://kit.n3wth.com/docs) · [**Blog**](https://kit.n3wth.com/blog)
 
 ---
 
@@ -35,19 +35,13 @@ The result: AI-generated code that matches your design system on the first try.
 Install the design system base (required for CSS variables):
 
 ```bash
-npx shadcn add https://kit.newth.ai/r/n3wth.json
+npx shadcn add https://kit.n3wth.com/r/n3wth.json
 ```
 
 Install any component:
 
 ```bash
-npx shadcn add https://kit.newth.ai/r/button.json
-```
-
-Or scaffold a full project:
-
-```bash
-npx @n3wth/kit init
+npx shadcn add https://kit.n3wth.com/r/button.json
 ```
 
 ---
@@ -57,13 +51,13 @@ npx @n3wth/kit init
 ### Cursor
 
 ```bash
-curl -o .cursorrules https://kit.newth.ai/ai/.cursorrules
+curl -o .cursorrules https://kit.n3wth.com/ai/cursorrules
 ```
 
 ### Claude Code
 
 ```bash
-curl -o CLAUDE.md https://kit.newth.ai/ai/CLAUDE.md
+curl -o CLAUDE.md https://kit.n3wth.com/ai/CLAUDE.md
 ```
 
 ### MCP (Cursor, Claude, Cline, etc.)
@@ -77,7 +71,7 @@ Add to your MCP client config:
       "command": "npx",
       "args": ["-y", "shadcn@latest", "registry:mcp"],
       "env": {
-        "REGISTRY_URL": "https://kit.newth.ai/r/registry.json"
+        "REGISTRY_URL": "https://kit.n3wth.com/r/registry.json"
       }
     }
   }
@@ -94,43 +88,43 @@ Add to your MCP client config:
 
 | Component | Description | Install |
 |-----------|-------------|---------|
-| Button | Multi-variant, loading state, asChild | `npx shadcn add https://kit.newth.ai/r/button.json` |
-| Badge | Semantic color variants (sage, coral, mint, gold) | `npx shadcn add https://kit.newth.ai/r/badge.json` |
-| Input | Glass variant, icon slots, error state | `npx shadcn add https://kit.newth.ai/r/input.json` |
-| Icon | iconoir-react wrapper with size presets | `npx shadcn add https://kit.newth.ai/r/icon.json` |
-| Switch | Controlled/uncontrolled, size variants | `npx shadcn add https://kit.newth.ai/r/switch.json` |
-| Avatar | Image, fallback initials, size presets | `npx shadcn add https://kit.newth.ai/r/avatar.json` |
-| Label | Form label with required indicator | `npx shadcn add https://kit.newth.ai/r/label.json` |
-| Textarea | Resize control, error state | `npx shadcn add https://kit.newth.ai/r/textarea.json` |
-| Separator | Horizontal or vertical | `npx shadcn add https://kit.newth.ai/r/separator.json` |
-| Progress | Animated bar, semantic color states | `npx shadcn add https://kit.newth.ai/r/progress.json` |
-| Skeleton | Text, circular, rectangular variants | `npx shadcn add https://kit.newth.ai/r/skeleton.json` |
-| Tooltip | Portal-based, auto-positioning, arrow | `npx shadcn add https://kit.newth.ai/r/tooltip.json` |
+| Button | Multi-variant, loading state, asChild | `npx shadcn add https://kit.n3wth.com/r/button.json` |
+| Badge | Semantic color variants (sage, coral, mint, gold) | `npx shadcn add https://kit.n3wth.com/r/badge.json` |
+| Input | Glass variant, icon slots, error state | `npx shadcn add https://kit.n3wth.com/r/input.json` |
+| Icon | iconoir-react wrapper with size presets | `npx shadcn add https://kit.n3wth.com/r/icon.json` |
+| Switch | Controlled/uncontrolled, size variants | `npx shadcn add https://kit.n3wth.com/r/switch.json` |
+| Avatar | Image, fallback initials, size presets | `npx shadcn add https://kit.n3wth.com/r/avatar.json` |
+| Label | Form label with required indicator | `npx shadcn add https://kit.n3wth.com/r/label.json` |
+| Textarea | Resize control, error state | `npx shadcn add https://kit.n3wth.com/r/textarea.json` |
+| Separator | Horizontal or vertical | `npx shadcn add https://kit.n3wth.com/r/separator.json` |
+| Progress | Animated bar, semantic color states | `npx shadcn add https://kit.n3wth.com/r/progress.json` |
+| Skeleton | Text, circular, rectangular variants | `npx shadcn add https://kit.n3wth.com/r/skeleton.json` |
+| Tooltip | Portal-based, auto-positioning, arrow | `npx shadcn add https://kit.n3wth.com/r/tooltip.json` |
 
 ### Molecules (11)
 
 | Component | Description | Install |
 |-----------|-------------|---------|
-| Card | Default, glass, interactive variants | `npx shadcn add https://kit.newth.ai/r/card.json` |
-| Modal | Portal, focus trap, compound sub-components | `npx shadcn add https://kit.newth.ai/r/modal.json` |
-| Tabs | Underline and pill variants, animated indicator | `npx shadcn add https://kit.newth.ai/r/tabs.json` |
-| Toast | Auto-dismiss, variant styling | `npx shadcn add https://kit.newth.ai/r/toast.json` |
-| Dropdown | Single/multi-select, search | `npx shadcn add https://kit.newth.ai/r/dropdown.json` |
-| Accordion | Single/multiple mode, animated | `npx shadcn add https://kit.newth.ai/r/accordion.json` |
-| Command Box | Copyable command display | `npx shadcn add https://kit.newth.ai/r/command-box.json` |
-| Theme Toggle | Dark/light with sun/moon icons | `npx shadcn add https://kit.newth.ai/r/theme-toggle.json` |
-| Code Block | Syntax highlighting, line numbers | `npx shadcn add https://kit.newth.ai/r/code-block.json` |
-| Mobile Drawer | Slide-in nav, focus trap | `npx shadcn add https://kit.newth.ai/r/mobile-drawer.json` |
-| Noise Overlay | SVG grain texture | `npx shadcn add https://kit.newth.ai/r/noise-overlay.json` |
+| Card | Default, glass, interactive variants | `npx shadcn add https://kit.n3wth.com/r/card.json` |
+| Modal | Portal, focus trap, compound sub-components | `npx shadcn add https://kit.n3wth.com/r/modal.json` |
+| Tabs | Underline and pill variants, animated indicator | `npx shadcn add https://kit.n3wth.com/r/tabs.json` |
+| Toast | Auto-dismiss, variant styling | `npx shadcn add https://kit.n3wth.com/r/toast.json` |
+| Dropdown | Single/multi-select, search | `npx shadcn add https://kit.n3wth.com/r/dropdown.json` |
+| Accordion | Single/multiple mode, animated | `npx shadcn add https://kit.n3wth.com/r/accordion.json` |
+| Command Box | Copyable command display | `npx shadcn add https://kit.n3wth.com/r/command-box.json` |
+| Theme Toggle | Dark/light with sun/moon icons | `npx shadcn add https://kit.n3wth.com/r/theme-toggle.json` |
+| Code Block | Syntax highlighting, line numbers | `npx shadcn add https://kit.n3wth.com/r/code-block.json` |
+| Mobile Drawer | Slide-in nav, focus trap | `npx shadcn add https://kit.n3wth.com/r/mobile-drawer.json` |
+| Noise Overlay | SVG grain texture | `npx shadcn add https://kit.n3wth.com/r/noise-overlay.json` |
 
 ### Blocks (4)
 
 | Component | Description | Install |
 |-----------|-------------|---------|
-| Nav | Responsive bar, mobile drawer, theme toggle | `npx shadcn add https://kit.newth.ai/r/nav.json` |
-| Hero | Badge, title, description, CTA buttons | `npx shadcn add https://kit.newth.ai/r/hero.json` |
-| Section | Layout wrapper with size and spacing options | `npx shadcn add https://kit.newth.ai/r/section.json` |
-| Footer | Link columns, social icons, copyright | `npx shadcn add https://kit.newth.ai/r/footer.json` |
+| Nav | Responsive bar, mobile drawer, theme toggle | `npx shadcn add https://kit.n3wth.com/r/nav.json` |
+| Hero | Badge, title, description, CTA buttons | `npx shadcn add https://kit.n3wth.com/r/hero.json` |
+| Section | Layout wrapper with size and spacing options | `npx shadcn add https://kit.n3wth.com/r/section.json` |
+| Footer | Link columns, social icons, copyright | `npx shadcn add https://kit.n3wth.com/r/footer.json` |
 
 ### Hooks (11)
 

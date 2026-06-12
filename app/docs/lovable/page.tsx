@@ -36,9 +36,9 @@ export default function LovableDocsPage() {
             Use the Lovable terminal to install n3wth components:
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700">
-{`npx shadcn add https://kit.newth.ai/r/button.json
-npx shadcn add https://kit.newth.ai/r/card.json
-npx shadcn add https://kit.newth.ai/r/input.json`}
+{`npx shadcn add https://kit.n3wth.com/r/button.json
+npx shadcn add https://kit.n3wth.com/r/card.json
+npx shadcn add https://kit.n3wth.com/r/input.json`}
           </pre>
         </section>
 
@@ -52,7 +52,7 @@ npx shadcn add https://kit.newth.ai/r/input.json`}
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700">
 {`This project has custom components from the n3wth
-registry (kit.newth.ai): Button, Card, Input.
+registry (kit.n3wth.com): Button, Card, Input.
 Use these instead of building custom ones.
 Import from @/components/ui/[name].`}
           </pre>

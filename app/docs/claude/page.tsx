@@ -35,7 +35,7 @@ export default function ClaudeDocsPage() {
             CLAUDE.md automatically and gains full knowledge of your components.
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700">
-            curl -o CLAUDE.md https://kit.newth.ai/ai/CLAUDE.md
+            curl -o CLAUDE.md https://kit.n3wth.com/ai/CLAUDE.md
           </pre>
         </section>
 
@@ -57,7 +57,7 @@ export default function ClaudeDocsPage() {
       "command": "npx",
       "args": ["-y", "shadcn@latest", "registry:mcp"],
       "env": {
-        "REGISTRY_URL": "https://kit.newth.ai/r/registry.json"
+        "REGISTRY_URL": "https://kit.n3wth.com/r/registry.json"
       }
     }
   }
@@ -70,12 +70,12 @@ export default function ClaudeDocsPage() {
             3. Install components
           </h2>
           <pre className="mt-4 overflow-x-auto rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700">
-{`npx shadcn add https://kit.newth.ai/r/button.json
-npx shadcn add https://kit.newth.ai/r/card.json`}
+{`npx shadcn add https://kit.n3wth.com/r/button.json
+npx shadcn add https://kit.n3wth.com/r/card.json`}
           </pre>
           <p className="mt-3 text-sm text-neutral-500">
             Or tell Claude Code: &quot;Install the card component from
-            kit.newth.ai&quot;. It will run the command for you.
+            kit.n3wth.com&quot;. It will run the command for you.
           </p>
         </section>
 

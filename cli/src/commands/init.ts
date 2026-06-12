@@ -10,7 +10,7 @@ interface InitOptions {
   install?: boolean
 }
 
-const REGISTRY_URL = 'https://kit.newth.ai'
+const REGISTRY_URL = 'https://kit.n3wth.com'
 
 const BASE_COMPONENTS = ['cn', 'button', 'card', 'input']
 

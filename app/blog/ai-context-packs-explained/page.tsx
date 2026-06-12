@@ -100,7 +100,7 @@ Usage:
       "command": "npx",
       "args": ["-y", "shadcn@latest", "registry:mcp"],
       "env": {
-        "REGISTRY_URL": "https://kit.newth.ai/r/registry.json"
+        "REGISTRY_URL": "https://kit.n3wth.com/r/registry.json"
       }
     }
   }
@@ -159,10 +159,10 @@ Usage:
 
       <pre className="rounded-lg border border-stone-200 bg-stone-50 p-4 font-mono text-sm text-stone-700 overflow-x-auto">
 {`# For Cursor
-curl -o .cursorrules https://kit.newth.ai/ai/.cursorrules
+curl -o .cursorrules https://kit.n3wth.com/ai/cursorrules
 
 # For Claude Code
-curl -o CLAUDE.md https://kit.newth.ai/ai/CLAUDE.md`}
+curl -o CLAUDE.md https://kit.n3wth.com/ai/CLAUDE.md`}
       </pre>
 
       <p>

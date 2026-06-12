@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-npx shadcn add https://kit.newth.ai/r/[name].json
+npx shadcn add https://kit.n3wth.com/r/[name].json
 ```
 
 Replace `[name]` with any component name below. Multiple components can be installed at once by running the command for each.

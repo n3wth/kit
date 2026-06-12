@@ -1,7 +1,6 @@
 {
-  "$schema": "https://kit.newth.ai/ai/components-schema.json",
-  "registry": "https://kit.newth.ai/r",
-  "install": "npx shadcn add https://kit.newth.ai/r/{name}.json",
+  "registry": "https://kit.n3wth.com/r",
+  "install": "npx shadcn add https://kit.n3wth.com/r/{name}.json",
   "components": [
     {
       "name": "button",
@@ -340,7 +339,7 @@
         { "name": "showCopyButton", "type": "boolean", "default": "true" },
         { "name": "onCopy", "type": "() => void", "default": "undefined" }
       ],
-      "usage": "<CommandBox command=\"npx shadcn add https://kit.newth.ai/r/button.json\" variant=\"primary\" />",
+      "usage": "<CommandBox command=\"npx shadcn add https://kit.n3wth.com/r/button.json\" variant=\"primary\" />",
       "a11y": "Copy button has aria-label. Copied state announced via aria-live=\"polite\" region for screen readers."
     },
     {
