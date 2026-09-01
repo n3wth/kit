@@ -25,7 +25,7 @@ const columns = [
     links: [
       { label: 'Blog', href: '/blog' },
       { label: 'GitHub', href: 'https://github.com/n3wth/kit', external: true },
-      { label: 'Email', href: 'mailto:oliver@newth.ai' },
+      { label: 'Email', href: 'mailto:hey@n3wth.com' },
     ],
   },
 ]
