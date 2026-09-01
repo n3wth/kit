@@ -4,8 +4,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: 'https://kit.n3wth.com', lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
     { url: 'https://kit.n3wth.com/components', lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: 'https://kit.n3wth.com/r/registry.json', lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: 'https://kit.n3wth.com/pricing', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: 'https://kit.n3wth.com/blog', lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
+    { url: 'https://kit.n3wth.com/ai/cursorrules', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: 'https://kit.n3wth.com/ai/CLAUDE.md', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: 'https://kit.n3wth.com/ai/components.json', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: 'https://kit.n3wth.com/ai/mcp.json', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: 'https://kit.n3wth.com/docs', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: 'https://kit.n3wth.com/docs/getting-started', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: 'https://kit.n3wth.com/docs/cursor', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },

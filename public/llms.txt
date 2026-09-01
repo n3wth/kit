@@ -1,0 +1,49 @@
+# n3wth/kit
+
+AI-native component registry for React, built on shadcn's registry protocol.
+
+## Registry
+
+49 items: 1 design system style, 1 utility, 32 UI components, 4 blocks, 11 hooks.
+
+**Registry URL:** https://kit.n3wth.com/r/registry.json
+
+**Install any component:**
+```
+npx shadcn add https://kit.n3wth.com/r/[name].json
+```
+
+Example:
+```
+npx shadcn add https://kit.n3wth.com/r/button.json
+```
+
+## Components
+
+### UI Components
+accordion, animated-text, avatar, badge, button, card, character, code-block, command-box, composite-shape, dropdown, error-boundary, hamburger-icon, icon, input, label, mobile-drawer, modal, nav-link, noise-overlay, progress, scroll-indicator, separator, shape, skeleton, speech-bubble, switch, tabs, textarea, theme-toggle, toast, tooltip
+
+### Blocks
+footer, hero, nav, section
+
+### Hooks
+use-button-pulse, use-count-up, use-keyboard-shortcuts, use-media-query, use-page-transition, use-reduced-motion, use-scroll-reveal, use-stagger-list, use-text-reveal, use-theme, use-toast
+
+### Utilities
+cn (Tailwind class merge)
+
+## Design System
+
+Flat, minimal, iOS-inspired. No shadows or gradients unless specified. Ships with light and dark themes via CSS custom properties.
+
+## AI Context Packs
+
+Structured context files for AI coding assistants are available at:
+- https://kit.n3wth.com/ai/cursorrules — Cursor AI instructions
+- https://kit.n3wth.com/ai/CLAUDE.md — Claude Code API reference
+- https://kit.n3wth.com/ai/components.json — Structured JSON for programmatic use
+- https://kit.n3wth.com/ai/mcp.json — MCP server config
+
+## Note
+
+This is an independent registry. PR shadcn-ui/ui#11723 to add @n3wth to the official shadcn index is still open.
