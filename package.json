@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "registry:build": "npx shadcn@latest build",
+    "registry:build": "npx shadcn@latest build && node scripts/build-usage-rules.mts",
     "registry:dev": "npx shadcn@latest build --watch"
   },
   "dependencies": {
