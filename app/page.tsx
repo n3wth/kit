@@ -36,11 +36,11 @@ export default function Home() {
               + AI context packs
             </h1>
             <p className="mt-5 text-base leading-relaxed text-ink-dim">
-              A component registry you install from with{' '}
+              Install components with{' '}
               <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-sm">npx shadcn add</code>.
-              Ships with <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-sm">.cursorrules</code>{' '}
-              and <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-sm">AGENTS.md</code> files
-              so AI tools generate code that uses the components correctly.
+              Drop in the <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-sm">.cursorrules</code>{' '}
+              or <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-sm">AGENTS.md</code> context pack
+              so AI tools generate code that uses them correctly.
             </p>
             <div className="mt-8">
               <InstallCommand command="npx shadcn add https://kit.n3wth.com/r/button.json" />
@@ -152,7 +152,7 @@ export default function Home() {
             <div>
               <p className="text-xs font-medium uppercase tracking-wide text-ink-label">1. Install components</p>
               <p className="mt-2 text-sm text-ink-dim">
-                Use the standard shadcn CLI. Components are copied into your project.
+                The standard shadcn CLI copies each component into your project.
               </p>
               <div className="mt-4">
                 <InstallCommand command="npx shadcn add https://kit.n3wth.com/r/button.json" />

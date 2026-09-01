@@ -41,7 +41,7 @@ export function Footer() {
               n3wth/kit
             </p>
             <p className="mt-2 text-sm leading-relaxed text-ink-faint">
-              Design systems for the AI era.
+              A shadcn registry with AI context packs.
             </p>
           </div>
 
