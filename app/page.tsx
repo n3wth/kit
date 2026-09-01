@@ -1,22 +1,23 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { InstallCommand } from './_components/install-command'
 import { ComponentShowcase } from './_components/component-showcase'
 import { Footer } from './_components/footer'
 
 export const metadata: Metadata = {
-  title: 'n3wth/kit - Make AI coding tools use your design system',
-  description: 'The packaging layer between design systems and AI code generation. 47 components with AI context packs for v0, Cursor, Claude Code, Lovable, and Windsurf.',
+  title: 'n3wth/kit - shadcn registry with AI context packs',
+  description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or CLAUDE.md so AI tools generate code that uses them correctly.',
   openGraph: {
-    title: 'n3wth/kit - Make AI coding tools use your design system',
-    description: 'The packaging layer between design systems and AI code generation.',
+    title: 'n3wth/kit - shadcn registry with AI context packs',
+    description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or CLAUDE.md so AI tools generate code that uses them correctly.',
     url: 'https://kit.n3wth.com',
     siteName: 'n3wth/kit',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'n3wth/kit - Make AI coding tools use your design system',
-    description: 'The packaging layer between design systems and AI code generation.',
+    title: 'n3wth/kit - shadcn registry with AI context packs',
+    description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or CLAUDE.md so AI tools generate code that uses them correctly.',
   },
 }
 
@@ -31,12 +32,15 @@ export default function Home() {
               className="text-ink tracking-tight"
               style={{ fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', lineHeight: 1.15 }}
             >
-              Your design system,<br />
-              every AI tool.
+              shadcn registry<br />
+              + AI context packs
             </h1>
             <p className="mt-5 text-base leading-relaxed text-ink-dim">
-              AI coding tools generate generic UI. kit teaches them to use your
-              components, your tokens, your brand.
+              A component registry you install from with{' '}
+              <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-sm">npx shadcn add</code>.
+              Ships with <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-sm">.cursorrules</code>{' '}
+              and <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-sm">CLAUDE.md</code> files
+              so AI tools generate code that uses the components correctly.
             </p>
             <div className="mt-8">
               <InstallCommand command="npx shadcn add https://kit.n3wth.com/r/button.json" />
@@ -48,7 +52,7 @@ export default function Home() {
             <div className="bg-bg-raise p-5">
               <div className="flex items-center gap-2">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-red-400" />
-                <p className="text-[11px] font-medium text-ink-faint">Without kit</p>
+                <p className="text-[11px] font-medium text-ink-faint">Without context</p>
               </div>
               <pre className="mt-3 overflow-x-auto font-mono text-xs leading-relaxed text-ink-faint">
 {`<button className="bg-primary
@@ -63,7 +67,7 @@ export default function Home() {
             <div className="bg-bg-raise p-5">
               <div className="flex items-center gap-2">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                <p className="text-[11px] font-medium text-ink-faint">With kit</p>
+                <p className="text-[11px] font-medium text-ink-faint">With context pack</p>
               </div>
               <pre className="mt-3 overflow-x-auto font-mono text-xs leading-relaxed text-ink">
 {`<Button
@@ -77,20 +81,72 @@ export default function Home() {
         </div>
       </section>
 
+      {/* What's a context pack */}
+      <section className="border-t border-rail">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <h2 className="text-2xl tracking-tight text-ink sm:text-3xl">
+            What&apos;s a context pack?
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-dim">
+            A context pack is a file you drop into your project that tells AI coding tools
+            about your components. Cursor reads{' '}
+            <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-xs">.cursorrules</code>,
+            Claude Code reads{' '}
+            <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-xs">CLAUDE.md</code>.
+            With these files in place, generated code uses your Button instead of inline styles,
+            your Card instead of raw divs.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href="https://kit.n3wth.com/ai/cursorrules"
+              className="inline-flex items-center gap-2 rounded-md border border-rail px-3 py-1.5 text-xs font-medium text-ink-dim transition-colors hover:border-rail-strong hover:text-ink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>.cursorrules</span>
+              <span className="text-ink-faint">↗</span>
+            </a>
+            <a
+              href="https://kit.n3wth.com/ai/CLAUDE.md"
+              className="inline-flex items-center gap-2 rounded-md border border-rail px-3 py-1.5 text-xs font-medium text-ink-dim transition-colors hover:border-rail-strong hover:text-ink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>CLAUDE.md</span>
+              <span className="text-ink-faint">↗</span>
+            </a>
+            <a
+              href="https://kit.n3wth.com/ai/mcp.json"
+              className="inline-flex items-center gap-2 rounded-md border border-rail px-3 py-1.5 text-xs font-medium text-ink-dim transition-colors hover:border-rail-strong hover:text-ink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>mcp.json</span>
+              <span className="text-ink-faint">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Components */}
       <section className="border-t border-rail">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="max-w-3xl text-2xl tracking-tight text-ink sm:text-3xl">
-            47 components. One install each.
+            The registry
           </h2>
           <p className="mt-3 max-w-lg text-sm leading-relaxed text-ink-dim">
-            Every component ships with AI context &mdash; props, usage rules,
-            and design tokens that v0, Cursor, Claude Code, Lovable, and
-            Windsurf understand.
+            32 UI components, 4 blocks, 11 hooks. Each installs with{' '}
+            <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-xs">npx shadcn add</code>{' '}
+            and is documented in the context packs.
           </p>
           <div className="mt-10">
             <ComponentShowcase />
           </div>
+          <p className="mt-6 text-sm text-ink-dim">
+            <Link href="/components" className="underline underline-offset-4 hover:text-ink">
+              View all components →
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -100,12 +156,34 @@ export default function Home() {
           <h2 className="text-2xl tracking-tight text-ink sm:text-3xl">
             Get started
           </h2>
-          <p className="mt-3 text-sm text-ink-dim">
-            Install a single component with the shadcn CLI.
-          </p>
-          <div className="mt-6 max-w-lg">
-            <InstallCommand command="npx shadcn add https://kit.n3wth.com/r/button.json" />
+
+          <div className="mt-8 grid gap-8 sm:grid-cols-2">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wide text-ink-label">1. Install components</p>
+              <p className="mt-2 text-sm text-ink-dim">
+                Use the standard shadcn CLI. Components are copied into your project.
+              </p>
+              <div className="mt-4">
+                <InstallCommand command="npx shadcn add https://kit.n3wth.com/r/button.json" />
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wide text-ink-label">2. Add context pack</p>
+              <p className="mt-2 text-sm text-ink-dim">
+                Download the file for your AI tool. It teaches the tool how to use the components.
+              </p>
+              <div className="mt-4">
+                <InstallCommand command="curl -o .cursorrules https://kit.n3wth.com/ai/cursorrules" />
+              </div>
+            </div>
           </div>
+
+          <p className="mt-8 text-sm text-ink-dim">
+            <Link href="/docs/getting-started" className="underline underline-offset-4 hover:text-ink">
+              Full setup guide →
+            </Link>
+          </p>
         </div>
       </section>
 

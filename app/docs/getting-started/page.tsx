@@ -321,7 +321,7 @@ import { Search } from 'lucide-react'
               {
                 title: 'Browse components',
                 href: '/components',
-                description: 'See all 40+ components with install commands.',
+                description: 'See all components with install commands.',
               },
               {
                 title: 'Cursor integration',
