@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <section className="mx-auto max-w-5xl px-6 pt-16 pb-14">
+      <section className="mx-auto max-w-5xl px-6 pt-24 pb-14">
         <div className="grid items-center gap-12 sm:grid-cols-2">
           <div>
             <h1
