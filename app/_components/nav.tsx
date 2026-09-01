@@ -2,7 +2,6 @@ import Link from 'next/link'
 
 const links = [
   { href: '/docs/getting-started', label: 'Docs' },
-  { href: '/pricing', label: 'Pricing' },
 ]
 
 function GitHubIcon({ className }: { className?: string }) {
