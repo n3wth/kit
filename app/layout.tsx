@@ -19,11 +19,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://kit.n3wth.com'),
   title: {
-    default: 'n3wth/kit - Make AI coding tools use your design system',
+    default: 'n3wth/kit - shadcn registry with AI context packs',
     template: '%s - n3wth/kit',
   },
   description:
-    'The packaging layer between design systems and AI code generation. 47 components with AI context packs for v0, Cursor, Claude Code, Lovable, and Windsurf.',
+    'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or CLAUDE.md so AI tools generate code that uses them correctly.',
   keywords: [
     'design system',
     'AI components',
@@ -37,14 +37,16 @@ export const metadata: Metadata = {
     'Windsurf',
     'component registry',
     'AI code generation',
+    'context packs',
+    'cursorrules',
   ],
   authors: [{ name: 'Oliver Newth' }],
   alternates: {
     canonical: './',
   },
   openGraph: {
-    title: 'n3wth/kit - Make AI coding tools use your design system',
-    description: 'The packaging layer between design systems and AI code generation.',
+    title: 'n3wth/kit - shadcn registry with AI context packs',
+    description: 'A shadcn component registry with AI context packs. Install via npx shadcn add, then drop in .cursorrules or CLAUDE.md.',
     url: 'https://kit.n3wth.com',
     siteName: 'n3wth/kit',
     type: 'website',
@@ -52,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'n3wth/kit - Make AI coding tools use your design system',
-    description: 'The packaging layer between design systems and AI code generation.',
+    title: 'n3wth/kit - shadcn registry with AI context packs',
+    description: 'A shadcn component registry with AI context packs. Install via npx shadcn add, then drop in .cursorrules or CLAUDE.md.',
   },
   robots: {
     index: true,
@@ -65,7 +67,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: 'n3wth/kit',
-  description: 'The packaging layer between design systems and AI code generation.',
+  description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or CLAUDE.md so AI tools generate code that uses them correctly.',
   url: 'https://kit.n3wth.com',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'Any',

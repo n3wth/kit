@@ -34,8 +34,7 @@ const entries = [
     date: 'February 12, 2026',
     title: 'Initial release',
     changes: [
-      '47 components built on Radix UI and Tailwind CSS v4',
-      '11 custom React hooks for animations and state',
+      '32 UI components + 4 blocks + 11 hooks, built on Tailwind CSS v4',
       'AI context packs (.cursorrules, CLAUDE.md, MCP config, components.json)',
       'shadcn registry protocol support',
       'CLI tool for project scaffolding',

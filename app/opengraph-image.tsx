@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'n3wth/kit - Make AI coding tools use your design system'
+export const alt = 'n3wth/kit - shadcn registry with AI context packs'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -49,7 +49,7 @@ export default async function Image() {
               maxWidth: '900px',
             }}
           >
-            Make AI coding tools use your design system
+            shadcn registry + AI context packs
           </div>
           <div
             style={{
@@ -60,7 +60,7 @@ export default async function Image() {
               lineHeight: 1.5,
             }}
           >
-            47 components with AI context packs for v0, Cursor, Claude Code, Lovable, and Windsurf
+            Install components via npx shadcn add. Drop in .cursorrules or CLAUDE.md.
           </div>
           <div
             style={{
