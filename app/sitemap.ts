@@ -18,5 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: 'https://kit.n3wth.com/blog/ai-context-packs-explained', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
     { url: 'https://kit.n3wth.com/blog/shadcn-registry-protocol-deep-dive', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
     { url: 'https://kit.n3wth.com/blog/why-every-ai-tool-generates-same-ui', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
+    { url: 'https://kit.n3wth.com/llms.txt', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
   ]
 }
