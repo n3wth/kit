@@ -23,6 +23,7 @@ export default async function Image() {
         <div
           style={{
             display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
             gap: '32px',
           }}
@@ -48,6 +49,51 @@ export default async function Image() {
             }}
           >
             n3wth/kit
+          </div>
+          <div
+            style={{
+              fontSize: '56px',
+              fontWeight: 700,
+              color: '#f2f3f5',
+              textAlign: 'center',
+              lineHeight: 1.1,
+              maxWidth: '900px',
+            }}
+          >
+            shadcn registry + AI context packs
+          </div>
+          <div
+            style={{
+              fontSize: '22px',
+              color: '#9aa0a8',
+              textAlign: 'center',
+              maxWidth: '700px',
+              lineHeight: 1.5,
+            }}
+          >
+            Install components via npx shadcn add. Drop in .cursorrules or AGENTS.md.
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              gap: '12px',
+              marginTop: '16px',
+            }}
+          >
+            {['v0', 'Cursor', 'Windsurf', 'Lovable', 'Cline'].map((tool) => (
+              <div
+                key={tool}
+                style={{
+                  border: '1px solid rgba(255,255,255,0.17)',
+                  borderRadius: '999px',
+                  padding: '8px 20px',
+                  fontSize: '16px',
+                  color: '#62666d',
+                }}
+              >
+                {tool}
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,26 +1,26 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Claude Code Integration - n3wth/kit',
-  description: 'Set up n3wth/kit with Claude Code. Configure CLAUDE.md, MCP server, and generate on-brand components.',
+  title: 'AI Context Pack - n3wth/kit',
+  description: 'Set up n3wth/kit with AGENTS.md. Configure the AI context pack and MCP server to generate on-brand components.',
 }
 
-export default function ClaudeDocsPage() {
+export default function AgentsDocsPage() {
   return (
     <div className="min-h-screen bg-bg">
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
         <h1 className="text-3xl font-bold tracking-tight text-ink">
-          Claude Code Integration
+          AI Context Pack
         </h1>
         <p className="mt-3 text-ink-dim">
-          Configure Claude Code to use n3wth/kit components with full design
+          Configure AI coding tools to use n3wth/kit components with full design
           system context.
         </p>
 
         <section className="mt-12">
           <h2 className="text-lg font-semibold text-ink">Prerequisites</h2>
           <ul className="mt-4 list-inside list-disc space-y-2 text-sm text-ink-dim">
-            <li>Claude Code CLI installed</li>
+            <li>An AI coding tool (Cursor, Windsurf, or similar)</li>
             <li>A React/Next.js project with shadcn/ui initialized</li>
             <li>Tailwind CSS v4</li>
           </ul>
@@ -28,14 +28,14 @@ export default function ClaudeDocsPage() {
 
         <section className="mt-12">
           <h2 className="text-lg font-semibold text-ink">
-            1. Add the CLAUDE.md file
+            1. Add the AGENTS.md file
           </h2>
           <p className="mt-3 text-sm text-ink-dim">
-            Download the context file to your project root. Claude Code reads
-            CLAUDE.md automatically and gains full knowledge of your components.
+            Download the context file to your project root. AI tools read
+            AGENTS.md automatically and gain full knowledge of your components.
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim">
-            curl -o CLAUDE.md https://kit.n3wth.com/ai/CLAUDE.md
+            curl -o AGENTS.md https://kit.n3wth.com/ai/AGENTS.md
           </pre>
         </section>
 
@@ -74,7 +74,7 @@ export default function ClaudeDocsPage() {
 npx shadcn add https://kit.n3wth.com/r/card.json`}
           </pre>
           <p className="mt-3 text-sm text-ink-dim">
-            Or tell Claude Code: &quot;Install the card component from
+            Or tell your AI tool: &quot;Install the card component from
             kit.n3wth.com&quot;. It will run the command for you.
           </p>
         </section>
@@ -96,9 +96,9 @@ npx shadcn add https://kit.n3wth.com/r/card.json`}
         <section className="mt-12">
           <h2 className="text-lg font-semibold text-ink">Tips</h2>
           <ul className="mt-4 list-inside list-disc space-y-2 text-sm text-ink-dim">
-            <li>Commit CLAUDE.md to your repo so everyone gets the same AI context</li>
-            <li>Use headless mode: <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-xs text-ink-dim">claude -p &quot;...&quot;</code></li>
+            <li>Commit AGENTS.md to your repo so everyone gets the same AI context</li>
             <li>Reference component names directly for unambiguous results</li>
+            <li>Use the MCP server for live registry access during sessions</li>
           </ul>
         </section>
       </main>

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Docs - n3wth/kit',
-  description: 'Documentation for n3wth/kit. Guides for getting started, Cursor, Claude Code, v0, and Lovable integration.',
+  description: 'Documentation for n3wth/kit. Guides for getting started, Cursor, Windsurf, v0, and Lovable integration.',
 }
 
 const guides = [
@@ -18,9 +18,9 @@ const guides = [
     description: 'Configure .cursorrules and MCP server for Cursor AI.',
   },
   {
-    title: 'Claude Code Integration',
-    href: '/docs/claude',
-    description: 'Set up CLAUDE.md and MCP server for Claude Code.',
+    title: 'AI Context Pack',
+    href: '/docs/agents',
+    description: 'Set up AGENTS.md and MCP server for AI coding tools.',
   },
   {
     title: 'v0 Integration',

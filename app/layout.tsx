@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: '%s - n3wth/kit',
   },
   description:
-    'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or CLAUDE.md so AI tools generate code that uses them correctly.',
+    'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or AGENTS.md so AI tools generate code that uses them correctly.',
   keywords: [
     'design system',
     'AI components',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     'Tailwind CSS',
     'v0',
     'Cursor',
-    'Claude Code',
+    'Windsurf',
     'Lovable',
     'Windsurf',
     'component registry',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'n3wth/kit - shadcn registry with AI context packs',
-    description: 'A shadcn component registry with AI context packs. Install via npx shadcn add, then drop in .cursorrules or CLAUDE.md.',
+    description: 'A shadcn component registry with AI context packs. Install via npx shadcn add, then drop in .cursorrules or AGENTS.md.',
     url: 'https://kit.n3wth.com',
     siteName: 'n3wth/kit',
     type: 'website',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'n3wth/kit - shadcn registry with AI context packs',
-    description: 'A shadcn component registry with AI context packs. Install via npx shadcn add, then drop in .cursorrules or CLAUDE.md.',
+    description: 'A shadcn component registry with AI context packs. Install via npx shadcn add, then drop in .cursorrules or AGENTS.md.',
   },
   robots: {
     index: true,
@@ -67,7 +67,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: 'n3wth/kit',
-  description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or CLAUDE.md so AI tools generate code that uses them correctly.',
+  description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or AGENTS.md so AI tools generate code that uses them correctly.',
   url: 'https://kit.n3wth.com',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'Any',

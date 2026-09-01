@@ -39,10 +39,10 @@ Flat, minimal, iOS-inspired. No shadows or gradients unless specified. Ships wit
 ## AI Context Packs
 
 Structured context files for AI coding assistants are available at:
-- https://kit.n3wth.com/ai/cursorrules — Cursor AI instructions
-- https://kit.n3wth.com/ai/CLAUDE.md — Claude Code API reference
-- https://kit.n3wth.com/ai/components.json — Structured JSON for programmatic use
-- https://kit.n3wth.com/ai/mcp.json — MCP server config
+- https://kit.n3wth.com/ai/cursorrules - Cursor AI instructions
+- https://kit.n3wth.com/ai/AGENTS.md - AI coding tool API reference
+- https://kit.n3wth.com/ai/components.json - Structured JSON for programmatic use
+- https://kit.n3wth.com/ai/mcp.json - MCP server config
 
 ## Note
 

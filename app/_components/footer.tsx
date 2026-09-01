@@ -15,7 +15,7 @@ const columns = [
     links: [
       { label: 'Getting Started', href: '/docs/getting-started' },
       { label: 'Cursor', href: '/docs/cursor' },
-      { label: 'Claude Code', href: '/docs/claude' },
+      { label: 'AGENTS.md', href: '/docs/agents' },
       { label: 'v0', href: '/docs/v0' },
       { label: 'Lovable', href: '/docs/lovable' },
     ],

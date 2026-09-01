@@ -8,7 +8,7 @@ const plans = [
     tier: 'Free',
     price: '$0',
     description: 'Full component library with AI context packs. Unlimited projects.',
-    features: 'All components, .cursorrules, CLAUDE.md, MCP config, community support',
+    features: 'All components, .cursorrules, AGENTS.md, MCP config, community support',
   },
   {
     tier: 'Pro',

@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: 'What AI tools are supported?',
-    a: 'v0, Cursor, Claude Code, Lovable, and Windsurf. Any tool that supports the shadcn registry protocol or MCP servers works automatically.',
+    a: 'v0, Cursor, Windsurf, Lovable, and Cline. Any tool that supports the shadcn registry protocol or MCP servers works automatically.',
   },
 ]
 

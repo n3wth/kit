@@ -4,7 +4,7 @@ import { PageViewTracker } from '../../_components/page-view-tracker'
 
 export const metadata: Metadata = {
   title: 'Getting Started - n3wth/kit',
-  description: 'Get started with n3wth/kit. Install components via shadcn CLI, configure AI context packs for Cursor, Claude Code, and v0, and start building with AI-native components.',
+  description: 'Get started with n3wth/kit. Install components via shadcn CLI, configure AI context packs for Cursor, Windsurf, and v0, and start building with AI-native components.',
 }
 
 function CodeBlock({ children }: { children: string }) {
@@ -181,17 +181,17 @@ import { Search } from 'lucide-react'
               </p>
             </div>
 
-            {/* Claude Code */}
+            {/* AGENTS.md */}
             <div>
-              <h3 className="text-base font-semibold text-ink">Claude Code</h3>
+              <h3 className="text-base font-semibold text-ink">AGENTS.md</h3>
               <p className="mt-2 text-sm text-ink-dim">
-                Download the <InlineCode>CLAUDE.md</InlineCode> context file:
+                Download the <InlineCode>AGENTS.md</InlineCode> context file:
               </p>
-              <CodeBlock>{'curl -o CLAUDE.md https://kit.n3wth.com/ai/CLAUDE.md'}</CodeBlock>
+              <CodeBlock>{'curl -o AGENTS.md https://kit.n3wth.com/ai/AGENTS.md'}</CodeBlock>
               <p className="mt-3 text-sm text-ink-dim">
-                Claude Code reads <InlineCode>CLAUDE.md</InlineCode> automatically at startup. See the{' '}
-                <Link href="/docs/claude" className="text-ink underline underline-offset-4">
-                  Claude Code integration guide
+                AI coding tools read <InlineCode>AGENTS.md</InlineCode> automatically at startup. See the{' '}
+                <Link href="/docs/agents" className="text-ink underline underline-offset-4">
+                  AI context pack guide
                 </Link>
                 {' '}for MCP setup.
               </p>
@@ -329,9 +329,9 @@ import { Search } from 'lucide-react'
                 description: 'Full .cursorrules and MCP setup guide.',
               },
               {
-                title: 'Claude Code integration',
-                href: '/docs/claude',
-                description: 'CLAUDE.md and MCP server configuration.',
+                title: 'AI Context Pack',
+                href: '/docs/agents',
+                description: 'AGENTS.md and MCP server configuration.',
               },
               {
                 title: 'v0 integration',
