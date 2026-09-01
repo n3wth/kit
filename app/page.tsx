@@ -98,31 +98,22 @@ export default function Home() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href="https://kit.n3wth.com/ai/cursorrules"
+              href="/ai/cursorrules"
               className="inline-flex items-center gap-2 rounded-md border border-rail px-3 py-1.5 text-xs font-medium text-ink-dim transition-colors hover:border-rail-strong hover:text-ink"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <span>.cursorrules</span>
-              <span className="text-ink-faint">↗</span>
             </a>
             <a
-              href="https://kit.n3wth.com/ai/CLAUDE.md"
+              href="/ai/CLAUDE.md"
               className="inline-flex items-center gap-2 rounded-md border border-rail px-3 py-1.5 text-xs font-medium text-ink-dim transition-colors hover:border-rail-strong hover:text-ink"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <span>CLAUDE.md</span>
-              <span className="text-ink-faint">↗</span>
             </a>
             <a
-              href="https://kit.n3wth.com/ai/mcp.json"
+              href="/ai/mcp.json"
               className="inline-flex items-center gap-2 rounded-md border border-rail px-3 py-1.5 text-xs font-medium text-ink-dim transition-colors hover:border-rail-strong hover:text-ink"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <span>mcp.json</span>
-              <span className="text-ink-faint">↗</span>
             </a>
           </div>
         </div>
