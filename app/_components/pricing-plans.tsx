@@ -30,7 +30,7 @@ const plans = [
     price: 'Custom',
     description: 'For organizations with complex design systems.',
     features: 'Everything in Team + SSO, audit logs, Figma sync, unlimited members, dedicated support + SLA',
-    href: 'mailto:oliver@newth.ai',
+    href: 'mailto:hey@n3wth.com',
   },
 ]
 
