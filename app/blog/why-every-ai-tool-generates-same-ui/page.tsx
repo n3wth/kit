@@ -314,14 +314,14 @@ export function MetricCard({ title, value, trend }) {
         The second step is the context pack: a structured file that describes
         your design system to AI tools. For Cursor, this is a{' '}
         <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">.cursorrules</code>{' '}
-        file. For Claude Code, it is a{' '}
-        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">CLAUDE.md</code>.
+        file. For other AI tools, it is an{' '}
+        <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">AGENTS.md</code>.
         For MCP-compatible tools, it is a server that exposes component metadata
         on demand.
       </p>
 
       <pre className="rounded-lg border border-rail bg-bg-soft p-4 font-mono text-sm text-ink-dim overflow-x-auto">
-{`# Design system constraints (in .cursorrules or CLAUDE.md)
+{`# Design system constraints (in .cursorrules or AGENTS.md)
 
 ## Components
 - Use components from @/components — never install shadcn/ui directly
@@ -397,7 +397,7 @@ export function MetricCard({ title, value, trend }) {
           Put it in{' '}
           <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">.cursorrules</code>{' '}
           or{' '}
-          <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">CLAUDE.md</code>.
+          <code className="rounded bg-bg-raise px-1.5 py-0.5 text-sm text-ink-dim">AGENTS.md</code>.
           Commit it. It should travel with the codebase.
         </li>
         <li>

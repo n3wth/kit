@@ -35,7 +35,7 @@ const posts = [
     slug: 'ai-context-packs-explained',
     title: 'AI Context Packs Explained',
     date: 'February 10, 2026',
-    excerpt: 'What are AI context packs? How .cursorrules, CLAUDE.md, and MCP configs teach AI coding tools to use your design system.',
+    excerpt: 'What are AI context packs? How .cursorrules, AGENTS.md, and MCP configs teach AI coding tools to use your design system.',
   },
 ]
 

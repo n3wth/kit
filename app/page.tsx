@@ -6,10 +6,10 @@ import { Footer } from './_components/footer'
 
 export const metadata: Metadata = {
   title: 'n3wth/kit - shadcn registry with AI context packs',
-  description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or CLAUDE.md so AI tools generate code that uses them correctly.',
+  description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or AGENTS.md so AI tools generate code that uses them correctly.',
   openGraph: {
     title: 'n3wth/kit - shadcn registry with AI context packs',
-    description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or CLAUDE.md so AI tools generate code that uses them correctly.',
+    description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or AGENTS.md so AI tools generate code that uses them correctly.',
     url: 'https://kit.n3wth.com',
     siteName: 'n3wth/kit',
     type: 'website',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'n3wth/kit - shadcn registry with AI context packs',
-    description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or CLAUDE.md so AI tools generate code that uses them correctly.',
+    description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or AGENTS.md so AI tools generate code that uses them correctly.',
   },
 }
 
@@ -39,7 +39,7 @@ export default function Home() {
               A component registry you install from with{' '}
               <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-sm">npx shadcn add</code>.
               Ships with <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-sm">.cursorrules</code>{' '}
-              and <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-sm">CLAUDE.md</code> files
+              and <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-sm">AGENTS.md</code> files
               so AI tools generate code that uses the components correctly.
             </p>
             <div className="mt-8">
@@ -91,8 +91,8 @@ export default function Home() {
             A context pack is a file you drop into your project that tells AI coding tools
             about your components. Cursor reads{' '}
             <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-xs">.cursorrules</code>,
-            Claude Code reads{' '}
-            <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-xs">CLAUDE.md</code>.
+            other AI tools read{' '}
+            <code className="rounded bg-bg-raise px-1.5 py-0.5 font-mono text-xs">AGENTS.md</code>.
             With these files in place, generated code uses your Button instead of inline styles,
             your Card instead of raw divs.
           </p>
@@ -104,10 +104,10 @@ export default function Home() {
               <span>.cursorrules</span>
             </a>
             <a
-              href="/ai/CLAUDE.md"
+              href="/ai/AGENTS.md"
               className="inline-flex items-center gap-2 rounded-md border border-rail px-3 py-1.5 text-xs font-medium text-ink-dim transition-colors hover:border-rail-strong hover:text-ink"
             >
-              <span>CLAUDE.md</span>
+              <span>AGENTS.md</span>
             </a>
             <a
               href="/ai/mcp.json"

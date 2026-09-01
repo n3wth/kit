@@ -1,20 +1,16 @@
 # n3wth/kit
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-stone.svg)](https://opensource.org/licenses/MIT)
-[![Registry](https://img.shields.io/badge/registry-shadcn%20compatible-stone)](https://kit.n3wth.com/r/registry.json)
-[![Components](https://img.shields.io/badge/components-49-stone)](https://kit.n3wth.com/components)
-
-**AI-native component registry for the n3wth design system.**
+AI-native component registry for the n3wth design system.
 
 Components with built-in context packs so AI tools generate on-brand code instead of generic shadcn output.
 
-[**Browse components →**](https://kit.n3wth.com/components) · [**Docs**](https://kit.n3wth.com/docs) · [**Blog**](https://kit.n3wth.com/blog)
+[**Browse components**](https://kit.n3wth.com/components) | [**Docs**](https://kit.n3wth.com/docs) | [**Blog**](https://kit.n3wth.com/blog)
 
 ---
 
 ## The problem
 
-You install shadcn/ui. You add a `.cursorrules` file. You prompt an AI to build a feature. It generates valid React — but it looks nothing like your product. Wrong colors, wrong spacing, wrong component patterns. You spend 30 minutes fixing what should have taken 30 seconds.
+You install shadcn/ui. You add a `.cursorrules` file. You prompt an AI to build a feature. It generates valid React, but it looks nothing like your product. Wrong colors, wrong spacing, wrong component patterns. You spend 30 minutes fixing what should have taken 30 seconds.
 
 This happens because AI tools don't know your design system. They know shadcn defaults.
 
@@ -22,9 +18,9 @@ This happens because AI tools don't know your design system. They know shadcn de
 
 kit is a shadcn-compatible registry that ships every component with machine-readable context:
 
-- **Design tokens** — CSS variables your AI tools can read and apply
-- **AI context packs** — `.cursorrules`, `CLAUDE.md`, and MCP config that teach Cursor, Claude Code, v0, Lovable, and Windsurf what "on-brand" means for your project
-- **Usage rules** — Props, patterns, and accessibility notes in structured JSON that LLMs consume directly
+- **Design tokens** - CSS variables your AI tools can read and apply
+- **AI context packs** - `.cursorrules`, `AGENTS.md`, and MCP config that teach Cursor, Windsurf, v0, Lovable, and other AI tools what "on-brand" means for your project
+- **Usage rules** - Props, patterns, and accessibility notes in structured JSON that LLMs consume directly
 
 The result: AI-generated code that matches your design system on the first try.
 
@@ -54,13 +50,13 @@ npx shadcn add https://kit.n3wth.com/r/button.json
 curl -o .cursorrules https://kit.n3wth.com/ai/cursorrules
 ```
 
-### Claude Code
+### AGENTS.md
 
 ```bash
-curl -o CLAUDE.md https://kit.n3wth.com/ai/CLAUDE.md
+curl -o AGENTS.md https://kit.n3wth.com/ai/AGENTS.md
 ```
 
-### MCP (Cursor, Claude, Cline, etc.)
+### MCP (Cursor, Windsurf, etc.)
 
 Add to your MCP client config:
 
@@ -161,7 +157,7 @@ Add to your MCP client config:
 | Animation hooks (GSAP) | No | Yes |
 | Install command | `npx shadcn add` | `npx shadcn add` (same) |
 
-kit is additive — same install protocol, works with any shadcn-compatible toolchain.
+kit is additive - same install protocol, works with any shadcn-compatible toolchain.
 
 ---
 
@@ -170,7 +166,7 @@ kit is additive — same install protocol, works with any shadcn-compatible tool
 Without kit, prompting an AI gives you shadcn defaults:
 
 ```tsx
-// Generic output — wrong colors, wrong radius, wrong feel
+// Generic output - wrong colors, wrong radius, wrong feel
 <Button className="bg-blue-500 hover:bg-blue-600 rounded-md">
   Get started
 </Button>
@@ -179,7 +175,7 @@ Without kit, prompting an AI gives you shadcn defaults:
 With kit's context pack loaded, the same prompt gives you:
 
 ```tsx
-// On-brand output — correct tokens, correct patterns
+// On-brand output - correct tokens, correct patterns
 <Button variant="primary" size="md">
   Get started
 </Button>

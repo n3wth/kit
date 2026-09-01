@@ -133,7 +133,7 @@ npx shadcn add @n3wth/use-theme
 | File | Target | Purpose |
 |------|--------|---------|
 | `cursorrules` | Cursor | Natural language instructions and component catalog |
-| `CLAUDE.md` | Claude Code | Component API reference with props and patterns |
+| `AGENTS.md` | AI coding tools | Component API reference with props and patterns |
 | `mcp.json` | Any MCP client | MCP server config for direct registry access |
 | `components.json` | Programmatic / any AI | Structured JSON with props, usage, and a11y notes |
 
@@ -147,20 +147,20 @@ Download from https://kit.n3wth.com/ai/ or copy from the [public/ai](https://git
 curl -o .cursorrules https://kit.n3wth.com/ai/cursorrules
 ```
 
-**Claude Code:**
+**AGENTS.md:**
 
 ```bash
-curl -o CLAUDE.md https://kit.n3wth.com/ai/CLAUDE.md
+curl -o AGENTS.md https://kit.n3wth.com/ai/AGENTS.md
 ```
 
-**MCP (Cursor or Claude Code):**
+**MCP (Cursor, Windsurf, etc.):**
 
 ```bash
 # Cursor
 mkdir -p .cursor && curl -o .cursor/mcp.json https://kit.n3wth.com/ai/mcp.json
 
-# Claude Code
-mkdir -p .claude && curl -o .claude/mcp.json https://kit.n3wth.com/ai/mcp.json
+# Other MCP clients
+mkdir -p .mcp && curl -o .mcp/mcp.json https://kit.n3wth.com/ai/mcp.json
 ```
 
 ## Design System

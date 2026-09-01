@@ -3,7 +3,7 @@ import { ComponentGrid } from './_components/component-grid'
 
 export const metadata: Metadata = {
   title: 'Components - n3wth/kit',
-  description: '47 production-ready React components with built-in AI context. Install via shadcn CLI with context packs for v0, Cursor, Claude Code, Lovable, and Windsurf.',
+  description: '47 production-ready React components with built-in AI context. Install via shadcn CLI with context packs for v0, Cursor, Windsurf, Lovable, and Cline.',
 }
 
 export default function ComponentsPage() {

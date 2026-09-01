@@ -3,7 +3,7 @@ import { PostLayout } from '../_components/post-layout'
 
 export const metadata: Metadata = {
   title: 'AI Context Packs Explained - n3wth/kit',
-  description: 'What are AI context packs? How .cursorrules, CLAUDE.md, and MCP configs teach AI coding tools to use your design system.',
+  description: 'What are AI context packs? How .cursorrules, AGENTS.md, and MCP configs teach AI coding tools to use your design system.',
 }
 
 export default function Post() {
@@ -61,11 +61,11 @@ export default function Post() {
       </pre>
 
       <h3 className="mt-8 text-base font-semibold text-ink">
-        2. CLAUDE.md
+        2. AGENTS.md
       </h3>
 
       <p>
-        A structured reference document that Claude Code reads automatically
+        A structured reference document that AI coding tools read automatically
         from your project root. More technical than .cursorrules &mdash; includes
         prop tables, code snippets, and exact API signatures.
       </p>
@@ -131,7 +131,7 @@ Usage:
           your project root automatically
         </li>
         <li>
-          <span className="text-ink">Claude Code</span> reads CLAUDE.md
+          <span className="text-ink">AI coding tools</span> read AGENTS.md
           from your project root automatically
         </li>
         <li>
@@ -161,8 +161,8 @@ Usage:
 {`# For Cursor
 curl -o .cursorrules https://kit.n3wth.com/ai/cursorrules
 
-# For Claude Code
-curl -o CLAUDE.md https://kit.n3wth.com/ai/CLAUDE.md`}
+# For AI coding tools
+curl -o AGENTS.md https://kit.n3wth.com/ai/AGENTS.md`}
       </pre>
 
       <p>

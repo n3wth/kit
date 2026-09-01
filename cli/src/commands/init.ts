@@ -35,7 +35,7 @@ const CURSORRULES = `# n3wth Design System
 - /app - Next.js app router pages and layouts
 `
 
-const CLAUDE_MD = `# Project Context
+const AGENTS_MD = `# Project Context
 
 This project uses the n3wth design system (@n3wth/kit).
 
@@ -147,9 +147,9 @@ async function copyContextPacks(projectDir: string): Promise<void> {
   console.log(chalk.blue('Copying AI context packs...'))
 
   await writeFile(join(projectDir, '.cursorrules'), CURSORRULES)
-  await writeFile(join(projectDir, 'CLAUDE.md'), CLAUDE_MD)
+  await writeFile(join(projectDir, 'AGENTS.md'), AGENTS_MD)
 
-  console.log(chalk.green('Created .cursorrules and CLAUDE.md'))
+  console.log(chalk.green('Created .cursorrules and AGENTS.md'))
 }
 
 async function setTheme(projectDir: string, theme: 'dark' | 'light'): Promise<void> {
