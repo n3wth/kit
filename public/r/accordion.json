@@ -14,5 +14,82 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Accessible accordion with single/multiple modes and animated content.",
+      "exports": [
+        "AccordionProps",
+        "Accordion",
+        "AccordionItemProps",
+        "AccordionItem",
+        "AccordionTriggerProps",
+        "AccordionTrigger",
+        "AccordionContentProps",
+        "AccordionContent"
+      ],
+      "import": "import { Accordion } from '@/components/ui/accordion'",
+      "props": [
+        {
+          "name": "type",
+          "type": "'single' | 'multiple'",
+          "description": "",
+          "default": "'single'"
+        },
+        {
+          "name": "value",
+          "type": "string[]",
+          "description": ""
+        },
+        {
+          "name": "defaultValue",
+          "type": "string[]",
+          "description": ""
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string[]) => void",
+          "description": ""
+        },
+        {
+          "name": "collapsible",
+          "type": "boolean",
+          "description": "",
+          "default": "false"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "",
+          "required": true
+        }
+      ],
+      "variants": [
+        {
+          "name": "type",
+          "values": [
+            "single",
+            "multiple"
+          ],
+          "description": "Accepts 'single', 'multiple'.",
+          "default": "single"
+        }
+      ],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/accordion.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Renders ARIA role(s): region.",
+        "Sets aria-controls, aria-disabled, aria-expanded, aria-hidden, aria-labelledby.",
+        "Respects prefers-reduced-motion.",
+        "Generates ids with useId, so they are SSR-safe and unique per instance."
+      ]
+    }
+  }
 }

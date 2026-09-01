@@ -16,5 +16,151 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "curated",
+      "summary": "Listbox-style select supporting single or multi selection, optional search, and a compound API. This is kit's select primitive.",
+      "exports": [
+        "Dropdown",
+        "DropdownTrigger",
+        "DropdownMenu",
+        "DropdownItem",
+        "DropdownOption",
+        "DropdownProps"
+      ],
+      "import": "import { Dropdown } from '@/components/ui/dropdown'",
+      "props": [
+        {
+          "name": "options",
+          "type": "DropdownOption[]",
+          "required": true,
+          "description": "Items to render, each { value, label, disabled? }. Ignored when using the compound children API."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Controlled selection for single-select mode."
+        },
+        {
+          "name": "values",
+          "type": "string[]",
+          "description": "Controlled selection for multi-select mode."
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "description": "Initial selection for uncontrolled single-select."
+        },
+        {
+          "name": "defaultValues",
+          "type": "string[]",
+          "description": "Initial selection for uncontrolled multi-select."
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string) => void",
+          "description": "Fires on selection change in single-select mode."
+        },
+        {
+          "name": "onMultiChange",
+          "type": "(values: string[]) => void",
+          "description": "Fires on selection change in multi-select mode."
+        },
+        {
+          "name": "multi",
+          "type": "boolean",
+          "description": "Enable multi-select. Pair with values/defaultValues and onMultiChange."
+        },
+        {
+          "name": "searchable",
+          "type": "boolean",
+          "description": "Render a filter input at the top of the menu."
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "description": "Trigger text when nothing is selected."
+        },
+        {
+          "name": "searchPlaceholder",
+          "type": "string",
+          "description": "Placeholder for the search input when searchable is set."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "description": "Disable the trigger."
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "default": "'md'",
+          "description": "Trigger height and text scale."
+        },
+        {
+          "name": "variant",
+          "type": "'default' | 'glass'",
+          "default": "'default'",
+          "description": "Trigger surface treatment."
+        },
+        {
+          "name": "menuClassName",
+          "type": "string",
+          "description": "Extra classes for the menu, since className targets the trigger."
+        },
+        {
+          "name": "portal",
+          "type": "boolean",
+          "description": "Render the menu in a portal to escape overflow-hidden ancestors."
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "Compound API (Dropdown.Trigger / Dropdown.Menu / Dropdown.Item). Overrides options-based rendering."
+        }
+      ],
+      "variants": [
+        {
+          "name": "variant",
+          "values": [
+            "default",
+            "glass"
+          ],
+          "default": "default",
+          "description": "default: transparent with glass border. glass: translucent blurred fill."
+        },
+        {
+          "name": "size",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "default": "md",
+          "description": "Matches the Input size scale for aligned form rows."
+        }
+      ],
+      "example": "<Dropdown\n  options={[\n    { value: 'daily', label: 'Daily' },\n    { value: 'weekly', label: 'Weekly' },\n  ]}\n  value={cadence}\n  onChange={setCadence}\n  placeholder=\"Select cadence\"\n/>",
+      "do": [
+        "Use onChange with value for single-select, and onMultiChange with values for multi-select.",
+        "Set portal when the dropdown sits inside a container with overflow hidden or a transformed ancestor.",
+        "Set searchable once the list is long enough to scan awkwardly.",
+        "Use menuClassName to style the menu — className applies to the trigger."
+      ],
+      "dont": [
+        "Do not mix value with values; pick the mode that matches the multi prop.",
+        "Do not use this for menus of actions — it has listbox semantics, not menu semantics.",
+        "Do not pass both options and compound children; children take over rendering entirely.",
+        "Do not wrap it in a native <select> or duplicate a hidden select for forms."
+      ],
+      "a11y": [
+        "Trigger is role=\"combobox\" with aria-expanded, aria-haspopup=\"listbox\", and aria-controls.",
+        "Menu is role=\"listbox\" with aria-multiselectable in multi mode; items are role=\"option\" with aria-selected.",
+        "Disabled options set aria-disabled and are skipped on selection.",
+        "The search input is role=\"searchbox\" with aria-label=\"Filter options\".",
+        "Supply a visible label or aria-label on the trigger — the placeholder alone is not an accessible name."
+      ]
+    }
+  }
 }

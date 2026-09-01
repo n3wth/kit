@@ -13,5 +13,79 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Speech or thought bubble with directional tail.",
+      "exports": [
+        "BubbleDirection",
+        "BubbleVariant",
+        "BubbleSize",
+        "SpeechBubbleProps",
+        "SpeechBubble"
+      ],
+      "import": "import { SpeechBubble } from '@/components/ui/speech-bubble'",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "",
+          "required": true
+        },
+        {
+          "name": "direction",
+          "type": "BubbleDirection",
+          "description": "",
+          "default": "'bottom'"
+        },
+        {
+          "name": "variant",
+          "type": "BubbleVariant",
+          "description": "",
+          "default": "'speech'"
+        },
+        {
+          "name": "size",
+          "type": "BubbleSize",
+          "description": "",
+          "default": "'md'"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "description": "",
+          "default": "'var(--glass-bg, rgba(255, 255, 255, 0.05))'"
+        },
+        {
+          "name": "borderColor",
+          "type": "string",
+          "description": "",
+          "default": "'var(--glass-border, rgba(255, 255, 255, 0.1))'"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": ""
+        }
+      ],
+      "variants": [],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/speech-bubble.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "No ARIA roles or attributes are set by this component; supply them at the call site if the usage is interactive."
+      ]
+    }
+  }
 }

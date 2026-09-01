@@ -12,5 +12,77 @@
       "type": "registry:hook"
     }
   ],
-  "type": "registry:hook"
+  "type": "registry:hook",
+  "meta": {
+    "usageRules": {
+      "status": "curated",
+      "summary": "Toast state hook plus provider. Returns a toast function with success, error, warning, and info shortcuts.",
+      "exports": [
+        "useToast",
+        "ToastProvider",
+        "ToastOptions",
+        "UseToastReturn",
+        "ToastFn"
+      ],
+      "import": "import { useToast, ToastProvider } from '@/hooks/use-toast'",
+      "props": [
+        {
+          "name": "maxToasts",
+          "type": "number",
+          "default": "5",
+          "description": "Provider and hook argument. Oldest toasts are dropped once the stack exceeds it."
+        },
+        {
+          "name": "position",
+          "type": "ToastPosition",
+          "default": "'top-right'",
+          "description": "ToastProvider only. Passed through to the rendered ToastContainer."
+        },
+        {
+          "name": "toast(options)",
+          "type": "(options: ToastOptions) => string",
+          "description": "Queues a toast and returns its id. Options: title, description, variant, duration, icon."
+        },
+        {
+          "name": "dismiss",
+          "type": "(id: string) => void",
+          "description": "Removes one toast by the id returned from toast()."
+        },
+        {
+          "name": "dismissAll",
+          "type": "() => void",
+          "description": "Clears the whole stack."
+        }
+      ],
+      "variants": [
+        {
+          "name": "shortcut",
+          "values": [
+            "toast.success",
+            "toast.error",
+            "toast.warning",
+            "toast.info"
+          ],
+          "description": "Each calls toast() with the matching variant preset; they take ToastOptions without variant."
+        }
+      ],
+      "example": "<ToastProvider position=\"bottom-right\">\n  <App />\n</ToastProvider>\n\n// anywhere inside\nconst { toast, dismiss } = useToast()\nconst id = toast.error({ title: 'Upload failed' })",
+      "do": [
+        "Mount ToastProvider once near the root so every consumer shares one stack.",
+        "Keep the id returned by toast() when you need to dismiss it programmatically.",
+        "Use the variant shortcuts rather than passing variant by hand.",
+        "Install the toast and icon components too — this hook imports and renders both."
+      ],
+      "dont": [
+        "Do not call useToast outside a ToastProvider unless you want the isolated fallback state — that instance renders no container and its toasts are invisible.",
+        "Do not mount more than one ToastProvider; each has its own independent stack.",
+        "Do not hold onto the toasts array to render your own container when using the provider — it already renders one."
+      ],
+      "a11y": [
+        "Toasts inherit role=\"alert\" and aria-live=\"polite\" from the Toast component.",
+        "Raise duration or set 0 for messages a screen reader user must not miss.",
+        "Because the provider renders the container at a fixed position, keep the stack short so it does not cover focused content."
+      ]
+    }
+  }
 }

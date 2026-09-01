@@ -13,5 +13,114 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "curated",
+      "summary": "Primary interactive control. Renders a <button>, or clones a single child element when asChild is set.",
+      "exports": [
+        "Button",
+        "ButtonProps",
+        "ButtonSize"
+      ],
+      "import": "import { Button } from '@/components/ui/button'",
+      "props": [
+        {
+          "name": "variant",
+          "type": "'primary' | 'secondary' | 'ghost' | 'glass'",
+          "default": "'primary'",
+          "description": "Visual treatment. Primary is the filled white pill."
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg' | { base?: ButtonSize; md?: ButtonSize; lg?: ButtonSize }",
+          "default": "'md'",
+          "description": "Padding and text scale. Accepts a responsive object keyed by breakpoint; omitting base falls back to sm mobile-first."
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "Button label. Required."
+        },
+        {
+          "name": "isLoading",
+          "type": "boolean",
+          "default": "false",
+          "description": "Replaces leftIcon with a spinner, hides rightIcon, and disables the button."
+        },
+        {
+          "name": "leftIcon",
+          "type": "ReactNode",
+          "description": "Node rendered before the label. Hidden while isLoading."
+        },
+        {
+          "name": "rightIcon",
+          "type": "ReactNode",
+          "description": "Node rendered after the label. Hidden while isLoading."
+        },
+        {
+          "name": "asChild",
+          "type": "boolean",
+          "default": "false",
+          "description": "Clone the single child element instead of rendering a <button>, merging button classes onto it. Use for links."
+        },
+        {
+          "name": "touchTarget",
+          "type": "boolean",
+          "default": "false",
+          "description": "Applies min-w-[44px] min-h-[44px] to meet the WCAG 2.5.5 target size guideline."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "description": "Native disabled. Also forced on while isLoading is true."
+        }
+      ],
+      "variants": [
+        {
+          "name": "variant",
+          "values": [
+            "primary",
+            "secondary",
+            "ghost",
+            "glass"
+          ],
+          "default": "primary",
+          "description": "primary: filled white with glow. secondary: transparent with glass border. ghost: borderless, muted text. glass: translucent blurred surface."
+        },
+        {
+          "name": "size",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "default": "md",
+          "description": "sm: px-3 py-1.5 text-xs. md: px-4 py-2 text-sm. lg: px-6 py-3 text-base."
+        }
+      ],
+      "example": "<Button variant=\"primary\" size=\"md\" onClick={handleSave}>\n  Save changes\n</Button>",
+      "do": [
+        "Use exactly one primary button per view section; use secondary or ghost for the rest.",
+        "Set isLoading during async work instead of manually disabling and swapping children.",
+        "Use asChild with a single child element (such as <Link>) rather than nesting a link inside a button.",
+        "Pass a responsive size object when the control needs to grow on larger breakpoints.",
+        "Set touchTarget on icon-only or compact buttons in touch surfaces."
+      ],
+      "dont": [
+        "Do not pass shadcn/ui variant names such as default, destructive, outline, or link — this Button does not define them.",
+        "Do not override the pill shape, background, or border via className; pick a variant instead.",
+        "Do not render multiple children with asChild — only a single valid element is cloned.",
+        "Do not pair isLoading with a leftIcon and expect both; the spinner replaces the left icon."
+      ],
+      "a11y": [
+        "Renders a native <button> with a native disabled attribute, so keyboard and screen reader semantics come for free.",
+        "Includes the focus-ring utility for a visible keyboard focus indicator; do not remove it.",
+        "Icon-only buttons need an explicit aria-label — the component does not infer one.",
+        "touchTarget enforces the 44x44px minimum from WCAG 2.5.5 Target Size.",
+        "While isLoading the button is disabled; announce longer operations with a live region elsewhere."
+      ]
+    }
+  }
 }

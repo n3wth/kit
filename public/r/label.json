@@ -13,5 +13,48 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Form label with required indicator and disabled state.",
+      "exports": [
+        "LabelProps",
+        "Label"
+      ],
+      "import": "import { Label } from '@/components/ui/label'",
+      "props": [
+        {
+          "name": "required",
+          "type": "boolean",
+          "description": "",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "description": "",
+          "default": "false"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "",
+          "required": true
+        }
+      ],
+      "variants": [],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/label.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Sets aria-hidden."
+      ]
+    }
+  }
 }

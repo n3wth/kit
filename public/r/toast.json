@@ -14,5 +14,113 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "curated",
+      "summary": "Transient notification with a variant icon and auto-dismiss timer, plus a fixed-position container.",
+      "exports": [
+        "Toast",
+        "ToastContainer",
+        "ToastProps",
+        "ToastData",
+        "ToastVariant",
+        "ToastPosition"
+      ],
+      "import": "import { Toast, ToastContainer } from '@/components/ui/toast'",
+      "props": [
+        {
+          "name": "variant",
+          "type": "'default' | 'success' | 'error' | 'warning' | 'info'",
+          "default": "'default'",
+          "description": "Selects the border color and default icon."
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "Bold first line."
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Supporting body text."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "5000",
+          "description": "Milliseconds before auto-dismiss. Set 0 to keep it until dismissed."
+        },
+        {
+          "name": "icon",
+          "type": "ReactNode",
+          "description": "Overrides the variant icon."
+        },
+        {
+          "name": "onDismiss",
+          "type": "() => void",
+          "description": "Fires after the 200ms exit animation completes."
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "default": "true",
+          "description": "Set false to trigger the exit animation."
+        },
+        {
+          "name": "position",
+          "type": "'top-right' | 'top-left' | 'top-center' | 'bottom-right' | 'bottom-left' | 'bottom-center'",
+          "default": "'top-right'",
+          "description": "ToastContainer only. Where the stack is anchored."
+        }
+      ],
+      "variants": [
+        {
+          "name": "variant",
+          "values": [
+            "default",
+            "success",
+            "error",
+            "warning",
+            "info"
+          ],
+          "default": "default",
+          "description": "default: bell icon, neutral border. success: sage. error: coral. warning: gold. info: mint."
+        },
+        {
+          "name": "position",
+          "values": [
+            "top-right",
+            "top-left",
+            "top-center",
+            "bottom-right",
+            "bottom-left",
+            "bottom-center"
+          ],
+          "default": "top-right",
+          "description": "ToastContainer anchor point."
+        }
+      ],
+      "example": "const { toast } = useToast()\n\ntoast.success({ title: 'Saved', description: 'Your changes are live.' })",
+      "do": [
+        "Prefer the use-toast hook and ToastProvider over rendering Toast by hand — the provider wires the container and dismissal.",
+        "Set duration={0} for errors that need an explicit acknowledgement.",
+        "Keep the title to a few words and put detail in description.",
+        "Render one ToastContainer per position, not one per toast."
+      ],
+      "dont": [
+        "Do not depend on the Icon component being absent — Toast imports Icon, so install icon alongside it.",
+        "Do not use toasts for content the user must act on; use modal instead.",
+        "Do not stack more than a few at once — use-toast caps the stack at maxToasts (default 5).",
+        "Do not put interactive controls inside a toast that auto-dismisses."
+      ],
+      "a11y": [
+        "Renders role=\"alert\" with aria-live=\"polite\".",
+        "The dismiss button has aria-label=\"Dismiss notification\".",
+        "The variant icon is decorative — the title and description carry the message.",
+        "Entrance and exit animations are wrapped in motion-safe, so they are skipped under prefers-reduced-motion.",
+        "Auto-dismiss can outrun a screen reader; raise duration or use 0 for important messages."
+      ]
+    }
+  }
 }

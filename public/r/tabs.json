@@ -14,5 +14,78 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "curated",
+      "summary": "Compound tabs with roving focus, arrow-key navigation, and an animated active indicator.",
+      "exports": [
+        "Tabs",
+        "TabsList",
+        "TabsTab",
+        "TabsPanel"
+      ],
+      "import": "import { Tabs, TabsList, TabsTab, TabsPanel } from '@/components/ui/tabs'",
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Controlled active tab value. Omit for uncontrolled mode."
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "description": "Initial active tab for uncontrolled mode."
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string) => void",
+          "description": "Fires when the active tab changes. Named onChange, not onValueChange."
+        },
+        {
+          "name": "variant",
+          "type": "'underline' | 'pill'",
+          "default": "'underline'",
+          "description": "Indicator style; set on the Tabs root and read by list and tabs via context."
+        },
+        {
+          "name": "glass",
+          "type": "boolean",
+          "default": "false",
+          "description": "TabsList only. Adds a blurred backdrop to the list."
+        }
+      ],
+      "variants": [
+        {
+          "name": "variant",
+          "values": [
+            "underline",
+            "pill"
+          ],
+          "default": "underline",
+          "description": "underline: bottom border on the list with a 2px sliding indicator. pill: rounded track with a filled sliding pill."
+        }
+      ],
+      "example": "<Tabs defaultValue=\"overview\" variant=\"pill\">\n  <TabsList>\n    <TabsTab value=\"overview\">Overview</TabsTab>\n    <TabsTab value=\"usage\">Usage</TabsTab>\n  </TabsList>\n  <TabsPanel value=\"overview\">{overview}</TabsPanel>\n  <TabsPanel value=\"usage\">{usage}</TabsPanel>\n</Tabs>",
+      "do": [
+        "Give every TabsTab a matching TabsPanel with the same value string.",
+        "Set defaultValue (or value) — with neither, the internal value starts empty and no panel renders.",
+        "Set variant on the Tabs root; TabsList and TabsTab read it from context.",
+        "Keep tab labels short so the sliding indicator stays legible."
+      ],
+      "dont": [
+        "Do not render TabsList, TabsTab, or TabsPanel outside a Tabs parent — the context hook throws.",
+        "Do not use onValueChange; this component calls it onChange.",
+        "Do not mount panels for inactive tabs expecting hidden content — inactive panels return null and unmount.",
+        "Do not put variant or glass on the wrong element: variant belongs on Tabs, glass on TabsList."
+      ],
+      "a11y": [
+        "List is role=\"tablist\"; tabs are role=\"tab\" with aria-selected and aria-controls; panels are role=\"tabpanel\" with aria-labelledby.",
+        "Roving tabindex — only the active tab is in the tab order.",
+        "ArrowLeft, ArrowRight, Home, and End move focus and activate, wrapping at both ends.",
+        "ids are generated with useId, so they are SSR-safe and unique per instance.",
+        "The indicator animation is skipped when prefers-reduced-motion is set."
+      ]
+    }
+  }
 }

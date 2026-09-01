@@ -13,5 +13,96 @@
       "type": "registry:block"
     }
   ],
-  "type": "registry:block"
+  "type": "registry:block",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Site footer with link columns, social icons, and copyright.",
+      "exports": [
+        "FooterLink",
+        "FooterSection",
+        "FooterSite",
+        "FooterProps",
+        "Footer"
+      ],
+      "import": "import { Footer } from '@/components/ui/footer'",
+      "props": [
+        {
+          "name": "sites",
+          "type": "FooterSite[]",
+          "description": ""
+        },
+        {
+          "name": "currentSite",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "legalLinks",
+          "type": "FooterLink[]",
+          "description": ""
+        },
+        {
+          "name": "copyright",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "logo",
+          "type": "ReactNode",
+          "description": ""
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "sections",
+          "type": "FooterSection[]",
+          "description": ""
+        },
+        {
+          "name": "socialLinks",
+          "type": "Array<{",
+          "description": ""
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "description": "",
+          "required": true
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "description": "",
+          "required": true
+        },
+        {
+          "name": "icon",
+          "type": "ReactNode",
+          "description": "",
+          "required": true
+        },
+        {
+          "name": "bottomLinks",
+          "type": "FooterLink[]",
+          "description": ""
+        }
+      ],
+      "variants": [],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/footer.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Sets aria-label."
+      ]
+    }
+  }
 }

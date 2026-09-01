@@ -16,5 +16,97 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "curated",
+      "summary": "Portal-rendered dialog with focus trap, scroll lock, and Escape handling. This is kit's dialog primitive.",
+      "exports": [
+        "Modal",
+        "ModalHeader",
+        "ModalTitle",
+        "ModalDescription",
+        "ModalBody",
+        "ModalFooter",
+        "ModalClose"
+      ],
+      "import": "import { Modal } from '@/components/ui/modal'",
+      "props": [
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "required": true,
+          "description": "Whether the modal is open. Fully controlled."
+        },
+        {
+          "name": "onClose",
+          "type": "() => void",
+          "required": true,
+          "description": "Called on backdrop click, Escape, and the close button. You must flip isOpen yourself."
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg' | 'full'",
+          "default": "'md'",
+          "description": "Max width of the panel. full is a screen-height sheet with no radius."
+        },
+        {
+          "name": "closeOnBackdropClick",
+          "type": "boolean",
+          "default": "true",
+          "description": "Whether clicking the backdrop calls onClose."
+        },
+        {
+          "name": "closeOnEscape",
+          "type": "boolean",
+          "default": "true",
+          "description": "Whether pressing Escape calls onClose."
+        },
+        {
+          "name": "ariaLabel",
+          "type": "string",
+          "description": "Accessible name for the dialog. Use when there is no ModalTitle to label it."
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "Panel contents, typically the compound sub-components."
+        }
+      ],
+      "variants": [
+        {
+          "name": "size",
+          "values": [
+            "sm",
+            "md",
+            "lg",
+            "full"
+          ],
+          "default": "md",
+          "description": "sm: max-w-[400px]. md: max-w-[560px]. lg: max-w-[720px]. full: full-screen, w-screen h-[100dvh], no border radius."
+        }
+      ],
+      "example": "const [open, setOpen] = useState(false)\n\n<Modal isOpen={open} onClose={() => setOpen(false)} size=\"md\">\n  <Modal.Header>\n    <Modal.Title>Delete project</Modal.Title>\n  </Modal.Header>\n  <Modal.Body>This cannot be undone.</Modal.Body>\n  <Modal.Footer>\n    <Button variant=\"secondary\" onClick={() => setOpen(false)}>Cancel</Button>\n    <Button onClick={confirm}>Delete</Button>\n  </Modal.Footer>\n</Modal>",
+      "do": [
+        "Drive isOpen from state and close by setting it false inside onClose.",
+        "Include a Modal.Title, or pass ariaLabel when the dialog has no visible title.",
+        "Give destructive confirmations an explicit Cancel action rather than relying on the backdrop.",
+        "Use size=\"full\" for mobile sheets and long forms."
+      ],
+      "dont": [
+        "Do not render Modal conditionally with `{open && <Modal .../>}` — it handles its own mount and exit animation from isOpen.",
+        "Do not set both ariaLabel and a Modal.Title; ariaLabel wins and the visible title stops being the accessible name.",
+        "Do not disable both closeOnBackdropClick and closeOnEscape without providing a visible close control.",
+        "Do not add your own body scroll lock — the modal already locks and restores scroll position."
+      ],
+      "a11y": [
+        "Panel renders role=\"dialog\" with aria-modal=\"true\" and tabIndex={-1}.",
+        "Focus moves to the first focusable element on open and returns to the previously focused element on close.",
+        "Tab and Shift+Tab are trapped inside the panel.",
+        "Escape closes by default; keep that unless the dialog is genuinely blocking.",
+        "Respects prefers-reduced-motion — transform and transition are dropped under motion-reduce."
+      ]
+    }
+  }
 }

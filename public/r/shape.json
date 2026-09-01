@@ -18,5 +18,95 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Decorative SVG shape with pattern fills and responsive sizing.",
+      "exports": [
+        "ShapeType",
+        "ResponsiveSize",
+        "ShapeProps",
+        "Shape"
+      ],
+      "import": "import { Shape } from '@/components/ui/shape'",
+      "props": [
+        {
+          "name": "type",
+          "type": "ShapeType",
+          "description": "",
+          "required": true
+        },
+        {
+          "name": "size",
+          "type": "number | { width: number; height: number } | ResponsiveSize",
+          "description": "",
+          "default": "48"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "description": "",
+          "default": "'currentColor'"
+        },
+        {
+          "name": "pattern",
+          "type": "PatternType",
+          "description": "",
+          "default": "'solid'"
+        },
+        {
+          "name": "patternColors",
+          "type": "string[]",
+          "description": ""
+        },
+        {
+          "name": "patternScale",
+          "type": "number",
+          "description": "",
+          "default": "1"
+        },
+        {
+          "name": "patternAngle",
+          "type": "number",
+          "description": "",
+          "default": "45"
+        },
+        {
+          "name": "rotation",
+          "type": "number",
+          "description": "",
+          "default": "0"
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "description": "",
+          "default": "1"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": ""
+        }
+      ],
+      "variants": [],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/shape.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Sets aria-hidden."
+      ]
+    }
+  }
 }

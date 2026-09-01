@@ -14,5 +14,64 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Copyable command display box with clipboard support.",
+      "exports": [
+        "CommandBoxProps",
+        "CommandBox"
+      ],
+      "import": "import { CommandBox } from '@/components/ui/command-box'",
+      "props": [
+        {
+          "name": "command",
+          "type": "string",
+          "description": "",
+          "required": true
+        },
+        {
+          "name": "variant",
+          "type": "'default' | 'primary'",
+          "description": "",
+          "default": "'default'"
+        },
+        {
+          "name": "showCopyButton",
+          "type": "boolean",
+          "description": "",
+          "default": "true"
+        },
+        {
+          "name": "onCopy",
+          "type": "() => void",
+          "description": ""
+        }
+      ],
+      "variants": [
+        {
+          "name": "variant",
+          "values": [
+            "default",
+            "primary"
+          ],
+          "description": "Accepts 'default', 'primary'.",
+          "default": "default"
+        }
+      ],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/command-box.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Renders ARIA role(s): status.",
+        "Sets aria-label, aria-live."
+      ]
+    }
+  }
 }

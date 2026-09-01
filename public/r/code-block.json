@@ -13,5 +13,64 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Lightweight syntax-highlighting code block with line numbers.",
+      "exports": [
+        "CodeBlockProps",
+        "CodeBlock"
+      ],
+      "import": "import { CodeBlock } from '@/components/ui/code-block'",
+      "props": [
+        {
+          "name": "code",
+          "type": "string",
+          "description": "",
+          "required": true
+        },
+        {
+          "name": "language",
+          "type": "'javascript' | 'typescript' | 'json' | 'bash' | 'css'",
+          "description": ""
+        },
+        {
+          "name": "showLineNumbers",
+          "type": "boolean",
+          "description": "",
+          "default": "false"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "variants": [
+        {
+          "name": "language",
+          "values": [
+            "javascript",
+            "typescript",
+            "json",
+            "bash",
+            "css"
+          ],
+          "description": "Accepts 'javascript', 'typescript', 'json', 'bash', 'css'."
+        }
+      ],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/code-block.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "No ARIA roles or attributes are set by this component; supply them at the call site if the usage is interactive."
+      ]
+    }
+  }
 }

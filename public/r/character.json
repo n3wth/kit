@@ -13,5 +13,84 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Expressive SVG character face with expressions and accessories.",
+      "exports": [
+        "Expression",
+        "Accessory",
+        "CharacterProps",
+        "Character"
+      ],
+      "import": "import { Character } from '@/components/ui/character'",
+      "props": [
+        {
+          "name": "expression",
+          "type": "Expression",
+          "description": "",
+          "default": "'happy'"
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "description": "",
+          "default": "48"
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "description": "",
+          "default": "'#A78BFA'"
+        },
+        {
+          "name": "featureColor",
+          "type": "string",
+          "description": "",
+          "default": "'#1d1d1f'"
+        },
+        {
+          "name": "accessory",
+          "type": "Accessory",
+          "description": "",
+          "default": "'none'"
+        },
+        {
+          "name": "accessoryColor",
+          "type": "string",
+          "description": "",
+          "default": "'#FF6B9D'"
+        },
+        {
+          "name": "animate",
+          "type": "boolean",
+          "description": "",
+          "default": "false"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": ""
+        }
+      ],
+      "variants": [],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/character.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Respects prefers-reduced-motion."
+      ]
+    }
+  }
 }

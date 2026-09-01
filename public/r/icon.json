@@ -16,5 +16,42 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Icon wrapper around iconoir-react with named icon map and size presets.",
+      "exports": [
+        "IconName",
+        "IconProps",
+        "Icon"
+      ],
+      "import": "import { Icon } from '@/components/ui/icon'",
+      "props": [
+        {
+          "name": "name",
+          "type": "IconName",
+          "description": "",
+          "required": true
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl' | number",
+          "description": ""
+        }
+      ],
+      "variants": [],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/icon.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Sets aria-hidden."
+      ]
+    }
+  }
 }

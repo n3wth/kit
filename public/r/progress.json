@@ -13,5 +13,93 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Animated progress bar with value label and semantic color states.",
+      "exports": [
+        "ProgressProps",
+        "Progress"
+      ],
+      "import": "import { Progress } from '@/components/ui/progress'",
+      "props": [
+        {
+          "name": "value",
+          "type": "number",
+          "description": "",
+          "required": true
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "description": "",
+          "default": "100"
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "description": "",
+          "default": "'md'"
+        },
+        {
+          "name": "variant",
+          "type": "'default' | 'success' | 'warning' | 'error'",
+          "description": "",
+          "default": "'default'"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "showValue",
+          "type": "boolean",
+          "description": "",
+          "default": "false"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "variants": [
+        {
+          "name": "size",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "description": "Accepts 'sm', 'md', 'lg'.",
+          "default": "md"
+        },
+        {
+          "name": "variant",
+          "values": [
+            "default",
+            "success",
+            "warning",
+            "error"
+          ],
+          "description": "Accepts 'default', 'success', 'warning', 'error'.",
+          "default": "default"
+        }
+      ],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/progress.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Renders ARIA role(s): progressbar.",
+        "Sets aria-label, aria-valuemax, aria-valuemin, aria-valuenow."
+      ]
+    }
+  }
 }

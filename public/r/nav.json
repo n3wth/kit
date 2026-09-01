@@ -16,5 +16,86 @@
       "type": "registry:block"
     }
   ],
-  "type": "registry:block"
+  "type": "registry:block",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Responsive navigation bar with desktop links, mobile drawer, and theme toggle.",
+      "exports": [
+        "NavItem",
+        "NavProps",
+        "Nav"
+      ],
+      "import": "import { Nav } from '@/components/ui/nav'",
+      "props": [
+        {
+          "name": "logo",
+          "type": "ReactNode",
+          "description": ""
+        },
+        {
+          "name": "logoHref",
+          "type": "string",
+          "description": "",
+          "default": "'/'"
+        },
+        {
+          "name": "items",
+          "type": "NavItem[]",
+          "description": ""
+        },
+        {
+          "name": "theme",
+          "type": "'dark' | 'light'",
+          "description": "",
+          "default": "'dark'"
+        },
+        {
+          "name": "onThemeToggle",
+          "type": "() => void",
+          "description": ""
+        },
+        {
+          "name": "showThemeToggle",
+          "type": "boolean",
+          "description": "",
+          "default": "true"
+        },
+        {
+          "name": "fixed",
+          "type": "boolean",
+          "description": "",
+          "default": "false"
+        },
+        {
+          "name": "hideOnScroll",
+          "type": "boolean",
+          "description": "",
+          "default": "false"
+        }
+      ],
+      "variants": [
+        {
+          "name": "theme",
+          "values": [
+            "dark",
+            "light"
+          ],
+          "description": "Accepts 'dark', 'light'.",
+          "default": "dark"
+        }
+      ],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/nav.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Sets aria-expanded, aria-hidden, aria-label."
+      ]
+    }
+  }
 }

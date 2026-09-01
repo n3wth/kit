@@ -13,5 +13,42 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "SVG noise texture overlay for visual grain effect.",
+      "exports": [
+        "NoiseOverlayProps",
+        "NoiseOverlay"
+      ],
+      "import": "import { NoiseOverlay } from '@/components/ui/noise-overlay'",
+      "props": [
+        {
+          "name": "opacity",
+          "type": "number",
+          "description": "",
+          "default": "0.03"
+        },
+        {
+          "name": "fixed",
+          "type": "boolean",
+          "description": "",
+          "default": "true"
+        }
+      ],
+      "variants": [],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/noise-overlay.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Sets aria-hidden."
+      ]
+    }
+  }
 }

@@ -15,5 +15,89 @@
       "type": "registry:block"
     }
   ],
-  "type": "registry:block"
+  "type": "registry:block",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Hero section with badge, title, description, and CTA buttons.",
+      "exports": [
+        "HeroCTA",
+        "HeroProps",
+        "Hero"
+      ],
+      "import": "import { Hero } from '@/components/ui/hero'",
+      "props": [
+        {
+          "name": "badge",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "title",
+          "type": "ReactNode",
+          "description": "",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "ReactNode",
+          "description": ""
+        },
+        {
+          "name": "ctas",
+          "type": "HeroCTA[]",
+          "description": ""
+        },
+        {
+          "name": "align",
+          "type": "'left' | 'center'",
+          "description": "",
+          "default": "'center'"
+        },
+        {
+          "name": "size",
+          "type": "'default' | 'large'",
+          "description": "",
+          "default": "'default'"
+        },
+        {
+          "name": "gradient",
+          "type": "boolean",
+          "description": "",
+          "default": "true"
+        }
+      ],
+      "variants": [
+        {
+          "name": "align",
+          "values": [
+            "left",
+            "center"
+          ],
+          "description": "Accepts 'left', 'center'.",
+          "default": "center"
+        },
+        {
+          "name": "size",
+          "values": [
+            "default",
+            "large"
+          ],
+          "description": "Accepts 'default', 'large'.",
+          "default": "default"
+        }
+      ],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/hero.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "No ARIA roles or attributes are set by this component; supply them at the call site if the usage is interactive."
+      ]
+    }
+  }
 }

@@ -13,5 +13,56 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Navigation link with default, underline, and pill variants.",
+      "exports": [
+        "NavLinkProps",
+        "NavLink"
+      ],
+      "import": "import { NavLink } from '@/components/ui/nav-link'",
+      "props": [
+        {
+          "name": "variant",
+          "type": "'default' | 'underline' | 'pill'",
+          "description": ""
+        },
+        {
+          "name": "isActive",
+          "type": "boolean",
+          "description": ""
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "",
+          "required": true
+        }
+      ],
+      "variants": [
+        {
+          "name": "variant",
+          "values": [
+            "default",
+            "underline",
+            "pill"
+          ],
+          "description": "Accepts 'default', 'underline', 'pill'."
+        }
+      ],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/nav-link.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Uses the focus-ring utility for a visible keyboard focus indicator; do not remove it."
+      ]
+    }
+  }
 }

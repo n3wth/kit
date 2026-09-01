@@ -16,5 +16,99 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "curated",
+      "summary": "Hover and focus tooltip rendered in a portal with viewport-aware flipping.",
+      "exports": [
+        "Tooltip",
+        "TooltipProps",
+        "TooltipPosition"
+      ],
+      "import": "import { Tooltip } from '@/components/ui/tooltip'",
+      "props": [
+        {
+          "name": "content",
+          "type": "ReactNode",
+          "required": true,
+          "description": "What the tooltip shows."
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "Trigger content. Wrapped in an inline-flex <div> that owns the hover and focus handlers."
+        },
+        {
+          "name": "position",
+          "type": "'top' | 'right' | 'bottom' | 'left'",
+          "default": "'top'",
+          "description": "Preferred side. Flips through a fallback order when it would overflow the viewport."
+        },
+        {
+          "name": "showDelay",
+          "type": "number",
+          "default": "200",
+          "description": "Milliseconds before showing."
+        },
+        {
+          "name": "hideDelay",
+          "type": "number",
+          "default": "0",
+          "description": "Milliseconds before hiding."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Suppress the tooltip entirely."
+        },
+        {
+          "name": "arrow",
+          "type": "boolean",
+          "default": "true",
+          "description": "Render the pointing arrow."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Applies to the tooltip popup, not the trigger wrapper."
+        }
+      ],
+      "variants": [
+        {
+          "name": "position",
+          "values": [
+            "top",
+            "right",
+            "bottom",
+            "left"
+          ],
+          "default": "top",
+          "description": "Preferred placement only — the component repositions to the first side that fits and clamps 8px from the viewport edge."
+        }
+      ],
+      "example": "<Tooltip content=\"Copy to clipboard\" position=\"top\">\n  <Button variant=\"ghost\" aria-label=\"Copy\">\n    <Icon name=\"copy\" />\n  </Button>\n</Tooltip>",
+      "do": [
+        "Wrap a focusable trigger so keyboard users can reach the tooltip — it opens on focus as well as hover.",
+        "Keep content short; the popup is max-w-xs.",
+        "Use it for supplementary hints only, never for the sole copy of critical information.",
+        "Set disabled instead of conditionally unmounting when the hint is temporarily irrelevant."
+      ],
+      "dont": [
+        "Do not use a tooltip as the only accessible name for an icon-only button — add aria-label too.",
+        "Do not put interactive content inside; the popup is pointer-events-none and cannot be hovered or clicked.",
+        "Do not expect it to work on touch — it is driven by mouseenter, mouseleave, focus, and blur.",
+        "Do not rely on className to move the popup; it is fixed-positioned from measured coordinates."
+      ],
+      "a11y": [
+        "The popup is role=\"tooltip\" and the trigger wrapper gets aria-describedby while visible.",
+        "Opens on focus and closes on blur, so keyboard users get it — but only if the child is focusable.",
+        "Because it is aria-describedby, it supplements rather than replaces the accessible name.",
+        "Rendered through a portal to document.body to escape overflow and stacking contexts.",
+        "Transitions are wrapped in motion-safe and skipped under prefers-reduced-motion."
+      ]
+    }
+  }
 }

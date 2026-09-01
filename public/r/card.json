@@ -13,5 +13,81 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "curated",
+      "summary": "Rounded container surface with an optional compound header, content, and footer.",
+      "exports": [
+        "Card",
+        "CardHeader",
+        "CardTitle",
+        "CardDescription",
+        "CardContent",
+        "CardFooter"
+      ],
+      "import": "import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'",
+      "props": [
+        {
+          "name": "variant",
+          "type": "'default' | 'glass' | 'interactive'",
+          "default": "'default'",
+          "description": "Surface treatment. interactive adds hover styles, cursor-pointer, and gradient-border shine-sweep."
+        },
+        {
+          "name": "padding",
+          "type": "'none' | 'sm' | 'md' | 'lg'",
+          "default": "'md'",
+          "description": "Inner padding. none removes padding for edge-to-edge media."
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "Card contents, typically the compound sub-components."
+        }
+      ],
+      "variants": [
+        {
+          "name": "variant",
+          "values": [
+            "default",
+            "glass",
+            "interactive"
+          ],
+          "default": "default",
+          "description": "default: transparent with glass border. glass: translucent blurred fill. interactive: default plus hover highlight and pointer cursor."
+        },
+        {
+          "name": "padding",
+          "values": [
+            "none",
+            "sm",
+            "md",
+            "lg"
+          ],
+          "default": "md",
+          "description": "none: no padding. sm: p-3. md: p-5. lg: p-8."
+        }
+      ],
+      "example": "<Card variant=\"glass\">\n  <CardHeader>\n    <CardTitle>Usage</CardTitle>\n    <CardDescription>Requests this billing period.</CardDescription>\n  </CardHeader>\n  <CardContent>{children}</CardContent>\n</Card>",
+      "do": [
+        "Compose with CardHeader, CardTitle, CardDescription, CardContent, and CardFooter — they supply the spacing rhythm.",
+        "Set the CardTitle `as` prop to keep the page heading order correct (h1 through h4, default h3).",
+        "Use padding=\"none\" when the card wraps full-bleed media, then pad inner sections yourself.",
+        "Wrap the whole card in a link or button when using variant=\"interactive\"."
+      ],
+      "dont": [
+        "Do not use variant=\"interactive\" on a card that is not actually clickable — it sets cursor-pointer.",
+        "Do not add your own margins to the sub-components; CardContent and CardFooter already apply mt-4.",
+        "Do not put more than two lines in CardDescription — it is line-clamp-2 and will truncate.",
+        "Do not nest a Card inside a Card; flatten the hierarchy instead."
+      ],
+      "a11y": [
+        "Card renders a plain <div> with no role, so it is not focusable or announced as a region on its own.",
+        "variant=\"interactive\" is styling only — put the actual interactive element (a link or button) inside or around the card so it is keyboard reachable.",
+        "CardTitle renders a real heading tag; choose `as` so the document outline does not skip levels."
+      ]
+    }
+  }
 }

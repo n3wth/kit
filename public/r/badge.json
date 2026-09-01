@@ -13,5 +13,77 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "curated",
+      "summary": "Small inline status label. Non-interactive.",
+      "exports": [
+        "Badge",
+        "BadgeProps"
+      ],
+      "import": "import { Badge } from '@/components/ui/badge'",
+      "props": [
+        {
+          "name": "variant",
+          "type": "'default' | 'sage' | 'coral' | 'mint' | 'gold' | 'outline'",
+          "default": "'default'",
+          "description": "Semantic color. Each variant tints background, text, and border."
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md'",
+          "default": "'sm'",
+          "description": "sm is uppercase 10px with tracking; md is sentence-case 12px."
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "description": "Badge label. Required."
+        }
+      ],
+      "variants": [
+        {
+          "name": "variant",
+          "values": [
+            "default",
+            "sage",
+            "coral",
+            "mint",
+            "gold",
+            "outline"
+          ],
+          "default": "default",
+          "description": "default: neutral glass. sage: positive. coral: negative. mint: informational. gold: warning. outline: transparent with border only."
+        },
+        {
+          "name": "size",
+          "values": [
+            "sm",
+            "md"
+          ],
+          "default": "sm",
+          "description": "sm: px-2 py-0.5 text-[10px] uppercase. md: px-3 py-1 text-xs."
+        }
+      ],
+      "example": "<Badge variant=\"sage\">Active</Badge>",
+      "do": [
+        "Map status meaning to color consistently across the app — sage positive, coral negative, gold warning, mint informational.",
+        "Keep labels to one or two words; the badge is whitespace-nowrap and will not wrap.",
+        "Use size=\"md\" when the label is sentence-case or sits next to body text."
+      ],
+      "dont": [
+        "Do not attach onClick to a Badge — it renders a <span> with no button semantics or focus handling.",
+        "Do not pass shadcn variant names such as secondary or destructive; this Badge does not define them.",
+        "Do not rely on color alone to convey status — include the word in the label."
+      ],
+      "a11y": [
+        "Renders a plain <span> with no role, so it is read as inline text.",
+        "Color is not an accessible signal on its own; the label text must carry the meaning.",
+        "For status that changes at runtime, put the badge inside your own live region — the badge does not announce updates.",
+        "At size=\"sm\" the text is 10px uppercase; keep it to short labels for legibility."
+      ]
+    }
+  }
 }

@@ -13,5 +13,70 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Circular avatar with image, fallback initials, and size presets.",
+      "exports": [
+        "AvatarProps",
+        "Avatar"
+      ],
+      "import": "import { Avatar } from '@/components/ui/avatar'",
+      "props": [
+        {
+          "name": "src",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "alt",
+          "type": "string",
+          "description": "",
+          "default": "''"
+        },
+        {
+          "name": "fallback",
+          "type": "string",
+          "description": ""
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "description": "",
+          "default": "'md'"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "variants": [
+        {
+          "name": "size",
+          "values": [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl"
+          ],
+          "description": "Accepts 'xs', 'sm', 'md', 'lg', 'xl'.",
+          "default": "md"
+        }
+      ],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/avatar.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Sets aria-hidden."
+      ]
+    }
+  }
 }

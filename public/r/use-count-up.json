@@ -12,5 +12,30 @@
       "type": "registry:hook"
     }
   ],
-  "type": "registry:hook"
+  "type": "registry:hook",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Animated number counter with scroll-trigger support.",
+      "exports": [
+        "UseCountUpOptions",
+        "UseCountUpReturn",
+        "useCountUp"
+      ],
+      "import": "import { useCountUp } from '@/hooks/use-count-up'",
+      "props": [],
+      "variants": [],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/use-count-up.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Respects prefers-reduced-motion."
+      ]
+    }
+  }
 }

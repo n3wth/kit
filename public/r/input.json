@@ -13,5 +13,96 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "curated",
+      "summary": "Single-line text field with optional icon slots and an inline error message.",
+      "exports": [
+        "Input",
+        "InputProps"
+      ],
+      "import": "import { Input } from '@/components/ui/input'",
+      "props": [
+        {
+          "name": "variant",
+          "type": "'default' | 'glass'",
+          "default": "'default'",
+          "description": "Surface treatment of the field wrapper."
+        },
+        {
+          "name": "inputSize",
+          "type": "'sm' | 'md' | 'lg'",
+          "default": "'md'",
+          "description": "Height and text scale. Named inputSize because size is a native input attribute."
+        },
+        {
+          "name": "leftIcon",
+          "type": "ReactNode",
+          "description": "Decorative node pinned to the left; adds matching padding."
+        },
+        {
+          "name": "rightIcon",
+          "type": "ReactNode",
+          "description": "Decorative node pinned to the right; adds matching padding."
+        },
+        {
+          "name": "error",
+          "type": "boolean | string",
+          "default": "false",
+          "description": "true applies error styling only. A string also renders the message below the field and wires aria-describedby."
+        },
+        {
+          "name": "labelId",
+          "type": "string",
+          "description": "id of an external label element, applied as aria-labelledby."
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Required for the error message to be linked — the error id is derived as `${id}-error`."
+        }
+      ],
+      "variants": [
+        {
+          "name": "variant",
+          "values": [
+            "default",
+            "glass"
+          ],
+          "default": "default",
+          "description": "default: transparent with glass border. glass: translucent blurred fill."
+        },
+        {
+          "name": "inputSize",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "default": "md",
+          "description": "sm: h-8 text-xs. md: h-10 text-sm. lg: h-12 text-base."
+        }
+      ],
+      "example": "<Input\n  id=\"email\"\n  type=\"email\"\n  placeholder=\"you@example.com\"\n  error={errors.email}\n/>",
+      "do": [
+        "Use inputSize, not size — size is forwarded to the native input as the character-width attribute.",
+        "Pass an id whenever you pass a string error, so aria-describedby can point at the message.",
+        "Pass the error string itself rather than rendering your own message element below the field.",
+        "Pair with the Label component, or pass labelId, so the field has an accessible name."
+      ],
+      "dont": [
+        "Do not rely on placeholder text as the label — it disappears on input.",
+        "Do not put interactive controls in leftIcon or rightIcon; both slots are aria-hidden and leftIcon is pointer-events-none.",
+        "Do not add width classes expecting the field to shrink — the wrapper is w-full and sizes to its container."
+      ],
+      "a11y": [
+        "Sets aria-invalid when error is truthy.",
+        "A string error renders with role=\"alert\" and is linked via aria-describedby, but only when id is also provided.",
+        "Icon slots are aria-hidden so they are not announced.",
+        "The field has no implicit label; supply a <Label htmlFor>, aria-label, or labelId.",
+        "Focus styling comes from focus-within on the wrapper — the inner input intentionally has focus:outline-none, so do not remove the wrapper classes."
+      ]
+    }
+  }
 }

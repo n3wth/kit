@@ -13,5 +13,69 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Animated scroll-down indicator with label and position presets.",
+      "exports": [
+        "ScrollIndicatorProps",
+        "ScrollIndicator"
+      ],
+      "import": "import { ScrollIndicator } from '@/components/ui/scroll-indicator'",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "description": "",
+          "default": "'Scroll'"
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "description": "",
+          "default": "'md'"
+        },
+        {
+          "name": "position",
+          "type": "'bottom-left' | 'bottom-center' | 'bottom-right'",
+          "description": "",
+          "default": "'bottom-left'"
+        }
+      ],
+      "variants": [
+        {
+          "name": "size",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "description": "Accepts 'sm', 'md', 'lg'.",
+          "default": "md"
+        },
+        {
+          "name": "position",
+          "values": [
+            "bottom-left",
+            "bottom-center",
+            "bottom-right"
+          ],
+          "description": "Accepts 'bottom-left', 'bottom-center', 'bottom-right'.",
+          "default": "bottom-left"
+        }
+      ],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/scroll-indicator.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "No ARIA roles or attributes are set by this component; supply them at the call site if the usage is interactive."
+      ]
+    }
+  }
 }

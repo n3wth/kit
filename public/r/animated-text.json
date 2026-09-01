@@ -13,5 +13,92 @@
       "type": "registry:ui"
     }
   ],
-  "type": "registry:ui"
+  "type": "registry:ui",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "CSS-animated text with fade-up, fade-in, slide-up, and blur-in effects.",
+      "exports": [
+        "AnimatedTextProps",
+        "AnimatedText"
+      ],
+      "import": "import { AnimatedText } from '@/components/ui/animated-text'",
+      "props": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "",
+          "required": true
+        },
+        {
+          "name": "animation",
+          "type": "'fade-up' | 'fade-in' | 'slide-up' | 'blur-in'",
+          "description": "",
+          "default": "'fade-up'"
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "description": "",
+          "default": "0"
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "description": "",
+          "default": "600"
+        },
+        {
+          "name": "as",
+          "type": "'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div'",
+          "description": ""
+        },
+        {
+          "name": "animateOnScroll",
+          "type": "boolean",
+          "description": "",
+          "default": "true"
+        }
+      ],
+      "variants": [
+        {
+          "name": "animation",
+          "values": [
+            "fade-up",
+            "fade-in",
+            "slide-up",
+            "blur-in"
+          ],
+          "description": "Accepts 'fade-up', 'fade-in', 'slide-up', 'blur-in'.",
+          "default": "fade-up"
+        },
+        {
+          "name": "as",
+          "values": [
+            "span",
+            "p",
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6",
+            "div"
+          ],
+          "description": "Accepts 'span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div'."
+        }
+      ],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/animated-text.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Respects prefers-reduced-motion."
+      ]
+    }
+  }
 }

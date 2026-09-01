@@ -12,5 +12,29 @@
       "type": "registry:hook"
     }
   ],
-  "type": "registry:hook"
+  "type": "registry:hook",
+  "meta": {
+    "usageRules": {
+      "status": "stub",
+      "summary": "Page entrance/exit fade-and-slide animations.",
+      "exports": [
+        "UsePageTransitionOptions",
+        "usePageTransition"
+      ],
+      "import": "import { usePageTransition } from '@/hooks/use-page-transition'",
+      "props": [],
+      "variants": [],
+      "do": [
+        "Install with: npx shadcn add https://kit.n3wth.com/r/use-page-transition.json",
+        "Read the props list below before generating usage — this entry is derived from the component source, not hand-written."
+      ],
+      "dont": [
+        "Do not assume shadcn/ui prop names — kit components define their own variant and size unions.",
+        "Do not restyle with utility classes where a listed variant already covers the case."
+      ],
+      "a11y": [
+        "Respects prefers-reduced-motion."
+      ]
+    }
+  }
 }
