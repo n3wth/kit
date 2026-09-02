@@ -1,91 +1,46 @@
 # n3wth/kit
 
-AI-native component registry for the n3wth design system.
+A shadcn-compatible component registry for the n3wth design system. Every registry item carries a `meta.usageRules` block: typed props, variants, do/don't rules and accessibility notes as JSON, so an AI coding tool can read the component contract instead of inferring it from source.
 
-A shadcn-compatible registry whose components ship with structured usage rules — props, variants, do/don't guidance and accessibility notes — as machine-readable JSON.
+Registry URL: `https://kit.n3wth.com/r/registry.json`
+Site and component previews: https://kit.n3wth.com
 
-[**Browse components**](https://kit.n3wth.com/components) | [**Docs**](https://kit.n3wth.com/docs) | [**Blog**](https://kit.n3wth.com/blog)
+## Install
 
----
+Run these in a project that already has a `components.json` (from `npx shadcn init`).
 
-## The problem
-
-You install shadcn/ui. You add a `.cursorrules` file. You prompt an AI to build a feature. It generates valid React, but it looks nothing like your product. Wrong colors, wrong spacing, wrong component patterns. You spend 30 minutes fixing what should have taken 30 seconds.
-
-This happens because AI tools don't know your design system. They know shadcn defaults.
-
-## What kit does
-
-kit is a shadcn-compatible registry that ships machine-readable context alongside the code:
-
-- **Usage rules** - Every item in `public/r/*.json` carries a `meta.usageRules` object: typed props with
-  defaults, variant unions, do/don't rules, and accessibility notes. An agent can read the contract
-  without inferring it from the component source.
-- **Design tokens** - CSS variables, installed via the `n3wth` style item.
-- **Project-level context files** - a `.cursorrules` and an `AGENTS.md` describing the design system in prose.
-
-The intent is that an AI tool with this metadata in context generates code that fits the design system
-rather than reaching for shadcn defaults. That is the design goal, not a measured result — see
-[Status](#status) for what is and isn't proven.
-
----
-
-## Quick start
-
-Install the design system base (required for CSS variables):
+The style item sets the CSS variables the components use. Install it first:
 
 ```bash
 npx shadcn add https://kit.n3wth.com/r/n3wth.json
 ```
 
-Install any component:
+Then add any item by name:
 
 ```bash
 npx shadcn add https://kit.n3wth.com/r/button.json
 ```
 
----
+The shadcn CLI resolves registry dependencies (`cn`, `icon`, `use-reduced-motion`, and so on) and installs npm dependencies declared by an item (`gsap` for the animation hooks, `iconoir-react` for `icon`).
 
-## AI tool setup
+kit is not on npm. The registry is the only distribution.
 
-### Cursor
+## What it is
 
-```bash
-curl -o .cursorrules https://kit.n3wth.com/ai/cursorrules
-```
+- A registry of 49 items: 1 style, 1 lib utility, 32 UI components, 4 blocks, 11 hooks. Built with the standard shadcn registry protocol and installable by any shadcn-compatible tool.
+- One design system, not a general library. Flat, monochrome tokens, Inter, 0.625rem radius. It is the n3wth look. Fork it if you want the pattern with your own tokens.
+- Source is Next.js 16, React 19, TypeScript, Tailwind CSS v4, Radix UI primitives. Animation hooks use GSAP.
 
-### AGENTS.md
+## What it is not
 
-```bash
-curl -o AGENTS.md https://kit.n3wth.com/ai/AGENTS.md
-```
-
-### MCP (Cursor, Windsurf, etc.)
-
-kit does not ship its own MCP server. This is the stock shadcn registry MCP server pointed at this
-registry, which exposes the registry items — including their `meta.usageRules` — to an MCP client:
-
-```json
-{
-  "mcpServers": {
-    "n3wth-kit": {
-      "command": "npx",
-      "args": ["-y", "shadcn@latest", "registry:mcp"],
-      "env": {
-        "REGISTRY_URL": "https://kit.n3wth.com/r/registry.json"
-      }
-    }
-  }
-}
-```
-
----
+- Not an MCP server. Use the stock shadcn registry MCP server pointed at this registry (config below).
+- Not a code generator. It supplies context to tools that generate; it generates nothing itself.
+- Not proven to change model output. There is no eval, benchmark or before/after comparison in this repo. Treat "AI generates on-brand code" as the goal, not a result.
+- Not per-project context. The `.cursorrules` and `AGENTS.md` files are two static files describing the design system in prose.
 
 ## Usage rules
 
-Every built registry item carries a `meta.usageRules` object. `meta` is an open field in the
-[registry-item schema](https://ui.shadcn.com/schema/registry-item.json), so items stay installable
-with `npx shadcn add` by any shadcn-compatible tool, which ignores fields it does not know.
+Each built item in `public/r/*.json` has a `meta.usageRules` object. `meta` is an open field in the [registry-item schema](https://ui.shadcn.com/schema/registry-item.json), so tools that do not know it ignore it and the item still installs.
 
 ```bash
 curl -s https://kit.n3wth.com/r/button.json | jq .meta.usageRules
@@ -104,162 +59,76 @@ curl -s https://kit.n3wth.com/r/button.json | jq .meta.usageRules
       "default": "'primary'",
       "description": "Visual treatment. Primary is the filled white pill."
     }
-    // …
   ],
   "variants": [
-    { "name": "size", "values": ["sm", "md", "lg"], "default": "md", "description": "…" }
+    { "name": "size", "values": ["sm", "md", "lg"], "default": "md" }
   ],
   "example": "<Button variant=\"primary\" size=\"md\">Save changes</Button>",
-  "do": ["Set isLoading during async work instead of manually disabling and swapping children.", "…"],
-  "dont": ["Do not pass shadcn/ui variant names such as default, destructive, outline, or link.", "…"],
-  "a11y": ["Icon-only buttons need an explicit aria-label — the component does not infer one.", "…"]
+  "do": ["Set isLoading during async work instead of manually disabling and swapping children."],
+  "dont": ["Do not pass shadcn/ui variant names such as default, destructive, outline, or link."],
+  "a11y": ["Icon-only buttons need an explicit aria-label. The component does not infer one."]
 }
 ```
 
-The `status` field tells you how much to trust the prose:
+`status` says how much to trust the prose:
 
-- **`curated`** (10 items) - hand-written against the component source. Currently `button`, `card`,
-  `input`, `modal`, `dropdown`, `tabs`, `toast`, `use-toast`, `badge`, `tooltip`.
-- **`stub`** (39 items) - generated by parsing the component's props interface, destructuring
-  defaults, exports and ARIA attributes. Props, variants, exports and a11y notes are derived from
-  real source; the `do`/`dont` lists are generic placeholders until the item is curated.
+- `curated` (10 items): written by hand against the component source. `button`, `card`, `input`, `modal`, `dropdown`, `tabs`, `toast`, `use-toast`, `badge`, `tooltip`.
+- `stub` (39 items): generated by parsing the props interface, destructured defaults, exports and ARIA attributes. Props, variants, exports and a11y notes come from real source. The `do` and `dont` lists are generic placeholders.
 
-Rules are generated by `scripts/build-usage-rules.mts`, which runs as part of `npm run registry:build`.
-To curate an item, add an entry to `scripts/usage-rules.mts` and rebuild.
+Rules are generated by `scripts/build-usage-rules.mts` during `npm run registry:build`. To curate an item, add an entry to `scripts/usage-rules.mts` and rebuild. If the `jq` command above returns `null`, the hosted registry was deployed from a build that predates usage rules.
 
----
+## AI tool context
 
-## Components
+Two static files describe the design system in prose:
 
-49 components across atoms, molecules, blocks, hooks, and visual utilities.
+```bash
+curl -o .cursorrules https://kit.n3wth.com/ai/cursorrules
+curl -o AGENTS.md https://kit.n3wth.com/ai/AGENTS.md
+```
 
-### Atoms (12)
+For MCP clients (Cursor, Windsurf, Claude Code), point shadcn's own registry MCP server at this registry. It exposes every item, including `meta.usageRules`:
 
-| Component | Description | Install |
-|-----------|-------------|---------|
-| Button | Multi-variant, loading state, asChild | `npx shadcn add https://kit.n3wth.com/r/button.json` |
-| Badge | Semantic color variants (sage, coral, mint, gold) | `npx shadcn add https://kit.n3wth.com/r/badge.json` |
-| Input | Glass variant, icon slots, error state | `npx shadcn add https://kit.n3wth.com/r/input.json` |
-| Icon | iconoir-react wrapper with size presets | `npx shadcn add https://kit.n3wth.com/r/icon.json` |
-| Switch | Controlled/uncontrolled, size variants | `npx shadcn add https://kit.n3wth.com/r/switch.json` |
-| Avatar | Image, fallback initials, size presets | `npx shadcn add https://kit.n3wth.com/r/avatar.json` |
-| Label | Form label with required indicator | `npx shadcn add https://kit.n3wth.com/r/label.json` |
-| Textarea | Resize control, error state | `npx shadcn add https://kit.n3wth.com/r/textarea.json` |
-| Separator | Horizontal or vertical | `npx shadcn add https://kit.n3wth.com/r/separator.json` |
-| Progress | Animated bar, semantic color states | `npx shadcn add https://kit.n3wth.com/r/progress.json` |
-| Skeleton | Text, circular, rectangular variants | `npx shadcn add https://kit.n3wth.com/r/skeleton.json` |
-| Tooltip | Portal-based, auto-positioning, arrow | `npx shadcn add https://kit.n3wth.com/r/tooltip.json` |
+```json
+{
+  "mcpServers": {
+    "n3wth-kit": {
+      "command": "npx",
+      "args": ["-y", "shadcn@latest", "registry:mcp"],
+      "env": {
+        "REGISTRY_URL": "https://kit.n3wth.com/r/registry.json"
+      }
+    }
+  }
+}
+```
 
-### Molecules (11)
+## Items
 
-| Component | Description | Install |
-|-----------|-------------|---------|
-| Card | Default, glass, interactive variants | `npx shadcn add https://kit.n3wth.com/r/card.json` |
-| Modal | Portal, focus trap, compound sub-components | `npx shadcn add https://kit.n3wth.com/r/modal.json` |
-| Tabs | Underline and pill variants, animated indicator | `npx shadcn add https://kit.n3wth.com/r/tabs.json` |
-| Toast | Auto-dismiss, variant styling | `npx shadcn add https://kit.n3wth.com/r/toast.json` |
-| Dropdown | Single/multi-select, search | `npx shadcn add https://kit.n3wth.com/r/dropdown.json` |
-| Accordion | Single/multiple mode, animated | `npx shadcn add https://kit.n3wth.com/r/accordion.json` |
-| Command Box | Copyable command display | `npx shadcn add https://kit.n3wth.com/r/command-box.json` |
-| Theme Toggle | Dark/light with sun/moon icons | `npx shadcn add https://kit.n3wth.com/r/theme-toggle.json` |
-| Code Block | Syntax highlighting, line numbers | `npx shadcn add https://kit.n3wth.com/r/code-block.json` |
-| Mobile Drawer | Slide-in nav, focus trap | `npx shadcn add https://kit.n3wth.com/r/mobile-drawer.json` |
-| Noise Overlay | SVG grain texture | `npx shadcn add https://kit.n3wth.com/r/noise-overlay.json` |
+Install any of these with `npx shadcn add https://kit.n3wth.com/r/<name>.json`.
 
-### Blocks (4)
+**Style and lib:** `n3wth` (CSS variables), `cn` (class merge utility)
 
-| Component | Description | Install |
-|-----------|-------------|---------|
-| Nav | Responsive bar, mobile drawer, theme toggle | `npx shadcn add https://kit.n3wth.com/r/nav.json` |
-| Hero | Badge, title, description, CTA buttons | `npx shadcn add https://kit.n3wth.com/r/hero.json` |
-| Section | Layout wrapper with size and spacing options | `npx shadcn add https://kit.n3wth.com/r/section.json` |
-| Footer | Link columns, social icons, copyright | `npx shadcn add https://kit.n3wth.com/r/footer.json` |
+**UI components (32):** `accordion`, `animated-text`, `avatar`, `badge`, `button`, `card`, `character`, `code-block`, `command-box`, `composite-shape`, `dropdown`, `error-boundary`, `hamburger-icon`, `icon`, `input`, `label`, `mobile-drawer`, `modal`, `nav-link`, `noise-overlay`, `progress`, `scroll-indicator`, `separator`, `shape`, `skeleton`, `speech-bubble`, `switch`, `tabs`, `textarea`, `theme-toggle`, `toast`, `tooltip`
 
-### Hooks (11)
+**Blocks (4):** `nav`, `hero`, `section`, `footer`
 
-| Hook | Description |
-|------|-------------|
-| `use-theme` | localStorage persistence, system preference detection |
-| `use-media-query` | SSR-safe breakpoint matching |
-| `use-reduced-motion` | prefers-reduced-motion with animation config defaults |
-| `use-keyboard-shortcuts` | Declarative shortcut handler with modifier keys |
-| `use-toast` | Toast context provider and variant helpers |
-| `use-count-up` | Animated number counter with scroll trigger |
-| `use-scroll-reveal` | Scroll-triggered entrance animations |
-| `use-stagger-list` | Staggered cascade animations |
-| `use-page-transition` | Page entrance/exit fade-and-slide |
-| `use-text-reveal` | Character-by-character text reveal |
-| `use-button-pulse` | Hover/press scale animations |
+**Hooks (11):** `use-theme`, `use-media-query`, `use-reduced-motion`, `use-keyboard-shortcuts`, `use-toast`, `use-count-up`, `use-scroll-reveal`, `use-stagger-list`, `use-page-transition`, `use-text-reveal`, `use-button-pulse`
 
-### Visual / decorative
-
-`animated-text`, `character`, `composite-shape`, `hamburger-icon`, `nav-link`, `scroll-indicator`, `shape`, `speech-bubble`
-
----
-
-## vs plain shadcn/ui
-
-| | shadcn/ui | n3wth/kit |
-|---|---|---|
-| Component primitives | Yes | Yes (extended) |
-| shadcn registry protocol | Yes | Yes |
-| Design tokens | Defaults only | Custom system |
-| Project-level AI context files | No | Yes |
-| Machine-readable usage rules | No | Yes (10 curated, 39 derived) |
-| Works with the shadcn registry MCP server | Yes | Yes (kit ships no MCP server of its own) |
-| Animation hooks (GSAP) | No | Yes |
-| Install command | `npx shadcn add` | `npx shadcn add` (same) |
-
-kit is additive - same install protocol, works with any shadcn-compatible toolchain.
-
----
-
-## Status
-
-What exists today, stated plainly:
-
-- **Registry** - 49 items build and install through the standard shadcn protocol.
-- **Usage rules** - shipping on all 49 built items. 10 are hand-curated; the other 39 are derived
-  from source and are accurate about props, variants and ARIA, but generic about do/don't guidance.
-- **Context files** - `.cursorrules` and `AGENTS.md` are two static, project-level files describing
-  the design system in prose. They are not generated per component or per project.
-- **MCP** - works via the stock shadcn registry MCP server. There is no kit-specific server.
-
-Not yet done:
-
-- **No evidence the metadata changes model output.** There is no eval, benchmark, or before/after
-  comparison in this repo showing that an AI tool produces different code with kit installed than
-  without. Until that exists, treat "AI generates on-brand code" as the goal, not a demonstrated claim.
-- **39 of 49 items still need curated do/don't rules.**
-
----
-
-## Tech stack
-
-- Next.js 16, React 19, TypeScript
-- Tailwind CSS v4 with CSS variables
-- Radix UI primitives
-- shadcn registry protocol
-- GSAP animations
-
----
+Descriptions for each item are in `registry.json` and on https://kit.n3wth.com/components.
 
 ## Development
 
 ```bash
 npm install
-npm run dev              # Start dev server at localhost:3000
-npm run registry:build   # Build registry JSON to public/r/
-npm run build            # Build everything
+npm run dev              # site at localhost:3000
+npm run registry:build   # shadcn build, then add meta.usageRules to public/r/*.json
+npm run build            # Next.js build
 ```
 
-Registry items live in `registry/new-york/[name]/`. Each item has a `.tsx` source and is declared in `registry.json`, then built to `public/r/[name].json`.
+Registry sources live in `registry/new-york/<name>/`, `registry/hooks/<name>/` and `registry/lib/<name>/`, declared in `registry.json`, built to `public/r/<name>.json`.
 
-`npm run registry:build` runs two steps: `shadcn build` writes the registry-item JSON, then
-`scripts/build-usage-rules.mts` reopens each file and adds `meta.usageRules`.
+## License and maintenance
 
----
+MIT. Copyright Oliver Newth.
 
-## License
-
-MIT
+Maintained by Oliver Newth ([n3wth](https://github.com/n3wth)). Bugs and requests go to [GitHub Issues](https://github.com/n3wth/kit/issues). There is no Discord and no discussions board.

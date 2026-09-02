@@ -46,3 +46,16 @@ Flat, minimal design. No shadows/gradients unless specified.
 Components in `registry/new-york/[name]/` have `[name].tsx` + `index.ts`.
 Defined in `registry.json`, built to `public/r/[name].json`.
 Install: `npx shadcn add https://kit.n3wth.com/r/[name].json`
+
+## README voice: don'ts
+
+1. No LLM adjectives: robust, seamless, powerful, effortless, delightful, blazing, intuitive, elegant, supercharge, leverage.
+2. No "getting started journey", "let's dive in", "you're all set". The install section is commands and one sentence per command.
+3. No claim without a file, command or URL behind it. If it is not in the repo, it is not in the README.
+4. No "AI-native", "context-aware", "on-brand" as a result. They are goals until an eval in this repo says otherwise.
+5. No emojis, no `---` dividers, no badges beyond npm and license.
+6. No problem/solution story ("You install X. It looks wrong. You waste 30 minutes."). Say what it does.
+7. No comparison tables against other projects unless every cell is verified against that project's current docs, with the date.
+8. No "coming soon", roadmap or "once we're listed on X". Describe the present tense only.
+9. No inventing support channels. Issues exist. Discord and Discussions do not.
+10. No version bumps or release notes in README edits. Versions come from package.json.
