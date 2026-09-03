@@ -3,13 +3,13 @@ import { PostLayout } from '../_components/post-layout'
 
 export const metadata: Metadata = {
   title: 'The shadcn Registry Protocol',
-  description: 'A technical deep-dive into the registry protocol that powers shadcn/ui, how it works under the hood, and why it matters for the component ecosystem.',
+  description: 'How the shadcn registry protocol works.',
   alternates: {
     canonical: 'https://kit.n3wth.com/blog/shadcn-registry-protocol',
   },
   openGraph: {
     title: 'The shadcn Registry Protocol — n3wth/kit',
-    description: 'A technical deep-dive into the registry protocol that powers shadcn/ui.',
+    description: 'How the shadcn registry protocol works.',
     url: 'https://kit.n3wth.com/blog/shadcn-registry-protocol',
     type: 'article',
     publishedTime: '2026-02-12T00:00:00Z',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'The shadcn Registry Protocol — n3wth/kit',
-    description: 'A technical deep-dive into the registry protocol that powers shadcn/ui.',
+    description: 'How the shadcn registry protocol works.',
   },
 }
 
@@ -170,9 +170,9 @@ npx shadcn add https://kit.n3wth.com/r/button.json
 
       <div className="mt-12 rounded-lg border border-rail bg-bg-soft p-6">
         <p className="text-ink">
-          kit uses the shadcn registry protocol to distribute AI-native
-          components. Install with a single command, get source code you own,
-          and AI context that teaches your tools how to use it.
+          kit uses the shadcn registry protocol to distribute components with
+          context packs. Install with a single command, get source code you own,
+          and context that teaches your tools how to use it.
         </p>
         <a
           href="/docs/getting-started"

@@ -167,7 +167,7 @@ function AccordionDemo() {
         <AccordionItem value="item-1">
           <AccordionTrigger>What is n3wth/kit?</AccordionTrigger>
           <AccordionContent>
-            An AI-native component registry with context packs for v0, Cursor, and Windsurf.
+            A component registry with context packs for v0, Cursor, and Windsurf.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">

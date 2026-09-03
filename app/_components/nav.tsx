@@ -39,8 +39,15 @@ function MailIcon({ className }: { className?: string }) {
 
 export function Nav() {
   return (
-    <nav className="fixed top-4 left-1/2 z-50 -translate-x-1/2">
-      <div className="flex items-center gap-1 rounded-full border border-rail bg-bg/80 px-1.5 py-1.5 backdrop-blur-md">
+    <nav className="fixed top-4 left-1/2 z-50 -translate-x-1/2 isolate">
+      <div
+        className="nav-blur-pill flex items-center gap-1 rounded-full border border-rail/50 px-1.5 py-1.5"
+        style={{
+          backgroundColor: 'hsl(var(--background) / 0.72)',
+          WebkitBackdropFilter: 'blur(16px) saturate(1.2)',
+          backdropFilter: 'blur(16px) saturate(1.2)',
+        }}
+      >
         {/* Logo */}
         <Link
           href="/"

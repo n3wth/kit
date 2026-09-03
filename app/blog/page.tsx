@@ -3,20 +3,20 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Thoughts on AI-native design systems, component registries, and building better developer tools.',
+  description: 'Notes on registries, context packs, and generated UI.',
   alternates: {
     canonical: 'https://kit.n3wth.com/blog',
   },
   openGraph: {
     title: 'Blog — n3wth/kit',
-    description: 'Thoughts on AI-native design systems, component registries, and building better developer tools.',
+    description: 'Notes on registries, context packs, and generated UI.',
     url: 'https://kit.n3wth.com/blog',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Blog — n3wth/kit',
-    description: 'Thoughts on AI-native design systems, component registries, and building better developer tools.',
+    description: 'Notes on registries, context packs, and generated UI.',
   },
 }
 
@@ -26,7 +26,7 @@ const webPageJsonLd = {
   '@id': 'https://kit.n3wth.com/blog#webpage',
   url: 'https://kit.n3wth.com/blog',
   name: 'Blog — n3wth/kit',
-  description: 'Thoughts on AI-native design systems, component registries, and building better developer tools.',
+  description: 'Notes on registries, context packs, and generated UI.',
   isPartOf: { '@id': 'https://kit.n3wth.com/#website' },
   primaryImageOfPage: {
     '@type': 'ImageObject',
@@ -57,7 +57,7 @@ const posts = [
     slug: 'shadcn-registry-protocol',
     title: 'The shadcn Registry Protocol',
     date: 'February 12, 2026',
-    excerpt: 'A technical deep-dive into the registry protocol that powers shadcn/ui, how it works under the hood, and why it matters for the component ecosystem.',
+    excerpt: 'How the shadcn registry protocol works.',
   },
   {
     slug: 'ai-context-packs-explained',
@@ -79,8 +79,7 @@ export default function BlogPage() {
           Blog
         </h1>
         <p className="mt-3 text-ink-dim">
-          Thoughts on AI-native design systems, component registries, and the
-          future of developer tooling.
+          Notes on registries, context packs, and generated UI.
         </p>
 
         <div className="mt-16 space-y-12">

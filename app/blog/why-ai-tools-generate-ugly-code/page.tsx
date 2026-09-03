@@ -183,7 +183,7 @@ export default function Post() {
 
       <div className="mt-12 rounded-lg border border-rail bg-bg-soft p-6">
         <p className="text-ink">
-          kit is an AI-native component registry with built-in context packs.
+          kit is a component registry with built-in context packs.
           Install components with a single command, then generate code that
           actually matches your design system.
         </p>
