@@ -5,7 +5,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: 'https://kit.n3wth.com', lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
     { url: 'https://kit.n3wth.com/components', lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: 'https://kit.n3wth.com/r/registry.json', lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
-    { url: 'https://kit.n3wth.com/pricing', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: 'https://kit.n3wth.com/blog', lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: 'https://kit.n3wth.com/ai/cursorrules', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: 'https://kit.n3wth.com/ai/AGENTS.md', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },

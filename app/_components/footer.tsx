@@ -5,7 +5,6 @@ const columns = [
     title: 'Product',
     links: [
       { label: 'Components', href: '/components' },
-      { label: 'Pricing', href: '/pricing' },
       { label: 'Changelog', href: '/changelog' },
       { label: 'Registry', href: '/docs/getting-started' },
     ],
@@ -37,7 +36,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-4">
           {/* Brand */}
           <div>
-            <p className="font-mono text-sm font-semibold text-ink">
+            <p className="text-sm font-semibold text-ink">
               n3wth/kit
             </p>
             <p className="mt-2 text-sm leading-relaxed text-ink-faint">

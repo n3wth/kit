@@ -2,7 +2,6 @@ import Link from 'next/link'
 
 const links = [
   { href: '/docs/getting-started', label: 'Docs' },
-  { href: '/pricing', label: 'Pricing' },
 ]
 
 function GitHubIcon({ className }: { className?: string }) {
@@ -45,7 +44,7 @@ export function Nav() {
         {/* Logo */}
         <Link
           href="/"
-          className="rounded-full px-3 py-1.5 font-mono text-sm font-semibold text-ink transition-colors hover:bg-bg-raise"
+          className="rounded-full px-3 py-1.5 text-sm font-semibold text-ink transition-colors hover:bg-bg-raise"
         >
           n3wth/kit
         </Link>
