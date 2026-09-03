@@ -2,8 +2,24 @@ import type { Metadata } from 'next'
 import { PostLayout } from '../_components/post-layout'
 
 export const metadata: Metadata = {
-  title: 'The shadcn Registry Protocol - n3wth/kit',
+  title: 'The shadcn Registry Protocol',
   description: 'A technical deep-dive into the registry protocol that powers shadcn/ui, how it works under the hood, and why it matters for the component ecosystem.',
+  alternates: {
+    canonical: 'https://kit.n3wth.com/blog/shadcn-registry-protocol',
+  },
+  openGraph: {
+    title: 'The shadcn Registry Protocol — n3wth/kit',
+    description: 'A technical deep-dive into the registry protocol that powers shadcn/ui.',
+    url: 'https://kit.n3wth.com/blog/shadcn-registry-protocol',
+    type: 'article',
+    publishedTime: '2026-02-12T00:00:00Z',
+    authors: ['Oliver Newth'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The shadcn Registry Protocol — n3wth/kit',
+    description: 'A technical deep-dive into the registry protocol that powers shadcn/ui.',
+  },
 }
 
 export default function Post() {

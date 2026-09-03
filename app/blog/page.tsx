@@ -2,8 +2,36 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Blog - n3wth/kit',
+  title: 'Blog',
   description: 'Thoughts on AI-native design systems, component registries, and building better developer tools.',
+  alternates: {
+    canonical: 'https://kit.n3wth.com/blog',
+  },
+  openGraph: {
+    title: 'Blog — n3wth/kit',
+    description: 'Thoughts on AI-native design systems, component registries, and building better developer tools.',
+    url: 'https://kit.n3wth.com/blog',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog — n3wth/kit',
+    description: 'Thoughts on AI-native design systems, component registries, and building better developer tools.',
+  },
+}
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': 'https://kit.n3wth.com/blog#webpage',
+  url: 'https://kit.n3wth.com/blog',
+  name: 'Blog — n3wth/kit',
+  description: 'Thoughts on AI-native design systems, component registries, and building better developer tools.',
+  isPartOf: { '@id': 'https://kit.n3wth.com/#website' },
+  primaryImageOfPage: {
+    '@type': 'ImageObject',
+    url: 'https://kit.n3wth.com/blog/opengraph-image',
+  },
 }
 
 const posts = [
@@ -42,6 +70,10 @@ const posts = [
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
       <main className="mx-auto max-w-2xl px-6 pt-32 pb-24">
         <h1 className="text-3xl font-bold tracking-tight text-ink">
           Blog

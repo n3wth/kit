@@ -2,14 +2,15 @@ import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Nav } from './_components/nav'
+import { SkipLink } from './_components/skip-link'
 import { PostHogProvider } from './_components/posthog-provider'
 import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kit.n3wth.com'),
   title: {
-    default: 'n3wth/kit - shadcn registry with AI context packs',
-    template: '%s - n3wth/kit',
+    default: 'n3wth/kit — shadcn registry with AI context packs',
+    template: '%s — n3wth/kit',
   },
   description:
     'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or AGENTS.md so AI tools generate code that uses them correctly.',
@@ -23,7 +24,6 @@ export const metadata: Metadata = {
     'Cursor',
     'Windsurf',
     'Lovable',
-    'Windsurf',
     'component registry',
     'AI code generation',
     'context packs',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     canonical: './',
   },
   openGraph: {
-    title: 'n3wth/kit - shadcn registry with AI context packs',
+    title: 'n3wth/kit — shadcn registry with AI context packs',
     description: 'A shadcn component registry with AI context packs. Install via npx shadcn add, then drop in .cursorrules or AGENTS.md.',
     url: 'https://kit.n3wth.com',
     siteName: 'n3wth/kit',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'n3wth/kit - shadcn registry with AI context packs',
+    title: 'n3wth/kit — shadcn registry with AI context packs',
     description: 'A shadcn component registry with AI context packs. Install via npx shadcn add, then drop in .cursorrules or AGENTS.md.',
   },
   robots: {
@@ -52,14 +52,45 @@ export const metadata: Metadata = {
   },
 }
 
-const jsonLd = {
+const websiteJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'WebSite',
+  '@id': 'https://kit.n3wth.com/#website',
   name: 'n3wth/kit',
-  description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or AGENTS.md so AI tools generate code that uses them correctly.',
   url: 'https://kit.n3wth.com',
-  applicationCategory: 'DeveloperApplication',
-  operatingSystem: 'Any',
+  description: 'A shadcn component registry with AI context packs for v0, Cursor, Windsurf, Lovable, and Cline.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'n3wth',
+    url: 'https://n3wth.com',
+    email: 'hey@n3wth.com',
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://kit.n3wth.com/components?q={search_term_string}',
+    },
+    'query-input': 'required name=search_term_string',
+  },
+}
+
+const softwareJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareSourceCode',
+  '@id': 'https://kit.n3wth.com/#software',
+  name: 'n3wth/kit',
+  description: 'A shadcn component registry with AI context packs. 49 items: 32 UI components, 4 blocks, 11 hooks, 1 utility, 1 design style.',
+  url: 'https://kit.n3wth.com',
+  codeRepository: 'https://github.com/n3wth/kit',
+  programmingLanguage: ['TypeScript', 'React', 'Tailwind CSS'],
+  runtimePlatform: 'Node.js',
+  license: 'https://opensource.org/licenses/MIT',
+  author: {
+    '@type': 'Person',
+    name: 'Oliver Newth',
+    url: 'https://n3wth.com',
+  },
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -77,11 +108,18 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
         />
         <PostHogProvider>
+          <SkipLink />
           <Nav />
-          {children}
+          <div id="main-content">
+            {children}
+          </div>
           <Analytics />
           <SpeedInsights />
         </PostHogProvider>

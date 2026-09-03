@@ -2,8 +2,11 @@ import type { Metadata } from 'next'
 import { PostLayout } from '../_components/post-layout'
 
 export const metadata: Metadata = {
-  title: 'Why Every AI Tool Generates the Same Looking UI - n3wth/kit',
+  title: 'Why Every AI Tool Generates the Same Looking UI',
   description: 'AI coding tools default to shadcn\'s visual style because of training data bias. Design system packaging solves this — here\'s how.',
+  alternates: {
+    canonical: 'https://kit.n3wth.com/blog/why-every-ai-tool-generates-same-ui',
+  },
   keywords: [
     'vibe coding design system',
     'AI generated UI looks same',
@@ -13,10 +16,17 @@ export const metadata: Metadata = {
     'shadcn ui alternatives',
   ],
   openGraph: {
-    title: 'Why Every AI Tool Generates the Same Looking UI',
-    description: 'AI coding tools default to shadcn\'s visual style because of training data bias. Design system packaging solves this.',
+    title: 'Why Every AI Tool Generates the Same Looking UI — n3wth/kit',
+    description: 'AI coding tools default to shadcn\'s visual style because of training data bias.',
+    url: 'https://kit.n3wth.com/blog/why-every-ai-tool-generates-same-ui',
     type: 'article',
-    publishedTime: '2026-04-06',
+    publishedTime: '2026-04-06T00:00:00Z',
+    authors: ['Oliver Newth'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Why Every AI Tool Generates the Same Looking UI — n3wth/kit',
+    description: 'AI coding tools default to shadcn\'s visual style because of training data bias.',
   },
 }
 

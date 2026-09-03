@@ -1,8 +1,21 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Cursor Integration - n3wth/kit',
+  title: 'Cursor Integration',
   description: 'Set up n3wth/kit with Cursor AI. Configure .cursorrules, MCP server, and start generating on-brand components.',
+  alternates: {
+    canonical: 'https://kit.n3wth.com/docs/cursor',
+  },
+  openGraph: {
+    title: 'Cursor Integration — n3wth/kit',
+    description: 'Configure .cursorrules and MCP server for Cursor AI.',
+    url: 'https://kit.n3wth.com/docs/cursor',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cursor Integration — n3wth/kit',
+    description: 'Configure .cursorrules and MCP server for Cursor AI.',
+  },
 }
 
 export default function CursorDocsPage() {

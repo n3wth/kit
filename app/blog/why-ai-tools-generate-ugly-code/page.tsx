@@ -2,8 +2,24 @@ import type { Metadata } from 'next'
 import { PostLayout } from '../_components/post-layout'
 
 export const metadata: Metadata = {
-  title: 'Why AI Tools Generate Ugly Code - n3wth/kit',
+  title: 'Why AI Tools Generate Ugly Code',
   description: 'AI coding tools produce functional but generic code because they lack context about your design system. Here\'s how AI context packs fix that.',
+  alternates: {
+    canonical: 'https://kit.n3wth.com/blog/why-ai-tools-generate-ugly-code',
+  },
+  openGraph: {
+    title: 'Why AI Tools Generate Ugly Code — n3wth/kit',
+    description: 'AI coding tools produce generic code because they lack design system context.',
+    url: 'https://kit.n3wth.com/blog/why-ai-tools-generate-ugly-code',
+    type: 'article',
+    publishedTime: '2026-02-15T00:00:00Z',
+    authors: ['Oliver Newth'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Why AI Tools Generate Ugly Code — n3wth/kit',
+    description: 'AI coding tools produce generic code because they lack design system context.',
+  },
 }
 
 export default function Post() {

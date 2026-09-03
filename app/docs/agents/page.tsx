@@ -1,8 +1,21 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AI Context Pack - n3wth/kit',
+  title: 'AI Context Pack',
   description: 'Set up n3wth/kit with AGENTS.md. Configure the AI context pack and MCP server to generate on-brand components.',
+  alternates: {
+    canonical: 'https://kit.n3wth.com/docs/agents',
+  },
+  openGraph: {
+    title: 'AI Context Pack — n3wth/kit',
+    description: 'Set up AGENTS.md and MCP server for AI coding tools.',
+    url: 'https://kit.n3wth.com/docs/agents',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Context Pack — n3wth/kit',
+    description: 'Set up AGENTS.md and MCP server for AI coding tools.',
+  },
 }
 
 export default function AgentsDocsPage() {

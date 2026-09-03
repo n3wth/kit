@@ -2,8 +2,24 @@ import type { Metadata } from 'next'
 import { PostLayout } from '../_components/post-layout'
 
 export const metadata: Metadata = {
-  title: 'The shadcn Registry Protocol: A Technical Deep Dive - n3wth/kit',
+  title: 'The shadcn Registry Protocol: A Technical Deep Dive',
   description: 'How the shadcn registry protocol works under the hood: JSON schema, install flow, dependency resolution, and how to build your own custom component registry.',
+  alternates: {
+    canonical: 'https://kit.n3wth.com/blog/shadcn-registry-protocol-deep-dive',
+  },
+  openGraph: {
+    title: 'The shadcn Registry Protocol: A Technical Deep Dive — n3wth/kit',
+    description: 'How the JSON schema, dependency resolution, and install flow work under the hood.',
+    url: 'https://kit.n3wth.com/blog/shadcn-registry-protocol-deep-dive',
+    type: 'article',
+    publishedTime: '2026-04-09T00:00:00Z',
+    authors: ['Oliver Newth'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The shadcn Registry Protocol: A Technical Deep Dive — n3wth/kit',
+    description: 'How the JSON schema, dependency resolution, and install flow work under the hood.',
+  },
   keywords: [
     'shadcn registry protocol',
     'custom component registry',
@@ -14,12 +30,6 @@ export const metadata: Metadata = {
     'component distribution protocol',
     'shadcn cli install',
   ],
-  openGraph: {
-    title: 'The shadcn Registry Protocol: A Technical Deep Dive',
-    description: 'How the shadcn registry protocol works under the hood, and how to build your own custom component registry.',
-    type: 'article',
-    publishedTime: '2026-04-09',
-  },
 }
 
 export default function Post() {

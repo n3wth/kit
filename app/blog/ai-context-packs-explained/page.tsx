@@ -2,8 +2,24 @@ import type { Metadata } from 'next'
 import { PostLayout } from '../_components/post-layout'
 
 export const metadata: Metadata = {
-  title: 'AI Context Packs Explained - n3wth/kit',
+  title: 'AI Context Packs Explained',
   description: 'What are AI context packs? How .cursorrules, AGENTS.md, and MCP configs teach AI coding tools to use your design system.',
+  alternates: {
+    canonical: 'https://kit.n3wth.com/blog/ai-context-packs-explained',
+  },
+  openGraph: {
+    title: 'AI Context Packs Explained — n3wth/kit',
+    description: 'How .cursorrules, AGENTS.md, and MCP configs teach AI coding tools to use your design system.',
+    url: 'https://kit.n3wth.com/blog/ai-context-packs-explained',
+    type: 'article',
+    publishedTime: '2026-02-10T00:00:00Z',
+    authors: ['Oliver Newth'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Context Packs Explained — n3wth/kit',
+    description: 'How .cursorrules, AGENTS.md, and MCP configs teach AI coding tools to use your design system.',
+  },
 }
 
 export default function Post() {
