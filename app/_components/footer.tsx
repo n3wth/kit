@@ -27,7 +27,17 @@ const columns = [
       { label: 'Email', href: 'mailto:hey@n3wth.com' },
     ],
   },
-]
+] as const
+
+const familyLinks = [
+  { label: 'hop.flights', href: 'https://hop.flights' },
+  { label: 'r3', href: 'https://r3.n3wth.com' },
+  { label: 'garden', href: 'https://garden.n3wth.com' },
+  { label: 'skills', href: 'https://skills.n3wth.com' },
+  { label: 'ui', href: 'https://ui.n3wth.com' },
+  { label: 'n3wth.com', href: 'https://n3wth.com' },
+  { label: 'Email', href: 'mailto:hey@n3wth.com' },
+] as const
 
 export function Footer() {
   return (
@@ -77,8 +87,27 @@ export function Footer() {
           ))}
         </div>
 
+        {/* Family row */}
+        <div className="mt-12 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-rail pt-6">
+          {familyLinks.map((link, i) => (
+            <span key={link.label} className="flex items-center gap-4">
+              <a
+                href={link.href}
+                target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+                rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                className="text-xs text-ink-faint transition-colors hover:text-ink"
+              >
+                {link.label}
+              </a>
+              {i < familyLinks.length - 1 && (
+                <span className="text-ink-faint/50">·</span>
+              )}
+            </span>
+          ))}
+        </div>
+
         {/* Bottom bar */}
-        <div className="mt-16 flex items-center justify-between border-t border-rail pt-6">
+        <div className="mt-8 flex items-center justify-between pt-6">
           <p className="text-xs text-ink-faint">
             &copy; 2026 Oliver Newth
           </p>
