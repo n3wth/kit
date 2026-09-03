@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Nav } from './_components/nav'
@@ -123,6 +124,7 @@ export default function RootLayout({
           <Analytics />
           <SpeedInsights />
         </PostHogProvider>
+        <GoogleAnalytics gaId="G-4QRMSG5HXK" />
       </body>
     </html>
   )
