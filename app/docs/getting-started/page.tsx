@@ -3,8 +3,21 @@ import Link from 'next/link'
 import { PageViewTracker } from '../../_components/page-view-tracker'
 
 export const metadata: Metadata = {
-  title: 'Getting Started - n3wth/kit',
+  title: 'Getting Started',
   description: 'Get started with n3wth/kit. Install components via shadcn CLI, configure AI context packs for Cursor, Windsurf, and v0, and start building with AI-native components.',
+  alternates: {
+    canonical: 'https://kit.n3wth.com/docs/getting-started',
+  },
+  openGraph: {
+    title: 'Getting Started — n3wth/kit',
+    description: 'Install components via shadcn CLI and configure AI context packs.',
+    url: 'https://kit.n3wth.com/docs/getting-started',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Getting Started — n3wth/kit',
+    description: 'Install components via shadcn CLI and configure AI context packs.',
+  },
 }
 
 function CodeBlock({ children }: { children: string }) {

@@ -1,8 +1,21 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'v0 Integration - n3wth/kit',
+  title: 'v0 Integration',
   description: 'Use the n3wth component registry with v0 to generate UIs that use your design system.',
+  alternates: {
+    canonical: 'https://kit.n3wth.com/docs/v0',
+  },
+  openGraph: {
+    title: 'v0 Integration — n3wth/kit',
+    description: 'Use the registry URL with v0 to generate on-brand UIs.',
+    url: 'https://kit.n3wth.com/docs/v0',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'v0 Integration — n3wth/kit',
+    description: 'Use the registry URL with v0 to generate on-brand UIs.',
+  },
 }
 
 export default function V0DocsPage() {

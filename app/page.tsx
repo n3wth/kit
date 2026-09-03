@@ -5,25 +5,32 @@ import { ComponentShowcase } from './_components/component-showcase'
 import { Footer } from './_components/footer'
 
 export const metadata: Metadata = {
-  title: 'n3wth/kit - shadcn registry with AI context packs',
-  description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or AGENTS.md so AI tools generate code that uses them correctly.',
-  openGraph: {
-    title: 'n3wth/kit - shadcn registry with AI context packs',
-    description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or AGENTS.md so AI tools generate code that uses them correctly.',
-    url: 'https://kit.n3wth.com',
-    siteName: 'n3wth/kit',
-    type: 'website',
+  alternates: {
+    canonical: 'https://kit.n3wth.com',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'n3wth/kit - shadcn registry with AI context packs',
-    description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or AGENTS.md so AI tools generate code that uses them correctly.',
+}
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://kit.n3wth.com/#webpage',
+  url: 'https://kit.n3wth.com',
+  name: 'n3wth/kit — shadcn registry with AI context packs',
+  description: 'A shadcn component registry with AI context packs. Install components via npx shadcn add, then drop in .cursorrules or AGENTS.md so AI tools generate code that uses them correctly.',
+  isPartOf: { '@id': 'https://kit.n3wth.com/#website' },
+  primaryImageOfPage: {
+    '@type': 'ImageObject',
+    url: 'https://kit.n3wth.com/opengraph-image',
   },
 }
 
 export default function Home() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
       {/* Hero */}
       <section className="mx-auto max-w-5xl px-6 pt-24 pb-14">
         <div className="grid items-center gap-12 sm:grid-cols-2">

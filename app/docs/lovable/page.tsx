@@ -1,8 +1,21 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Lovable Integration - n3wth/kit',
+  title: 'Lovable Integration',
   description: 'Add n3wth components to Lovable projects using the shadcn registry URL.',
+  alternates: {
+    canonical: 'https://kit.n3wth.com/docs/lovable',
+  },
+  openGraph: {
+    title: 'Lovable Integration — n3wth/kit',
+    description: 'Add n3wth components to Lovable projects.',
+    url: 'https://kit.n3wth.com/docs/lovable',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lovable Integration — n3wth/kit',
+    description: 'Add n3wth components to Lovable projects.',
+  },
 }
 
 export default function LovableDocsPage() {

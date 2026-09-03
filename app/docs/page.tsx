@@ -2,8 +2,36 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Docs - n3wth/kit',
-  description: 'Documentation for n3wth/kit. Guides for getting started, Cursor, Windsurf, v0, and Lovable integration.',
+  title: 'Documentation',
+  description: 'Documentation for n3wth/kit. Guides for getting started with Cursor, v0, Windsurf, Lovable, and Cline integration.',
+  alternates: {
+    canonical: 'https://kit.n3wth.com/docs',
+  },
+  openGraph: {
+    title: 'Documentation — n3wth/kit',
+    description: 'Guides for getting started with Cursor, v0, Windsurf, Lovable, and Cline integration.',
+    url: 'https://kit.n3wth.com/docs',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Documentation — n3wth/kit',
+    description: 'Guides for getting started with Cursor, v0, Windsurf, Lovable, and Cline integration.',
+  },
+}
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': 'https://kit.n3wth.com/docs#webpage',
+  url: 'https://kit.n3wth.com/docs',
+  name: 'Documentation — n3wth/kit',
+  description: 'Guides for getting started with Cursor, v0, Windsurf, Lovable, and Cline integration.',
+  isPartOf: { '@id': 'https://kit.n3wth.com/#website' },
+  primaryImageOfPage: {
+    '@type': 'ImageObject',
+    url: 'https://kit.n3wth.com/docs/opengraph-image',
+  },
 }
 
 const guides = [
@@ -37,6 +65,10 @@ const guides = [
 export default function DocsPage() {
   return (
     <div className="min-h-screen bg-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
       <main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
         <h1 className="text-3xl font-bold tracking-tight text-ink">
           Documentation
