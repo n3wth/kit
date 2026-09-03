@@ -436,9 +436,9 @@ export function MetricCard({ title, value, trend }) {
 
       <div className="mt-12 rounded-lg border border-rail bg-bg-soft p-6">
         <p className="text-ink">
-          kit is an AI-native component registry. Install components as source,
-          get a context pack that teaches your AI tools to use them correctly.
-          The shadcn registry protocol, with the AI context layer on top.
+          kit is a component registry with context packs. Install components as
+          source, get context that teaches your tools to use them correctly.
+          The shadcn registry protocol, with the context layer on top.
         </p>
         <a
           href="/docs/getting-started"

@@ -1,6 +1,6 @@
 # n3wth/kit
 
-AI-native component registry for the n3wth design system.
+Component registry for the n3wth design system.
 
 Components with built-in context packs so AI tools generate on-brand code instead of generic shadcn output.
 

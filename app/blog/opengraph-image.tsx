@@ -76,7 +76,7 @@ export default async function Image() {
               lineHeight: 1.5,
             }}
           >
-            AI-native design systems, component registries, and developer tooling
+            Registries, context packs, and generated UI
           </div>
           <div
             style={{

@@ -126,7 +126,7 @@ npx shadcn add @n3wth/use-theme
 
 ## AI Context Packs
 
-@n3wth/kit is an AI-native registry with context packs for AI coding assistants. These files help AI tools understand the component APIs and design patterns.
+@n3wth/kit ships context packs for AI coding assistants. These files help AI tools understand the component APIs and design patterns.
 
 ### Available Context Packs
 

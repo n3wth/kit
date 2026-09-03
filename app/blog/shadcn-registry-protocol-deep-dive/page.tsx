@@ -43,8 +43,8 @@ export default function Post() {
         The shadcn registry protocol is one of those infrastructure decisions
         that looks simple from the outside and reveals surprising depth when you
         dig in. It is how shadcn/ui distributes components as source code instead
-        of compiled packages. It is also the mechanism that makes AI-native
-        component registries like kit possible.
+        of compiled packages. It is also the mechanism that makes component
+        registries like kit possible.
       </p>
 
       <p>
@@ -618,9 +618,9 @@ Constraints:
 
       <div className="mt-12 rounded-lg border border-rail bg-bg-soft p-6">
         <p className="text-ink">
-          kit uses the shadcn registry protocol to distribute AI-native
-          components: source code you own, plus a context pack that teaches your
-          AI tools to use them correctly.
+          kit uses the shadcn registry protocol to distribute components with
+          context packs: source code you own, plus context that teaches your
+          tools to use them correctly.
         </p>
         <a
           href="/docs/getting-started"

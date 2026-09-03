@@ -69,7 +69,7 @@ export default async function Image() {
             maxWidth: '800px',
           }}
         >
-          A technical deep-dive into the registry protocol that powers shadcn/ui
+          How the shadcn registry protocol works
         </div>
         <div
           style={{
